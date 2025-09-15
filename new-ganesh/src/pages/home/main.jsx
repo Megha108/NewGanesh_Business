@@ -1,12 +1,15 @@
-import Landing from "./landing.jsx";
 import Navbar from "../../common/navbar.jsx";
-function HomeMain() {
+import Landing from "./landing.jsx";
+import CompanyOverview from "./overview.jsx";
+import WhatWeDo from "./whatWeDo.jsx";
+const HomeMain = () => {
   return (
-    <>
+    <div className="font-bricolage">
     <Navbar/>
     <Landing />
-      {/* Other sections */}
-    </>
+    <CompanyOverview/>
+    <WhatWeDo/>
+    </div>
   );
 }
 export default HomeMain;

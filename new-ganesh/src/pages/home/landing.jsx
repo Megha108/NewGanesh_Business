@@ -57,23 +57,13 @@ const [current, setCurrent] = useState(0);
             <div className="mt-8">
               <a
                 href="#products"
-                className="inline-flex items-center rounded-lg bg-emerald-700 px-5 py-3 text-white font-medium hover:bg-emerald-800 transition"
+                className="inline-flex items-center rounded-lg bg-green-700 px-5 py-3 text-white font-medium hover:bg-green-800 transition"
               >
                 Explore Products
               </a>
             </div>
           </div>
         </div>
-      </div>
-
-      {/* Dummy next section start (to show scroll) */}
-      <div id="products" className="container mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h2 className="text-2xl sm:text-3xl font-semibold text-emerald-900">
-          Our Featured Seeds
-        </h2>
-        <p className="mt-2 text-slate-600">
-          Add your product cards here…
-        </p>
       </div>
     </section>
   );

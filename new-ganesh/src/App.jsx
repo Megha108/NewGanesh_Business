@@ -1,10 +1,14 @@
-import HomeMain from "./pages/home/main.jsx";  
-function App() {
+import { Routes, Route } from "react-router-dom";
+import HomeMain from "./pages/home/main";  
+
+export default function App() {
   return (
     <>
-      <HomeMain />
-      
-    </>
+    
+      <Routes>
+        <Route path="/" element={<HomeMain />} />
+      </Routes>
+    
+  </>
   );
 }
-export default App;

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import Logo from "../assets/image/common/Logo.png";
 
 const Navbar = () => {
@@ -8,29 +9,29 @@ const Navbar = () => {
     <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur border-b border-black/5">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
-        <a href="#home" className="flex items-center gap-2">
+        <Link to="/" className="flex items-center gap-2">
           <img 
             src={Logo} 
             alt="New Ganesh Seeds Logo" 
             className="h-14 w-17"
           />
-        </a>
+        </Link>
 
         {/* Desktop menu */}
         <ul className="hidden md:flex items-center gap-8 text-slate-800">
-          <li><a href="#home" className="hover:text-emerald-800">Home</a></li>
-          <li><a href="#about" className="hover:text-emerald-800">About Us</a></li>
-          <li><a href="#products" className="hover:text-emerald-800">Products</a></li>
-          <li><a href="#gallery" className="hover:text-emerald-800">Gallery</a></li>
+          <li><Link to="/" className="hover:text-emerald-800">Home</Link></li>
+          <li><Link to="/about" className="hover:text-emerald-800">About Us</Link></li>
+          <li><Link to="/products" className="hover:text-emerald-800">Products</Link></li>
+          <li><Link to="/gallery" className="hover:text-emerald-800">Gallery</Link></li>
         </ul>
 
         {/* CTA (desktop) */}
-        <a
-          href="#enquire"
-          className="hidden md:inline-block rounded-lg bg-emerald-700 px-4 py-2 text-white font-medium hover:bg-emerald-800 transition"
+        <Link
+          to="/enquire"
+          className="hidden md:inline-block rounded-lg bg-[#16561A] px-4 py-2 text-white font-medium hover:bg-emerald-800 transition"
         >
           Enquire Now
-        </a>
+        </Link>
 
         {/* Mobile toggle */}
         <button
@@ -68,19 +69,27 @@ const Navbar = () => {
       >
         <div className="px-4 sm:px-6 lg:px-8 pb-4">
           <ul className="flex flex-col gap-3 text-slate-800">
-            <li><a href="#home" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Home</a></li>
-            <li><a href="#about" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>About Us</a></li>
-            <li><a href="#products" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Products</a></li>
-            <li><a href="#gallery" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Gallery</a></li>
+            <li>
+              <Link to="/" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Home</Link>
+            </li>
+            <li>
+              <Link to="/about" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>About Us</Link>
+            </li>
+            <li>
+              <Link to="/products" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Products</Link>
+            </li>
+            <li>
+              <Link to="/gallery" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>Gallery</Link>
+            </li>
           </ul>
 
-          <a
-            href="#enquire"
+          <Link
+            to="/enquire"
             className="mt-3 inline-flex w-full items-center justify-center rounded-lg bg-emerald-700 px-4 py-2 text-white font-medium hover:bg-emerald-800 transition"
             onClick={() => setOpen(false)}
           >
             Enquire Now
-          </a>
+          </Link>
         </div>
       </div>
     </header>
