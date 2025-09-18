@@ -26,7 +26,7 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-[#042c15] text-white py-10">
+    <footer className="bg-[#01200e] text-white py-10">
       <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-10">
         {/* Left */}
         <div className="space-y-4">
