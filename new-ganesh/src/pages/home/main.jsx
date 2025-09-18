@@ -3,6 +3,7 @@ import Landing from "./landing.jsx";
 import CompanyOverview from "./overview.jsx";
 import WhatWeDo from "./whatWeDo.jsx";
 import ProductsMarquee from "./product.jsx";
+import Footer from "../../common/footer.jsx";
 
 const HomeMain = () => {
   return (
@@ -12,6 +13,7 @@ const HomeMain = () => {
     <CompanyOverview/>
     <WhatWeDo/>
     <ProductsMarquee/>
+    <Footer/>
     </div>
   );
 }

@@ -7,7 +7,7 @@ const Landing = () => {
     "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
   ];
 
-const [current, setCurrent] = useState(0);
+  const [current, setCurrent] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,7 +22,7 @@ const [current, setCurrent] = useState(0);
       <div className="h-16" />
 
       {/* Hero */}
-      <div className="relative min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden">
+      <div className="relative h-screen min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden ">
         {/* Background Images with fade transition */}
         {backgrounds.map((bg, index) => (
           <div
@@ -35,7 +35,10 @@ const [current, setCurrent] = useState(0);
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
-          />
+          >
+            {/* Black overlay */}
+            <div className="absolute inset-0 bg-black/40"></div>
+          </div>
         ))}
 
         {/* Overlays */}
@@ -44,16 +47,26 @@ const [current, setCurrent] = useState(0);
 
         <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
           <div className="max-w-3xl">
-            <h3 className="text-white font-bold leading-tight
-                           text-xl sm:text-2xl md:text-3xl">Since 1990</h3>
-            <h1 className="text-white font-semibold leading-tight
-                           text-4xl sm:text-5xl md:text-6xl">
+            <h3
+              className="text-white font-bold leading-tight
+                           text-xl sm:text-2xl md:text-3xl"
+            >
+              Since 1990
+            </h3>
+            <h1
+              className="text-white font-semibold leading-tight
+                           text-4xl sm:text-5xl md:text-6xl"
+            >
               NEW GANESH SEEDS
             </h1>
-            <h3 className="text-white font-semibold leading-tight
-                           text-xl sm:text-2xl md:text-3xl">Trusted Seeds
-              <br /> for a Better Tomorrow</h3>
-            
+            <h3
+              className="text-white font-semibold leading-tight
+                           text-xl sm:text-2xl md:text-3xl"
+            >
+              Trusted Seeds
+              <br /> for a Better Tomorrow
+            </h3>
+
             <div className="mt-8">
               <a
                 href="#products"

@@ -7,7 +7,7 @@ const CompanyOverview = () => {
   return (
     <section
       id="overview"
-      className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24"
+      className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32"
     //   style={{
     //     backgroundImage: `url(${bgIllustration})`,
     //     backgroundRepeat: "no-repeat",
@@ -60,7 +60,7 @@ const CompanyOverview = () => {
           transition={{ duration: 0.8 }}
           className="max-w-xl md:text-left text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">
+          <h2 className="text-3xl md:text-5xl mb-6 font-semibold tracking-wide">
             Company Overview
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
