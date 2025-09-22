@@ -7,14 +7,18 @@ import Footer from "../../common/footer.jsx";
 
 const HomeMain = () => {
   return (
-    <div className="font-bricolage">
-    <Navbar/>
-    <Landing />
-    <CompanyOverview/>
-    <WhatWeDo/>
-    <ProductsMarquee/>
-    <Footer/>
-    </div>
+    <>
+      {/* All site content sits ABOVE bg in a new stacking context */}
+      <div className="relative z-10 isolate font-bricolage">
+        <Navbar />
+        <Landing />
+        <CompanyOverview />
+        <WhatWeDo />
+        <ProductsMarquee />
+        <Footer />
+      </div>
+    </>
   );
-}
+};
+
 export default HomeMain;

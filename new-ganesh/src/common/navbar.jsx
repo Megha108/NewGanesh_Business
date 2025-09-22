@@ -6,7 +6,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="fixed inset-x-0 top-0 z-50 bg-white/90 backdrop-blur border-b border-black/5">
+    <header className="fixed inset-x-0 top-0 z-50 bg-white shadow-md backdrop-blur border-b border-black/5">
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
@@ -28,7 +28,7 @@ const Navbar = () => {
         {/* CTA (desktop) */}
         <Link
           to="/enquire"
-          className="hidden md:inline-block rounded-lg bg-[#16561A] px-4 py-2 text-white font-medium hover:bg-emerald-800 transition"
+          className="hidden md:inline-block rounded-lg bg-[#16561A] px-4 py-2 text-white font-medium hover:bg-[#228B22] transition"
         >
           Enquire Now
         </Link>

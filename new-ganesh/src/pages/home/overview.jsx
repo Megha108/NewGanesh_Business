@@ -5,9 +5,10 @@ import img2 from "../../assets/image/home/l1.jpg"; // replace with your image
 
 const CompanyOverview = () => {
   return (
+    <div className="bg-white">
     <section
       id="overview"
-      className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32"
+      className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 "
     //   style={{
     //     backgroundImage: `url(${bgIllustration})`,
     //     backgroundRepeat: "no-repeat",
@@ -73,12 +74,13 @@ const CompanyOverview = () => {
             farmers benefit directly from quality seeds. WASL is certified by
             DSIR and ISO 9001:2015.
           </p>
-          <button className="bg-green-700 text-white px-6 py-3 rounded-md shadow hover:bg-green-800 transition">
+          <button className="bg-[#16561A] text-white px-6 py-3 rounded-md shadow hover:bg-[#228B22] transition">
             Discover More →
           </button>
         </motion.div>
       </div>
      </section>
+     </div>
   );
 };
 

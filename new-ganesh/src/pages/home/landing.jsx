@@ -70,7 +70,7 @@ const Landing = () => {
             <div className="mt-8">
               <a
                 href="#products"
-                className="inline-flex items-center rounded-lg bg-green-700 px-5 py-3 text-white font-medium hover:bg-green-800 transition"
+                className="inline-flex items-center rounded-lg bg-[#16561A] px-5 py-3 text-white font-medium hover:bg-[#228B22] transition"
               >
                 Explore Products
               </a>

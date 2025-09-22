@@ -100,11 +100,17 @@ export default function Footer() {
             <li className="flex items-start gap-2">
               📍{" "}
               <span>
+                Office <br />
+                New Ganesh Seeds - 38, Market Yard Rd, Sardar Bagh, Kadi, Gujarat 382715
+              </span>
+              📍{" "}
+              <span>
+                Warehouse <br />
                 New Ganesh Seeds - near Indian oil petrol pump TIRTH arcade, near Thol Road, Kadi, Gujarat 382715
               </span>
             </li>
             <li className="flex items-center gap-2">
-              📞 <span>+91 9825062048, 9925062048</span>
+              📞 <span>+91 9825062048, 9925062048, 9978031353</span>
             </li>
             <li className="flex items-center gap-2">
               ✉️ <span>info@newganeshseeds.com</span>
