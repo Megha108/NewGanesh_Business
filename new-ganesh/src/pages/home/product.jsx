@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import p1 from "../../assets/image/home/PSimg1.png";
-import p2 from "../../assets/image/home/PSimg2.png";
-import p3 from "../../assets/image/home/PSimg3.png";
-import p4 from "../../assets/image/home/PSimg4.png";
-import p5 from "../../assets/image/home/PSimg5.png";
-import p6 from "../../assets/image/home/PSimg6.png";
-import p7 from "../../assets/image/home/PSimg7.png";
-import p8 from "../../assets/image/home/PSimg8.png";
+import p1 from "../../assets/image/home/PSimg1.webp";
+import p2 from "../../assets/image/home/PSimg2.webp";
+import p3 from "../../assets/image/home/PSimg3.webp";
+import p4 from "../../assets/image/home/PSimg4.webp";
+import p5 from "../../assets/image/home/PSimg5.webp";
+import p6 from "../../assets/image/home/PSimg6.webp";
+import p7 from "../../assets/image/home/PSimg7.webp";
+import p8 from "../../assets/image/home/PSimg8.webp";
 
 const PRODUCTS = [
   { src: p2, alt: "Western 007" },
