@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 // import bgIllustration from "../../assets/image/common/Logo.png"; // your light background image
-import img1 from "../../assets/image/home/l2.jpg"; // replace with your image
-import img2 from "../../assets/image/home/l1.jpg"; // replace with your image
+import img1 from "../../assets/image/home/l2.webp"; 
+import img2 from "../../assets/image/home/l1.webp"; 
 
 const CompanyOverview = () => {
   return (
