@@ -46,7 +46,7 @@ export default function ProductsMarquee() {
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
           <div className="lg:col-span-4">
             <h2 className="text-3xl md:text-5xl mb-6 font-semibold tracking-wide text-black">
-              <span className="mr-2">“</span>OUR PRODUCTS<span className="ml-2">”</span>
+              <span className="mr-2">“</span>FeaturedProducts<span className="ml-2">”</span>
             </h2>
           </div>
 
