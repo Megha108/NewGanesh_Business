@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import logo from "../assets/image/common/Logo.webp"
+import logo from "../assets/image/common/Logo.webp";
 
 export default function Footer() {
   const IconWrap = ({ children }) => (
@@ -33,9 +33,9 @@ export default function Footer() {
           <img src={logo} alt="Company Logo" className="h-16 object-contain" />
 
           <p className="text-gray-300 text-sm leading-relaxed">
-            The seed company,NEW GANESH SEEDS is pioneer in seed
-            business in India, established in 1984. The WASL deals with quality
-            seed production and marketing.
+            The seed company,NEW GANESH SEEDS is pioneer in seed business in
+            India, established in 1984. The WASL deals with quality seed
+            production and marketing.
           </p>
           <p className="text-gray-300 text-sm">
             The company MOTO is <strong>"MORE FOR ALL"</strong>, meaning farmers
@@ -67,7 +67,7 @@ export default function Footer() {
           <ul className="space-y-2 text-gray-300">
             <li>
               <Link to="/rnd" className="hover:text-white">
-               Home
+                Home
               </Link>
             </li>
             <li>
@@ -97,23 +97,63 @@ export default function Footer() {
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
           <ul className="space-y-3 text-gray-300 text-sm">
-            <li className="flex items-start gap-2">
+            <li className="flex flex-col gap-2">
               📍{" "}
-              <span>
+              <a
+                href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 "
+              >
                 Office <br />
-                New Ganesh Seeds - 38, Market Yard Rd, Sardar Bagh, Kadi, Gujarat 382715
-              </span>
+                New Ganesh Seeds - 38, Market Yard Rd, Sardar Bagh, Kadi,
+                Gujarat 382715
+              </a>
               📍{" "}
-              <span>
+              <a
+                href="https://maps.app.goo.gl/J2engh2i2RqrY9MX9"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-amber-400 "
+              >
                 Warehouse <br />
-                New Ganesh Seeds - near Indian oil petrol pump TIRTH arcade, near Thol Road, Kadi, Gujarat 382715
-              </span>
+                New Ganesh Seeds - near Indian oil petrol pump TIRTH arcade,
+                near Thol Road, Kadi, Gujarat 382715
+              </a>
             </li>
-            <li className="flex items-center gap-2">
-              📞 <span>+91 9825062048, 9925062048, 9978031353</span>
+
+            <li className="flex flex-col gap-2">
+              📞{" "}
+              <div className="flex flex-col">
+                <a
+                  href="tel:+919825062048"
+                  className="hover:text-amber-400 "
+                >
+                  +91 9825062048
+                </a>
+                <a
+                  href="tel:+919925062048"
+                  className="hover:text-amber-400 "
+                >
+                  +91 9925062048
+                </a>
+                <a
+                  href="tel:+919978031353"
+                  className="hover:text-amber-400 "
+                >
+                  +91 9978031353
+                </a>
+              </div>
             </li>
+
             <li className="flex items-center gap-2">
-              ✉️ <span>info@newganeshseeds.com</span>
+              ✉️{" "}
+              <a
+                href="mailto:info@newganeshseeds.com"
+                className="hover:text-amber-400 underline"
+              >
+                info@newganeshseeds.com
+              </a>
             </li>
           </ul>
         </div>
