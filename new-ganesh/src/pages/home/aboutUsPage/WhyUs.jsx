@@ -1,252 +1,156 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
+import { motion } from "framer-motion";
+
+// Import SVGs (ensure filenames have no spaces)
+import CallSignIcon from "../../../assets/icon/aboutusIcons/CallSign.svg";
+import FastIcon from "../../../assets/icon/aboutusIcons/Fast.svg";
+import GenuienIcon from "../../../assets/icon/aboutusIcons/Shield.svg";
+import TeamIcon from "../../../assets/icon/aboutusIcons/Team.svg";
+import RupeeIcon from "../../../assets/icon/aboutusIcons/RupeeSymbol.svg";
 
 const WhyUs = () => {
-  const listRef = useRef([]);
-  const [visibleItems, setVisibleItems] = useState([]);
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const index = entry.target.getAttribute("data-index");
-          if (entry.isIntersecting) {
-            setVisibleItems((prev) => [...prev, parseInt(index)]);
-          }
-        });
-      },
-      {
-        threshold: 0.2,
-      }
-    );
-
-    listRef.current.forEach((el) => el && observer.observe(el));
-
-    return () => observer.disconnect();
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, []);
-
-  const styles = {
-    container: {
-      maxWidth: "90vw",
-      margin: "40px auto",
-      padding: "0 20px",
-      fontFamily: '"Bricolage Grotesque", Arial, sans-serif',
-    },
-    headerSection: {
-      display: "grid",
-      gridTemplateColumns: "1fr 1fr",
-      gap: "60px",
-      alignItems: "start",
-      marginBottom: "1vw",
-    },
-    headingsContainer: {
-      textAlign: "left",
-    },
-    mainHeading: {
-      fontSize: "48px",
-      fontWeight: "bold",
-      color: "#000",
-      marginBottom: "10px",
-      letterSpacing: "1px",
-      lineHeight: "1.1",
-      position: "relative"
-    },
-    subHeading: {
-      fontSize: "28px",
-      color: "#666",
-      marginBottom: "10px",
-      fontWeight: "normal",
-      position: "relative",
-      paddingBottom: "15px",
-    },
-    underline: {
-      position: "absolute",
-      bottom: "0",
-      left: "0",
-      width: "20vw",
-      height: "0.17vw",
-      backgroundColor: "#000",
-      marginTop: "2vw"
-    },
-    underlineContainer: {
-      position: "relative",
-      marginTop: "1vw", // Added gap between text and underline
-    },
-    highlightSectionRight: {
-      padding: "1.5vw",
-      backgroundColor: "#ffffffff",
-      borderRadius: "8px",
-      height: "fit-content",
-      display: "flex",
-      textAlign: "right",
-      minHeight: "160px",
-      width: "54vw",
-    },
-    highlightSectionVisible: {
-      opacity: 1,
-      transform: "translateY(0)",
-    },
-    highlightText: {
-      fontSize: "16px",
-      color: "#333",
-      lineHeight: "1.5",
-      fontStyle: "italic",
-      margin: 0,
-      textAlign: "left",
-      display: "-webkit-box",
-      WebkitLineClamp: 3,
-      WebkitBoxOrient: "vertical",
-      overflow: "hidden",
-      maxHeight: "72px",
-    },
-    contentGrid: {
-      display: "grid",
-      gridTemplateRows: "auto auto",
-      gap: "50px",
-      textAlign: "left",
-    },
-    row: {
-      display: "grid",
-      gridTemplateColumns: "repeat(3, 1fr)",
-      gap: "60px",
-    },
-    featureBox: {
-      opacity: 0,
-      transform: "translateY(20px)",
-      transition: "opacity 0.8s ease-out, transform 0.8s ease-out",
-      display: "flex",
-      alignItems: "flex-start",
-      gap: "20px",
-    },
-    featureBoxVisible: {
-      opacity: 1,
-      transform: "translateY(0)",
-    },
-    icon: {
-      fontSize: "32px",
-      minWidth: "40px",
-      marginTop: "5px",
-    },
-    content: {
-      flex: 1,
-    },
-    featureTitle: {
-      fontSize: "24px",
-      fontWeight: "bold",
-      color: "#000",
-      marginBottom: "15px",
-      lineHeight: "1.2",
-    },
-    featureText: {
-      fontSize: "16px",
-      color: "#666",
-      lineHeight: "1.6",
-    },
-  };
 
   const contentData = [
     {
-      icon: "✓",
+      icon: GenuienIcon,
       title: "100% Genuine Product",
-      text: "We provides 100% Genuin Seeds Products, with sure testing results, with attractive packing.",
+      text: "We provide 100% genuine seed products with reliable test results and attractive packing.",
+    },
+    {
+      icon: FastIcon,
+      title: "Quickly And Efficiently",
+      text: "We always work quickly with great quality, because we know how much you look forward to your garden.",
+    },
+    {
+      icon: CallSignIcon,
+      title: "Dedicated Support",
+      text: "Whether you use our services or not, when you call, we support our customers the most dedicated way.",
+    },
+    {
+      icon: TeamIcon,
+      title: "Professional Team",
+      text: "Customer satisfaction starts with dependable service. We have a committed and dedicated team.",
+    },
+    {
+      icon: RupeeIcon,
+      title: "Reasonable Price",
+      text: "We assure our customers that our company has very reasonable prices. Keeping customers is our priority.",
     },
     {
       icon: "🌱",
       title: "Environmentally Friendly",
-      text: "We use environmental friendly companies, such as zero waste printers for all our marketing material.",
-    },
-    {
-      icon: "📞",
-      title: "Dedicated Support",
-      text: "Whether you use our services or not, but when you call, we support our customers the most dedicated.",
-    },
-    {
-      icon: "👥",
-      title: "Professional Team",
-      text: "We understand that customer satisfaction starts with dependable service. With a dedicated and dedicated team.",
-    },
-    {
-      icon: "💰",
-      title: "Reasonable Price",
-      text: "We assure our customers that our company has a very reasonable price, we keeping customers is our criteria.",
-    },
-    {
-      icon: "⚡",
-      title: "Quickly And Efficiently",
-      text: "We always work quickly, but we pairing is great quality, we know how you look forward to your garden.",
+      text: "We partner with eco-friendly companies, such as zero waste printers for all our marketing material.",
     },
   ];
 
-  const highlightText = "Ganesh Seeds Pvt Ltd is committed to providing farmers and gardeners with the highest quality seeds available, using the latest technology and advanced breeding methods to ensure that our products deliver maximum yields and are well-adapted to local growing conditions.";
+  const highlightText =
+    "Ganesh Seeds Pvt Ltd is committed to providing farmers and gardeners with the highest quality seeds available, using the latest technology and advanced breeding methods to ensure that our products deliver maximum yields and are well-adapted to local growing conditions.";
+
+  const containerVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" }, // faster animation
+    },
+  };
+
+  const renderIcon = (icon, alt) => {
+    if (typeof icon === "string" && icon.length <= 3 && !icon.includes("/")) {
+      return <span className="text-3xl">{icon}</span>;
+    }
+    return <img src={icon} alt={alt} className="w-8 h-8 object-contain" />;
+  };
 
   return (
-    <div style={styles.container}>
-      {/* Header Section with Headings and Highlight Text Side by Side */}
-      <div style={styles.headerSection}>
+    <div className="max-w-[90vw] mx-auto my-10 px-5 font-bricolage">
+      {/* Header Section */}
+      <div className="grid gap-10 md:gap-16 items-start mb-10 md:mb-5 grid-cols-1 md:grid-cols-2">
         {/* Left Side - Headings */}
-        <div style={styles.headingsContainer}>
-          <h1 style={styles.subHeading}>
+        <div className="text-center md:text-left">
+          <motion.h1
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4 }}
+            className="text-2xl text-gray-600 mb-2 relative pb-3"
+          >
             BEST SEEDS FOR YOU
-          </h1>
-         
-            <h2 style={styles.mainHeading}>Why Choose Us</h2>
-             <div style={styles.underlineContainer}><div style={styles.underline}></div>
-          </div>
+          </motion.h1>
+
+          <motion.h2
+            initial={{ opacity: 0, x: -50 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.4, delay: 0.1 }}
+            className="text-4xl md:text-5xl font-bold text-black mb-0 leading-tight tracking-wide"
+          >
+            Why Choose Us
+          </motion.h2>
+
+          <motion.div
+            initial={{ width: 0 }}
+            animate={{ width: 300 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
+            className="h-[3px] bg-black mt-5 mx-auto md:mx-0"
+          />
         </div>
 
-        {/* Right Side - Highlight Text (3 lines) */}
-        <div
-          ref={(el) => (listRef.current[1] = el)}
-          data-index={6}
-          style={{
-            ...styles.highlightSectionRight,
-            
-          }}
+        {/* Right Side - Highlight Text */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.4, delay: 0.15 }}
+          className={`bg-white rounded-lg flex items-center ${
+            isMobile ? "p-2 min-h-[120px]" : "p-4 min-h-[160px]"
+          }`}
         >
-          <p style={styles.highlightText}>{highlightText}</p>
-        </div>
+          <p className="text-base text-gray-700 italic leading-relaxed line-clamp-3">
+            {highlightText}
+          </p>
+        </motion.div>
       </div>
 
-      {/* Content Grid - Two Rows with Three Items Each */}
-      <div style={styles.contentGrid}>
-        {/* First Row - First three items */}
-        <div style={styles.row}>
-          {contentData.slice(0, 3).map((item, index) => (
-            <div
+      {/* Content Grid */}
+      <div className="grid gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          {contentData.map((item, index) => (
+            <motion.div
               key={index}
-              ref={(el) => (listRef.current[index] = el)}
-              data-index={index}
-              style={{
-                ...styles.featureBox,
-                ...(visibleItems.includes(index) ? styles.featureBoxVisible : {}),
-              }}
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true, threshold: 0.2 }}
+              variants={containerVariants}
+              transition={{ delay: index * 0.05 }}
+              className="flex flex-col items-center text-center md:flex-row md:text-left gap-5"
             >
-              <div style={styles.icon}>{item.icon}</div>
-              <div style={styles.content}>
-                <h3 style={styles.featureTitle}>{item.title}</h3>
-                <p style={styles.featureText}>{item.text}</p>
+              <div className="flex justify-center items-center min-w-[40px]">
+                {renderIcon(item.icon, item.title)}
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Second Row - Next three items */}
-        <div style={styles.row}>
-          {contentData.slice(3, 6).map((item, index) => (
-            <div
-              key={index + 3}
-              ref={(el) => (listRef.current[index + 3] = el)}
-              data-index={index + 3}
-              style={{
-                ...styles.featureBox,
-                ...(visibleItems.includes(index + 3) ? styles.featureBoxVisible : {}),
-              }}
-            >
-              <div style={styles.icon}>{item.icon}</div>
-              <div style={styles.content}>
-                <h3 style={styles.featureTitle}>{item.title}</h3>
-                <p style={styles.featureText}>{item.text}</p>
+              <div>
+                <motion.h3
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.15 + index * 0.05 }}
+                  className="text-2xl font-bold text-black mb-3 leading-snug"
+                >
+                  {item.title}
+                </motion.h3>
+                <motion.p
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
+                  className="text-base text-gray-600 leading-relaxed"
+                >
+                  {item.text}
+                </motion.p>
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
       </div>
