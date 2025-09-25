@@ -16,14 +16,29 @@ const Navbar = () => {
             className="h-14 w-17"
           />
         </Link>
-
         {/* Desktop menu */}
-        <ul className="hidden md:flex items-center gap-8 text-slate-800">
-          <li><Link to="/" className="hover:text-emerald-800">Home</Link></li>
-          <li><Link to="/about" className="hover:text-emerald-800">About Us</Link></li>
-          <li><Link to="/products" className="hover:text-emerald-800">Products</Link></li>
-          <li><Link to="/gallery" className="hover:text-emerald-800">Gallery</Link></li>
-        </ul>
+                  <ul className="hidden md:flex items-center gap-4 text-slate-800">
+              <li>
+              <Link to="/" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+                Home
+              </Link>
+              </li>
+              <li>
+              <Link to="/about" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+                About Us
+              </Link>
+              </li>
+              <li>
+              <Link to="/products" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+                Products
+              </Link>
+              </li>
+              <li>
+              <Link to="/gallery" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+                Gallery
+              </Link>
+              </li>
+              </ul>
 
         {/* CTA (desktop) */}
         <Link

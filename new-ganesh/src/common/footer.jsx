@@ -3,7 +3,7 @@ import logo from "../assets/image/common/Logo.webp";
 
 export default function Footer() {
   const IconWrap = ({ children }) => (
-    <span className="inline-flex items-center justify-center p-2 rounded-full border border-gray-500 hover:bg-gray-700 transition">
+    <span className="inline-flex items-center justify-center p-2 rounded-full border border-white-500 hover:bg-white-700 transition">
       {children}
     </span>
   );
@@ -26,18 +26,47 @@ export default function Footer() {
   );
 
   return (
-    <footer className="bg-[#01200e] text-white py-10">
-      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-10">
+    <footer className="relative bg-[#ffffff] text-black pt-20 overflow-hidden">
+      {/* Waves */}
+      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-70 pointer-events-none z-10"
+           style={{
+             background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
+             backgroundSize: "1200px 600px",
+             backgroundRepeat: "repeat-x",
+             animation: "waveTop 30s ease-in-out infinite alternate",
+           }}
+      ></div>
+      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-50 pointer-events-none z-10"
+           style={{
+             background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
+             backgroundSize: "1200px 600px",
+             backgroundRepeat: "repeat-x",
+             animation: "waveTop 30s ease-in-out infinite alternate",
+             animationDelay: "-6s",
+           }}
+      ></div>
+      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-30 pointer-events-none z-10"
+           style={{
+             background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
+             backgroundSize: "1200px 600px",
+             backgroundRepeat: "repeat-x",
+             animation: "waveTop 30s ease-in-out infinite alternate",
+             animationDelay: "-12s",
+           }}
+      ></div>
+
+      {/* Footer Content */}
+      <div className="container mx-auto px-6 lg:px-12 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-20">
         {/* Left */}
         <div className="space-y-4">
           <img src={logo} alt="Company Logo" className="h-16 object-contain" />
 
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <p className="text-black-300 text-sm leading-relaxed">
             The seed company,NEW GANESH SEEDS is pioneer in seed business in
             India, established in 1984. The WASL deals with quality seed
             production and marketing.
           </p>
-          <p className="text-gray-300 text-sm">
+          <p className="text-black-300 text-sm">
             The company MOTO is <strong>"MORE FOR ALL"</strong>, meaning farmers
             to farmers, seed producing farmers to its end users farmers.
           </p>
@@ -64,29 +93,29 @@ export default function Footer() {
         {/* Middle */}
         <div>
           <h3 className="text-xl font-semibold mb-4">About Us</h3>
-          <ul className="space-y-2 text-gray-300">
+          <ul className="space-y-2 text-black-300">
             <li>
-              <Link to="/rnd" className="hover:text-white">
+              <Link to="/rnd" className="hover:text-amber-400">
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/activities" className="hover:text-white">
+              <Link to="/activities" className="hover:text-amber-400">
                 About
               </Link>
             </li>
             <li>
-              <Link to="/vision" className="hover:text-white">
+              <Link to="/vision" className="hover:text-amber-400">
                 Product
               </Link>
             </li>
             <li>
-              <Link to="/directors" className="hover:text-white">
+              <Link to="/directors" className="hover:text-amber-400">
                 Gallery
               </Link>
             </li>
             <li>
-              <Link to="/brochure" className="hover:text-white">
+              <Link to="/brochure" className="hover:text-amber-400">
                 Download E-Brochure
               </Link>
             </li>
@@ -96,7 +125,7 @@ export default function Footer() {
         {/* Right */}
         <div>
           <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-          <ul className="space-y-3 text-gray-300 text-sm">
+          <ul className="space-y-3 text-black-300 text-sm">
             <li className="flex flex-col gap-2">
               📍{" "}
               <a
@@ -159,16 +188,28 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-gray-800 mt-10 pt-4 text-center text-gray-400 text-sm">
+      <div className="border-t border-black-800 mt-10 pt-4 text-center text-black-400 text-sm relative z-20">
         © 2025 Newganeshseeds | All Rights Reserved |
-        <Link to="/terms" className="ml-2 hover:text-white">
+        <Link to="/terms" className="ml-2 hover:text-amber-400">
           Terms of Use
         </Link>{" "}
         |
-        <Link to="/privacy" className="ml-2 hover:text-white">
+        <Link to="/privacy" className="ml-2 hover:text-amber-400">
           Privacy Policy
         </Link>
       </div>
+
+      {/* Keyframes */}
+      <style jsx>{`
+        @keyframes waveTop {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-1200px);
+          }
+        }
+      `}</style>
     </footer>
   );
 }
