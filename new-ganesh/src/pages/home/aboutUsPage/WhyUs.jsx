@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
-// Import SVGs (ensure filenames have no spaces)
+// Import SVGs
 import CallSignIcon from "../../../assets/icon/aboutusIcons/CallSign.svg";
 import FastIcon from "../../../assets/icon/aboutusIcons/Fast.svg";
 import GenuienIcon from "../../../assets/icon/aboutusIcons/Shield.svg";
@@ -55,11 +55,7 @@ const WhyUs = () => {
 
   const containerVariants = {
     hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" }, // faster animation
-    },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.4, ease: "easeOut" } },
   };
 
   const renderIcon = (icon, alt) => {
@@ -77,7 +73,8 @@ const WhyUs = () => {
         <div className="text-center md:text-left">
           <motion.h1
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4 }}
             className="text-2xl text-gray-600 mb-2 relative pb-3"
           >
@@ -86,7 +83,8 @@ const WhyUs = () => {
 
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: 0.1 }}
             className="text-4xl md:text-5xl font-bold text-black mb-0 leading-tight tracking-wide"
           >
@@ -95,7 +93,8 @@ const WhyUs = () => {
 
           <motion.div
             initial={{ width: 0 }}
-            animate={{ width: 300 }}
+            whileInView={{ width: 300 }}
+            viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.4, delay: 0.2 }}
             className="h-[3px] bg-black mt-5 mx-auto md:mx-0"
           />
@@ -104,7 +103,8 @@ const WhyUs = () => {
         {/* Right Side - Highlight Text */}
         <motion.div
           initial={{ opacity: 0, x: 50 }}
-          animate={{ opacity: 1, x: 0 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.4, delay: 0.15 }}
           className={`bg-white rounded-lg flex items-center ${
             isMobile ? "p-2 min-h-[120px]" : "p-4 min-h-[160px]"
@@ -117,42 +117,42 @@ const WhyUs = () => {
       </div>
 
       {/* Content Grid */}
-      <div className="grid gap-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {contentData.map((item, index) => (
-            <motion.div
-              key={index}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, threshold: 0.2 }}
-              variants={containerVariants}
-              transition={{ delay: index * 0.05 }}
-              className="flex flex-col items-center text-center md:flex-row md:text-left gap-5"
-            >
-              <div className="flex justify-center items-center min-w-[40px]">
-                {renderIcon(item.icon, item.title)}
-              </div>
-              <div>
-                <motion.h3
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.15 + index * 0.05 }}
-                  className="text-2xl font-bold text-black mb-3 leading-snug"
-                >
-                  {item.title}
-                </motion.h3>
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.3, delay: 0.2 + index * 0.05 }}
-                  className="text-base text-gray-600 leading-relaxed"
-                >
-                  {item.text}
-                </motion.p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
+      <div className="grid gap-12 grid-cols-1 md:grid-cols-3">
+        {contentData.map((item, index) => (
+          <motion.div
+            key={index}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={containerVariants}
+            transition={{ delay: index * 0.1 }}
+            className="flex flex-col items-center text-center md:flex-row md:text-left gap-5"
+          >
+            <div className="flex justify-center items-center min-w-[40px]">
+              {renderIcon(item.icon, item.title)}
+            </div>
+            <div>
+              <motion.h3
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.05 }}
+                className="text-2xl font-bold text-black mb-3 leading-snug"
+              >
+                {item.title}
+              </motion.h3>
+              <motion.p
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.3, delay: 0.1 }}
+                className="text-base text-gray-600 leading-relaxed"
+              >
+                {item.text}
+              </motion.p>
+            </div>
+          </motion.div>
+        ))}
       </div>
     </div>
   );
