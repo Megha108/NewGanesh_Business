@@ -102,7 +102,7 @@ export default function ProductsMarquee() {
             {/* Title on top of model */}
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[150px] text-lg font-semibold text-black 
                     border border-black px-3 py-1 rounded-md bg-white shadow-sm">
-              Luncerne Seed
+              Lucerne Seed
             </div>
 
             <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
@@ -115,7 +115,7 @@ export default function ProductsMarquee() {
 
           {/* Title + Description on right side */}
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-black mb-2">Western Series</h3>
+            <h3 className="text-2xl font-bold text-black mb-2">Lucerne</h3>
             <p className="text-base text-gray-600 leading-relaxed">
               This model belongs to our Western collection. Designed with precision, it highlights
               modern aesthetics and durability. Perfect for showcasing premium features with an
