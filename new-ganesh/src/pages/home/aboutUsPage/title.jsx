@@ -1,9 +1,9 @@
 import React from 'react';
-import CastorVideo from '../../../assets/CastorVideo.mp4';
+import CastorVideo from '../../../assets/OATVideo.mp4';
 
 const Title = () => {
   return (
-    <div className="relative text-center py-[7vw] min-h-[calc(10vw+20vw)] overflow-hidden">
+    <div className="relative text-center py-[7vw] min-h-[calc(10vw+25vw)] overflow-hidden">
       {/* Video background */}
       <video
         autoPlay
