@@ -81,7 +81,6 @@ export default function ProductsMarquee() {
 
               <div className="marquee-track flex gap-10 md:gap-14 items-center">
                 {doubled.map((item, idx) => (
-                  <motion.div key={idx} className="shrink-0" whileHover={{ scale: 1.03 }}>
                     <img
                       src={item.src}
                       alt={item.alt}
@@ -105,7 +104,7 @@ export default function ProductsMarquee() {
               Luncerne Seed
             </div>
 
-            <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
+            <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
               <ambientLight intensity={3} /> {/*intensity means brigthness*/}
               <directionalLight position={[5, 5, 5]} /> {/*Position of directional light inside container*/}
               <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} />
