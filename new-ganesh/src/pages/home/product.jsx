@@ -81,6 +81,7 @@ export default function ProductsMarquee() {
 
               <div className="marquee-track flex gap-10 md:gap-14 items-center">
                 {doubled.map((item, idx) => (
+                  <motion.div key={idx} className="shrink-0" whileHover={{ scale: 1.03 }}>
                     <img
                       src={item.src}
                       alt={item.alt}
@@ -101,10 +102,10 @@ export default function ProductsMarquee() {
             {/* Title on top of model */}
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[150px] text-lg font-semibold text-black 
                     border border-black px-3 py-1 rounded-md bg-white shadow-sm">
-              Lucerne Seed
+              Luncerne Seed
             </div>
 
-            <Canvas camera={{ position: [0, 0, 5], fov: 35 }}>
+            <Canvas camera={{ position: [0, 0, 5], fov: 38 }}>
               <ambientLight intensity={3} /> {/*intensity means brigthness*/}
               <directionalLight position={[5, 5, 5]} /> {/*Position of directional light inside container*/}
               <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} />
@@ -114,7 +115,7 @@ export default function ProductsMarquee() {
 
           {/* Title + Description on right side */}
           <div className="flex-1">
-            <h3 className="text-2xl font-bold text-black mb-2">Lucerne</h3>
+            <h3 className="text-2xl font-bold text-black mb-2">Western Series</h3>
             <p className="text-base text-gray-600 leading-relaxed">
               This model belongs to our Western collection. Designed with precision, it highlights
               modern aesthetics and durability. Perfect for showcasing premium features with an
