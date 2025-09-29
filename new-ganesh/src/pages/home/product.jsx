@@ -30,17 +30,16 @@ const MODEL_ROTATION = {
   z: Math.PI / 2,
 };
 
-function Model({ rotation }) {
-  const { scene } = useGLTF("/models/3dmodel.glb");
+function Model({ rotation, path }) {
+  const { scene } = useGLTF(path);
   const ref = useRef();
 
-  // Continuous rotation
   useFrame(() => {
     if (ref.current) {
-      ref.current.rotation.z += 0.01;{/*Control Rotation on z axis */}
+      ref.current.rotation.z += 0.01;
     }
   });
-{/*Scale change */}
+
   return <primitive ref={ref} object={scene} scale={2} rotation={rotation} />;
 }
 
@@ -49,7 +48,6 @@ export default function ProductsMarquee() {
 
   return (
     <section className="relative py-12 md:py-16">
-      {/* Inline CSS for marquee */}
       <style>{`
         @keyframes marqueeScroll {
           from { transform: translateX(0); }
@@ -66,7 +64,6 @@ export default function ProductsMarquee() {
       `}</style>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Featured title */}
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center gap-8">
           <div className="lg:col-span-4">
             <h2 className="text-3xl md:text-5xl mb-6 font-semibold tracking-wide text-black">
@@ -78,7 +75,6 @@ export default function ProductsMarquee() {
             <div className="marquee relative overflow-hidden rounded-xl">
               <div className="pointer-events-none absolute left-0 top-0 h-full w-12 " />
               <div className="pointer-events-none absolute right-0 top-0 h-full w-12 " />
-
               <div className="marquee-track flex gap-10 md:gap-14 items-center">
                 {doubled.map((item, idx) => (
                   <motion.div key={idx} className="shrink-0" whileHover={{ scale: 1.03 }}>
@@ -95,25 +91,20 @@ export default function ProductsMarquee() {
           </div>
         </div>
 
-        {/* 🟢 3D Model Showcase with Title & Description */}
+        {/* 🟢 First 3D Model */}
         <div className="mt-16 flex flex-col md:flex-row items-start gap-8">
-          {/* 3D Model with title on top */}
           <div className="relative w-[250px] h-[300px] mx-auto md:mx-0 shadow-xl rounded-xl bg-white">
-            {/* Title on top of model */}
             <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[150px] text-lg font-semibold text-black 
                     border border-black px-3 py-1 rounded-md bg-white shadow-sm">
               Lucerne Seed
             </div>
-
-            <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-              <ambientLight intensity={3} /> {/*intensity means brigthness*/}
-              <directionalLight position={[5, 5, 5]} /> {/*Position of directional light inside container*/}
-              <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} />
-              <OrbitControls enableZoom={false} minDistance={4.85} maxDistance={5.15} />{/*Zoom is disabled and can be controlled*/}
+            <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
+              <ambientLight intensity={3} />
+              <directionalLight position={[5, 5, 5]} />
+              <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} path="/models/3dmodelRajaka.glb" />
+              <OrbitControls enableZoom={false} minDistance={4.85} maxDistance={5.15} />
             </Canvas>
           </div>
-
-          {/* Title + Description on right side */}
           <div className="flex-1">
             <h3 className="text-2xl font-bold text-black mb-2">Lucerne</h3>
             <p className="text-base text-gray-600 leading-relaxed">
@@ -124,9 +115,33 @@ export default function ProductsMarquee() {
           </div>
         </div>
 
+        {/* 🟢 Second 3D Model */}
+        <div className="mt-20 flex flex-col md:flex-row items-start gap-8">
+          <div className="relative w-[250px] h-[300px] mx-auto md:mx-0 shadow-xl rounded-xl bg-white">
+            <div className="absolute -top-12 left-1/2 -translate-x-1/2 w-[150px] text-lg font-semibold text-black 
+                    border border-black px-3 py-1 rounded-md bg-white shadow-sm">
+              Jaudo Seed
+            </div>
+            <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
+              <ambientLight intensity={3} />
+              <directionalLight position={[5, 5, 5]} />
+              <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} path="/models/3dmodelJaudo.glb" />
+              <OrbitControls enableZoom={false} minDistance={4.85} maxDistance={5.15} />
+            </Canvas>
+          </div>
+          <div className="flex-1">
+            <h3 className="text-2xl font-bold text-black mb-2">Jaudo</h3>
+            <p className="text-base text-gray-600 leading-relaxed">
+              This model is another premium item from our Western collection. It maintains the same
+              elegance and detail as our Lucerne model, showcasing top-tier design in a fully
+              interactive 3D format.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );
 }
 
-useGLTF.preload("/models/3dmodel.glb");
+useGLTF.preload("/models/3dmodelRajaka.glb");
+useGLTF.preload("/models/3dmodelJaudo.glb");
