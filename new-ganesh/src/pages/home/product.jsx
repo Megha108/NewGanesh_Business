@@ -105,7 +105,7 @@ export default function ProductsMarquee() {
               Lucerne Seed
             </div>
 
-            <Canvas camera={{ position: [0, 0, 5], fov: 50 }}>
+            <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
               <ambientLight intensity={3} /> {/*intensity means brigthness*/}
               <directionalLight position={[5, 5, 5]} /> {/*Position of directional light inside container*/}
               <Model rotation={[MODEL_ROTATION.x, MODEL_ROTATION.y, MODEL_ROTATION.z]} />
