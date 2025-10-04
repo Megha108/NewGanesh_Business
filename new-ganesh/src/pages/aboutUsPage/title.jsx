@@ -1,5 +1,5 @@
 import React from 'react';
-import CastorVideo from '../../../assets/OATVideo.mp4';
+import CastorVideo from '../../assets/OATVideo.mp4';
 
 const Title = () => {
   return (

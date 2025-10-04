@@ -1,5 +1,5 @@
-import Footer from "../../../common/footer.jsx";
-import Navbar from "../../../common/navbar.jsx";
+import Footer from "../../common/footer.jsx";
+import Navbar from "../../common/navbar.jsx";
 import Title from "./title.jsx";
 import WhyUs from "./WhyUs.jsx";
 import WhoareWe from "./WhoareWe.jsx";

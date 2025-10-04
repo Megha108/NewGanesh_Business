@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 // Import SVGs
-import CallSignIcon from "../../../assets/icon/aboutusIcons/CallSign.svg";
-import FastIcon from "../../../assets/icon/aboutusIcons/Fast.svg";
-import GenuienIcon from "../../../assets/icon/aboutusIcons/Shield.svg";
-import TeamIcon from "../../../assets/icon/aboutusIcons/Team.svg";
-import RupeeIcon from "../../../assets/icon/aboutusIcons/RupeeSymbol.svg";
+import CallSignIcon from "../../assets/icon/aboutusIcons/Callsign.svg";
+import FastIcon from "../../assets/icon/aboutusIcons/Fast.svg";
+import GenuienIcon from "../../assets/icon/aboutusIcons/Shield.svg";
+import TeamIcon from "../../assets/icon/aboutusIcons/Team.svg";
+import RupeeIcon from "../../assets/icon/aboutusIcons/RupeeSymbol.svg";
 
 const WhyUs = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
