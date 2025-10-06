@@ -1,8 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/image/common/Logo.webp";
+// ...existing code...
+<Link to="/productpage">Products</Link>
+// ...existing code...
 
-const Navbar = () => {
+function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
@@ -10,35 +13,34 @@ const Navbar = () => {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
-          <img 
-            src={Logo} 
-            alt="New Ganesh Seeds Logo" 
-            className="h-14 w-17"
-          />
+          <img
+            src={Logo}
+            alt="New Ganesh Seeds Logo"
+            className="h-14 w-17" />
         </Link>
         {/* Desktop menu */}
-                  <ul className="hidden md:flex items-center gap-4 text-slate-800">
-              <li>
-              <Link to="/" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
-                Home
-              </Link>
-              </li>
-              <li>
-              <Link to="/about" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
-                About Us
-              </Link>
-              </li>
-              <li>
-              <Link to="/products" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
-                Products
-              </Link>
-              </li>
-              <li>
-              <Link to="/gallery" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
-                Gallery
-              </Link>
-              </li>
-              </ul>
+        <ul className="hidden md:flex items-center gap-4 text-slate-800">
+          <li>
+            <Link to="/" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link to="/about" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+              About Us
+            </Link>
+          </li>
+          <li>
+            <Link to="/products" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+              Products
+            </Link>
+          </li>
+          <li>
+            <Link to="/gallery" className="px-3 py-1 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition">
+              Gallery
+            </Link>
+          </li>
+        </ul>
 
         {/* CTA (desktop) */}
         <Link
@@ -78,9 +80,7 @@ const Navbar = () => {
 
       {/* Mobile drawer */}
       <div
-        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${
-          open ? "max-h-64" : "max-h-0"
-        }`}
+        className={`md:hidden overflow-hidden transition-[max-height] duration-300 ${open ? "max-h-64" : "max-h-0"}`}
       >
         <div className="px-4 sm:px-6 lg:px-8 pb-4">
           <ul className="flex flex-col gap-3 text-slate-800">
@@ -109,6 +109,6 @@ const Navbar = () => {
       </div>
     </header>
   );
-};
+}
 
 export default Navbar;

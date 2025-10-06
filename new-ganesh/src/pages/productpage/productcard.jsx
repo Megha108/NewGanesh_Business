@@ -1,0 +1,31 @@
+
+const ProductCard = ({ name, image, category, price, onClick }) => {
+  return (
+    <div
+      onClick={onClick}
+      className="group bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 cursor-pointer"
+    >
+      <div className="relative">
+        <img
+          src={image}
+          alt={name}
+          className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+        />
+        <div className="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
+          {category}
+        </div>
+      </div>
+      <div className="p-5 text-center">
+        <h3 className="text-xl font-semibold text-gray-800 group-hover:text-green-700">
+          {name}
+        </h3>
+        <p className="mt-2 text-green-600 font-bold text-lg">₹{price}</p>
+        <button className="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+          View Details
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ProductCard;
