@@ -12,6 +12,7 @@
     "@react-three/drei": "^10.7.6",
     "@react-three/fiber": "^9.3.0",
     "framer-motion": "^12.23.13",
+    "gsap": "^3.13.0",
     "jarallax": "^2.2.1",
     "lucide-react": "^0.544.0",
     "react": "^19.1.1",
