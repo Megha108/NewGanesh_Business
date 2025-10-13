@@ -178,10 +178,10 @@ export default function Footer() {
             <li className="flex items-center gap-2">
               ✉️{" "}
               <a
-                href="mailto:info@newganeshseeds.com"
+                href="mailto:newganeshseeds38@gmail.com"
                 className="hover:text-amber-400 underline"
               >
-                info@newganeshseeds.com
+                newganeshseeds38@gmail.com
               </a>
             </li>
           </ul>

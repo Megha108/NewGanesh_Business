@@ -13,14 +13,14 @@ import p7 from "../../assets/image/home/PSimg7.webp";
 import p8 from "../../assets/image/home/PSimg8.webp";
 
 const PRODUCTS = [
-  { src: p2, alt: "Western 007" },
-  { src: p1, alt: "Western Sangam" },
-  { src: p3, alt: "Western Nirmal" },
-  { src: p4, alt: "Western Pratap" },
-  { src: p5, alt: "Western Product 5" },
-  { src: p6, alt: "Western Product 6" },
-  { src: p7, alt: "Western Product 7" },
-  { src: p8, alt: "Western Product 8" },
+  { src: p2, alt: "Ganesh Rajka" },
+  { src: p1, alt: "Ganesh Barmasi" },
+  { src: p3, alt: "Ganesh Teensali" },
+  { src: p4, alt: "Barseem Seeds" },
+  { src: p5, alt: "Rajka Bajra" },
+  { src: p6, alt: "Kasni seeds" },
+  { src: p7, alt: "Jaudo Seeds" },
+  { src: p8, alt: "Oat Seeds" },
 ];
 
 const MODEL_ROTATION = {
