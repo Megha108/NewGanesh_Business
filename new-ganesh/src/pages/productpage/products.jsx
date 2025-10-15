@@ -1,35 +1,64 @@
 import ProductCard from "./productcard";
 import ProductModal from "./productmodel";
 import { useState } from "react";
+import PImg1 from "../../assets/image/home/PSimg1.webp";
+import PImg2 from "../../assets/image/home/PSimg2.webp";
+import PImg3 from "../../assets/image/home/PSimg3.webp";
+import PImg4 from "../../assets/image/home/PSimg4.webp";
+import PImg5 from "../../assets/image/home/PSimg5.webp";
+import PImg6 from "../../assets/image/home/PSimg6.webp";
+import PImg7 from "../../assets/image/home/PSimg7.webp";
+import PImg8 from "../../assets/image/home/PSimg8.webp";
+
 
 const allProducts = [
   {
-    name: "Sunflower Seeds",
-    category: "Oil Seeds",
-    image: "/images/sunflower.jpg",
-    description: "High quality hybrid sunflower seeds for better yield.",
-    price: 250,
-  },
-  {
-    name: "Groundnut Seeds",
-    category: "Oil Seeds",
-    image: "/images/groundnut.jpg",
-    description: "Rich in oil content and disease resistance.",
-    price: 300,
-  },
-  {
-    name: "Maize Seeds",
-    category: "Cereal",
-    image: "/images/maize.jpg",
-    description: "Perfect for high productivity and early harvest.",
-    price: 220,
-  },
-  {
-    name: "Cotton Seeds",
+    name: "Ganesh Rajka Seeds",
     category: "Fiber",
-    image: "/images/cotton.jpg",
+    image: PImg6,
     description: "High germination rate and pest resistance.",
-    price: 280,
+  },
+  {
+    name: "Ganesh Rajka Teensali",
+    category: "Fiber",
+    image: PImg7,
+    description: "High germination rate and pest resistance.",
+  },
+  {
+    name: "Ganesh Rajka Barmasi",
+    category: "Fiber",
+    image: PImg8,
+    description: "High germination rate and pest resistance.",
+  },
+  {
+    name: "Ganesh Kasni",
+    category: "Cereal",
+    image: PImg3,
+    description: "Perfect for high productivity and early harvest.",
+  },
+  {
+    name: "Ganesh Rajka Bajra",
+    category: "Fiber",
+    image: PImg5,
+    description: "High germination rate and pest resistance.",
+  },
+  {
+    name: "Barseem",
+    category: "Oil Seeds",
+    image: PImg1,
+    description: "High quality hybrid sunflower seeds for better yield.",
+  },
+  {
+    name: "Ganesh Jaudo",
+    category: "Oil Seeds",
+    image: PImg2,
+    description: "Rich in oil content and disease resistance.",
+  },
+  {
+    name: "Oat Seeds",
+    category: "Fiber",
+    image: PImg4,
+    description: "High germination rate and pest resistance.",
   },
 ];
 

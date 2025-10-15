@@ -1,4 +1,3 @@
-
 const ProductCard = ({ name, image, category, price, onClick }) => {
   return (
     <div
@@ -9,7 +8,7 @@ const ProductCard = ({ name, image, category, price, onClick }) => {
         <img
           src={image}
           alt={name}
-          className="w-full h-56 object-cover transform group-hover:scale-110 transition-transform duration-500"
+          className="w-80 h-80 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500 p-5"
         />
         <div className="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
           {category}
@@ -19,7 +18,7 @@ const ProductCard = ({ name, image, category, price, onClick }) => {
         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-green-700">
           {name}
         </h3>
-        <p className="mt-2 text-green-600 font-bold text-lg">₹{price}</p>
+        {/* <p className="mt-2 text-green-600 font-bold text-lg">₹{price}</p> */}
         <button className="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
           View Details
         </button>
