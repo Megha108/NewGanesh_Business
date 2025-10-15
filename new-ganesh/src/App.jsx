@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import HomeMain from "./pages/home/main";  
 import AboutUsPage from "./pages/aboutUsPage/aboutUs";
-import ProductPage from "./pages/productpage/ProductPage";
+import ProductMain from "./pages/productpage/main.jsx";
 import SeedTrail from "./common/SeedTrail";
 
 export default function App() {
@@ -15,8 +15,7 @@ export default function App() {
       <Routes>
         <Route path="/" element={<HomeMain />} />
         <Route path="/about" element={<AboutUsPage />} />
-        <Route path="/productpage" element={<ProductPage />} />
-        <Route path="/products" element={<ProductPage />} />
+        <Route path="/products" element={<ProductMain />} />
       </Routes>
     </>
   );

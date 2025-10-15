@@ -1,7 +1,7 @@
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
-import Products from "./products";
-const AboutUsPage = () => {
+import Products from "./products.jsx";
+const ProductMain = () => {
   return (
     <>
       {/* All site content sits ABOVE bg in a new stacking context */}
@@ -16,4 +16,4 @@ const AboutUsPage = () => {
   );
 };
 
-export default AboutUsPage;
+export default ProductMain;
