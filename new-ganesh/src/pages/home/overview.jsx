@@ -10,7 +10,7 @@ const CompanyOverview = () => {
   const rotateInverse = useTransform(rotate, (r) => -r); // counter-rotate image
 
   return (
-    <div className="bg-white">
+    <div className="bg-[#F8F7F3]">
       <section
         id="overview"
         className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 "

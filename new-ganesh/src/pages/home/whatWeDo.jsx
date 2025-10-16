@@ -49,7 +49,7 @@ export default function WhatWeDo() {
       }}
     >
       {/* subtle wash so text pops over bg */}
-      <div className="absolute inset-0 bg-[#F8F7F3]" />
+      <div className="absolute inset-0 bg-white" />
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-20">
         {/* Heading */}
@@ -74,7 +74,7 @@ export default function WhatWeDo() {
               transition={{ duration: 0.5, delay: 0.1 * i }}
               className="text-center"
             >
-              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-[#F8F7F3]">
+              <div className="mx-auto flex h-24 w-24 items-center justify-center rounded-full bg-white">
                 {item.icon}
               </div>
               <h3 className="mt-4 text-lg md:text-xl font-semibold tracking-wide text-gray-700">
