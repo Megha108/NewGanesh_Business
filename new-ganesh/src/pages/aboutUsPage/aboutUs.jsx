@@ -3,6 +3,7 @@ import Navbar from "../../common/navbar.jsx";
 import Title from "./title.jsx";
 import WhyUs from "./WhyUs.jsx";
 import WhoareWe from "./WhoareWe.jsx";
+import AnimatedCounters from "./counter.jsx";
 const AboutUsPage = () => {
   return (
     <>
@@ -12,7 +13,7 @@ const AboutUsPage = () => {
         <Title />
         <WhoareWe />
         <WhyUs />
-       
+        <AnimatedCounters />
         <Footer />
       </div>
     </>
