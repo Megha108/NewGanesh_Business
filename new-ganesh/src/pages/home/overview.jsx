@@ -87,9 +87,12 @@ const CompanyOverview = () => {
               farming and better yields. At NEW GANESH SEEDS, our motto is
               <b> “Growing Trust, Ensuring Quality.”</b>
             </p>
-            <button className="bg-[#16561A] text-white px-6 py-3 rounded-md shadow hover:bg-[#228B22] transition">
-              Discover More →
-            </button>
+            <a
+            href="/about"
+            className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
+          >
+            Discover more ➔
+          </a>
           </motion.div>
         </div>
       </section>

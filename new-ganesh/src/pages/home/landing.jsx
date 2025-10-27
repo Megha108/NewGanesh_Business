@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-
+import BG1 from "../../assets/image/home/godownimg1.jpeg";
 const Landing = () => {
   const backgrounds = [
     "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?q=80&w=1600&auto=format&fit=crop",
+    BG1,
     "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
   ];
 
@@ -69,11 +69,11 @@ const Landing = () => {
 
             <div className="mt-8">
               <a
-                href="#products"
-                className="inline-flex items-center rounded-lg bg-[#16561A] px-5 py-3 text-white font-medium hover:bg-[#228B22] transition"
-              >
-                Explore Products
-              </a>
+            href="/product"
+            className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
+          >
+            Explore Products 
+          </a>
             </div>
           </div>
         </div>

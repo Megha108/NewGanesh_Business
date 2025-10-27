@@ -114,7 +114,7 @@ export default function ThreeDProducts() {
         <div className="mt-16 text-center">
           <a
             href="/products"
-            className="inline-block px-6 py-3 bg-green-800 text-white font-medium rounded-xl shadow-md hover:bg-green-700 transition"
+            className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
           >
             View All Products ➔
           </a>
