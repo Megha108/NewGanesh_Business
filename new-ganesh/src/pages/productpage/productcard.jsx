@@ -1,4 +1,4 @@
-const ProductCard = ({ name, image, category, price, onClick }) => {
+const ProductCard = ({ name, image, onClick }) => {
   return (
     <div
       onClick={onClick}
@@ -10,9 +10,6 @@ const ProductCard = ({ name, image, category, price, onClick }) => {
           alt={name}
           className="w-80 h-80 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500 p-5"
         />
-        <div className="absolute top-3 left-3 bg-green-600 text-white text-xs px-3 py-1 rounded-full">
-          {category}
-        </div>
       </div>
       <div className="p-5 text-center">
         <h3 className="text-xl font-semibold text-gray-800 group-hover:text-green-700">
