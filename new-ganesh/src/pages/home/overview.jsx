@@ -73,14 +73,19 @@ const CompanyOverview = () => {
               Company Overview
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              The seed company, NEW GANESH SEEDS is pioneer in seed
-              business in India, established in 1984. The WASL deals with quality
-              seed production and marketing.
+              <b>NEW GANESH SEEDS</b> is a trusted name in the seed industry, serving
+              both wholesale and retail customers across India. We specialize in
+              providing premium-quality seeds sourced directly from farmers,
+              ensuring natural freshness and reliability. Each batch is
+              carefully cleaned, processed, and packed in our own facility to
+              maintain purity and high germination rates.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
-              The company motto is <strong>"MORE FOR ALL"</strong>, ensuring
-              farmers benefit directly from quality seeds. WASL is certified by
-              DSIR and ISO 9001:2015.
+              Our products serve the needs of farmers, traders, and agricultural
+              suppliers who value quality and consistency. With years of
+              experience and commitment, we continue to promote sustainable
+              farming and better yields. At NEW GANESH SEEDS, our motto is
+              <b> “Growing Trust, Ensuring Quality.”</b>
             </p>
             <button className="bg-[#16561A] text-white px-6 py-3 rounded-md shadow hover:bg-[#228B22] transition">
               Discover More →
