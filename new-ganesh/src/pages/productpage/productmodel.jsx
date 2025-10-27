@@ -22,7 +22,7 @@ const ProductModal = ({ product, onClose }) => {
             {product.name}
           </h2>
           <p className="text-gray-600 mt-2">{product.description}</p>
-          <button className="mt-5 bg-green-600 text-white px-6 py-2 rounded-lg hover:bg-green-700 transition">
+          <button className="mt-5 bg-[#16561A] text-white px-6 py-2 rounded-lg hover:bg-[#228B22] transition">
             Buy Now
           </button>
         </div>

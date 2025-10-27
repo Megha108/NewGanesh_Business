@@ -16,7 +16,7 @@ const ProductCard = ({ name, image, onClick }) => {
           {name}
         </h3>
         {/* <p className="mt-2 text-green-600 font-bold text-lg">₹{price}</p> */}
-        <button className="mt-3 bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition">
+        <button className="mt-3 bg-[#16561A] text-white px-4 py-2 rounded-lg hover:bg-[#228B22] transition">
           View Details
         </button>
       </div>

@@ -58,7 +58,7 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-5">
-      <h1 className="text-[72px] font-bold text-center text-green-700 mb-16">
+      <h1 className="text-[72px] font-semibold text-center text-black mb-16">
         Our Seed Products
       </h1>
 
