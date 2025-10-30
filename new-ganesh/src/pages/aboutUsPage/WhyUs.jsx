@@ -69,6 +69,21 @@ const WhyUs = () => {
     <div className="max-w-[90vw] mx-auto my-10 px-5 font-bricolage">
       {/* Header Section */}
       <div className="grid gap-10 md:gap-16 items-start mb-10 md:mb-5 grid-cols-1 md:grid-cols-2">
+        {/* Right Side - Highlight Text */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 20, x: 350 }}
+          viewport={{ once: true, amount: 0.3}}
+          transition={{ duration: 0.4, delay: 0.50 }}
+          className={`bg-white rounded-lg flex items-start justify-start ${
+            isMobile ? "p-2 min-h-[120px]" : "p-4 min-h-[160px]"
+          }`}
+        >
+          <p className="text-2xl md:text-1xl text-gray-700 italic font-bold leading-tight line-clamp-7 text-center">
+            {highlightText}
+          </p>
+        </motion.div>
+      </div>
         {/* Left Side - Headings */}
         <div className="text-center md:text-left">
           <motion.h1
@@ -100,21 +115,7 @@ const WhyUs = () => {
           />
         </div>
 
-        {/* Right Side - Highlight Text */}
-        <motion.div
-          initial={{ opacity: 0, x: 50 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.4, delay: 0.15 }}
-          className={`bg-white rounded-lg flex items-center ${
-            isMobile ? "p-2 min-h-[120px]" : "p-4 min-h-[160px]"
-          }`}
-        >
-          <p className="text-base text-gray-700 italic leading-relaxed line-clamp-3">
-            {highlightText}
-          </p>
-        </motion.div>
-      </div>
+        
 
       {/* Content Grid */}
       <div className="grid gap-12 grid-cols-1 md:grid-cols-3">
