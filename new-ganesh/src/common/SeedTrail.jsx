@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
-import seedImg from "../assets/OatPhoto.png";
+import seedImg from "../assets/SproutingSeed .png";
 
 export default function SeedTrail() {
   const containerRef = useRef(null);
