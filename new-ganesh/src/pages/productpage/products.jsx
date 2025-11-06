@@ -7,13 +7,17 @@ import PImg3 from "../../assets/image/home/PSimg3.webp";
 import PImg4 from "../../assets/image/home/PSimg4.webp";
 import PImg5 from "../../assets/image/home/PSimg5.webp";
 import PImg6 from "../../assets/image/home/PSimg6.webp";
+import img61 from "../../assets/image/product/PImg6.1.webp";
+import img62 from "../../assets/image/product/PImg6.2.webp";
+import img63 from "../../assets/image/product/PImg6.3.webp";
+import img64 from "../../assets/image/product/PImg6.4.webp";
 import PImg7 from "../../assets/image/home/PSimg7.webp";
 import PImg8 from "../../assets/image/home/PSimg8.webp";
 
 const allProducts = [
   {
     name: "Ganesh Rajka Seeds",
-    image: PImg6,
+    image: PImg6,img61,img62,img63,img64,
     description: "High germination rate and pest resistance.",
     details: [
     ["Time of Sowing", "October to February (Rabi Season)"],
