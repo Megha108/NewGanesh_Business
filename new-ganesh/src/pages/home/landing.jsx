@@ -1,47 +1,86 @@
 import React, { useState, useEffect } from "react";
-import BG1 from "../../assets/image/home/godownimg1.jpeg";
+import BG1 from "../../assets/image/home/godownimg1.jpeg"
+import BG2 from "../../assets/image/home/ganesh12.jpg"
+import BG3 from "../../assets/image/home/ganesh54.jpg"
+import BG4 from "../../assets/image/home/ganesh6.jpg"
+import BG5 from "../../assets/image/home/ganesh16.jpg"
+import BG6 from "../../assets/image/home/ganesh52.jpg"
+import BG7 from "../../assets/image/home/ganesh54.jpg"
+
 const Landing = () => {
-  const backgrounds = [
-    "https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600&auto=format&fit=crop",
+  const webImages = [
+    BG6,
     BG1,
-    "https://images.unsplash.com/photo-1519681393784-d120267933ba?q=80&w=1600&auto=format&fit=crop",
+    BG7,
   ];
 
-  const [current, setCurrent] = useState(0);
+  const mobileImages = [
+    BG5,
+    BG4,
+    BG3,
+    BG2,
+  ];
 
+  const getMobile = () => window.innerWidth < 900;
+
+  const [isMobile, setIsMobile] = useState(getMobile());
+  const [backgrounds, setBackgrounds] = useState(
+    getMobile() ? mobileImages : webImages
+  );
+  const [current, setCurrent] = useState(0);
+  const [fading, setFading] = useState(false);
+
+  // slide interval
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrent((prev) => (prev + 1) % backgrounds.length);
-    }, 5000); // change slide every 5 seconds
-    return () => clearInterval(interval);
+    const id = setInterval(
+      () => setCurrent((p) => (p + 1) % backgrounds.length),
+      5000
+    );
+    return () => clearInterval(id);
   }, [backgrounds.length]);
 
-  return (
-    <section id="home" className="relative">
-      {/* Spacer to offset fixed navbar height */}
-      <div className="h-16" />
+  // watch resize → smooth crossfade
+  useEffect(() => {
+    const onResize = () => {
+      const newMobile = getMobile();
+      if (newMobile !== isMobile) {
+        setFading(true);
+        setTimeout(() => {
+          setIsMobile(newMobile);
+          setBackgrounds(newMobile ? mobileImages : webImages);
+          setCurrent(0);
+          setFading(false);
+        }, 400); // fade time
+      }
+    };
+    window.addEventListener("resize", onResize);
+    return () => window.removeEventListener("resize", onResize);
+  }, [isMobile]);
 
-      {/* Hero */}
-      <div className="relative h-screen min-h-[70vh] md:min-h-[85vh] flex items-center overflow-hidden ">
-        {/* Background Images with fade transition */}
-        {backgrounds.map((bg, index) => (
+  return (
+    <section className="relative">
+      <div className="relative h-screen min-h-[90vh] md:min-h-[70vh] overflow-hidden flex items-center">
+
+        {backgrounds.map((bg, i) => (
           <div
-            key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              index === current ? "opacity-100" : "opacity-0"
-            }`}
+            key={i}
+            className={`
+              absolute inset-0 transition-opacity duration-300
+              ${i === current && !fading ? "opacity-100" : "opacity-0"}
+            `}
             style={{
               backgroundImage: `url(${bg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
             }}
           >
-            {/* Black overlay */}
-            <div className="absolute inset-0 bg-black/40"></div>
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
 
-        {/* Overlays */}
+{/* your overlay and text content here */}
+
+{/* Overlays */}
         <div className="absolute inset-0 bg-amber-900/20 mix-blend-multiply" />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
 
@@ -78,8 +117,8 @@ const Landing = () => {
           </div>
         </div>
       </div>
-    </section>
-  );
-};
-
-export default Landing;
+        </section>
+      );
+    }
+    
+    export default Landing;
