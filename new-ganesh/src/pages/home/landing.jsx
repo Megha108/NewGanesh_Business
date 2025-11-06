@@ -9,9 +9,10 @@ import BG7 from "../../assets/image/home/ganesh54.jpg"
 
 const Landing = () => {
   const webImages = [
-    BG6,
-    BG1,
     BG7,
+    BG1,
+    BG6
+
   ];
 
   const mobileImages = [
@@ -50,75 +51,65 @@ const Landing = () => {
           setBackgrounds(newMobile ? mobileImages : webImages);
           setCurrent(0);
           setFading(false);
-        }, 400); // fade time
+        }, 600); // fade time
       }
     };
     window.addEventListener("resize", onResize);
     return () => window.removeEventListener("resize", onResize);
   }, [isMobile]);
+  // overlay content and text content
+return (
+  <section className="relative">
+    <div className="relative h-screen min-h-[90vh] overflow-hidden flex items-center">
 
-  return (
-    <section className="relative">
-      <div className="relative h-screen min-h-[90vh] md:min-h-[70vh] overflow-hidden flex items-center">
+      {/* BG SLIDES */}
+      {backgrounds.map((bg, i) => (
+        <div
+          key={i}
+          className={`
+            absolute inset-0 transition-opacity duration-500
+            ${i === current && !fading ? "opacity-100" : "opacity-0"}
+          `}
+          style={{
+            backgroundImage: `url(${bg})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+      ))}
 
-        {backgrounds.map((bg, i) => (
-          <div
-            key={i}
-            className={`
-              absolute inset-0 transition-opacity duration-300
-              ${i === current && !fading ? "opacity-100" : "opacity-0"}
-            `}
-            style={{
-              backgroundImage: `url(${bg})`,
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          >
-            <div className="absolute inset-0 bg-black/40" />
-          </div>
-        ))}
+      {/* DARK GRADIENT LEFT → RIGHT */}
+      <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/60 to-transparent" />
 
-{/* your overlay and text content here */}
+      {/* TEXT LEFT SIDE CENTER */}
+      <div className="relative w-full flex justify-start pl-10 md:pl-20">
+        <div className="max-w-xl text-white">
 
-{/* Overlays */}
-        <div className="absolute inset-0 bg-amber-900/20 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-black/10 to-transparent" />
+          <h3 className="text-sm tracking-[0.25em] uppercase opacity-75">
+            SINCE 1990
+          </h3>
 
-        <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-          <div className="max-w-3xl">
-            <h3
-              className="text-white font-bold leading-tight
-                           text-xl sm:text-2xl md:text-3xl"
-            >
-              Since 1990
-            </h3>
-            <h1
-              className="text-white font-semibold leading-tight
-                           text-4xl sm:text-5xl md:text-6xl"
-            >
-              NEW GANESH SEEDS
-            </h1>
-            <h3
-              className="text-white font-semibold leading-tight
-                           text-xl sm:text-2xl md:text-3xl"
-            >
-              Trusted Seeds
-              <br /> for a Better Tomorrow
-            </h3>
+          <h1 className="font-bold text-4xl md:text-6xl leading-tight mt-2">
+            NEW GANESH SEEDS
+          </h1>
 
-            <div className="mt-8">
-              <a
+          <p className="mt-4 text-lg opacity-90 leading-relaxed">
+            Trusted Seeds for a Better Tomorrow
+          </p>
+
+          <a
             href="/product"
-            className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
+            className="inline-block mt-8 px-6 py-3 bg-white text-black font-medium rounded-xl shadow-md hover:bg-gray-100 transition"
           >
-            Explore Products 
+            Explore Products
           </a>
-            </div>
-          </div>
+
         </div>
       </div>
-        </section>
-      );
-    }
-    
-    export default Landing;
+
+    </div>
+  </section>
+);
+}
+
+export default Landing;
