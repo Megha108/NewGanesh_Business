@@ -212,11 +212,11 @@ const allProducts = [
   },
 ];
 
-const Products = () => {
+const Products = () => { 
   const [selectedProduct, setSelectedProduct] = useState(null);
 
   return (
-    <div className="min-h-screen bg-gray-50 py-10 px-5">
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-10 px-5">
       {/* 🌿 Grass-text heading */}
       <h1 className="grassText text-[50px] sm:text-[56px] lg:text-[72px] leading-tight font-bold text-center mb-12">
         Our Seed Products

@@ -4,7 +4,7 @@ import AboutUsPage from "./pages/aboutUsPage/aboutUs";
 import ProductMain from "./pages/productpage/main.jsx";
 import SeedTrail from "./common/SeedTrail";
 import EnquiryPage from "./pages/enquiryPage/enquiryPage.jsx";
-
+import Enquiryform from "./pages/enquiryPage/enquiryform.jsx";
 export default function App() {
   return (
     <>
@@ -18,6 +18,7 @@ export default function App() {
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/products" element={<ProductMain />} />
         <Route path="/enquire" element={<EnquiryPage />} />
+        <Route path="/enquiryform" element={<EnquiryPage />} />
       </Routes>
     </>
   );

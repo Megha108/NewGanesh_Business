@@ -5,13 +5,14 @@ import BG3 from "../../assets/image/home/ganesh54.jpg";
 import BG4 from "../../assets/image/home/ganesh6.jpg";
 import BG5 from "../../assets/image/home/ganesh16.jpg";
 import BG6 from "../../assets/image/home/ganesh52.jpg";
-import BG7 from "../../assets/image/home/ganesh54.jpg";
+import BG7 from "../../assets/image/home/ganesh67.jpg";
+import BG9 from "../../assets/image/home/ganesh84.jpg";
 import BG8 from "../../assets/image/home/grase.png";
 
 import "./Landing.css";
 
 const Landing = () => {
-  const webImages = [BG7, BG1, BG6];
+  const webImages = [BG7, BG1, BG6, BG9,];
   const mobileImages = [BG5, BG4, BG3, BG2];
 
   const getMobile = () => window.innerWidth < 900;

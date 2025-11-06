@@ -44,7 +44,7 @@ function Navbar() {
 
         {/* CTA (desktop) */}
         <Link
-          to="/enquire"
+          to="/enquiryform"
           className="hidden md:inline-block rounded-lg bg-[#16561A] px-4 py-2 text-white font-medium hover:bg-[#228B22] transition"
         >
           Enquire Now
