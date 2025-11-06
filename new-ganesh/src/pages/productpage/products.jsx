@@ -2,17 +2,36 @@ import ProductCard from "./productcard";
 import ProductModal from "./productmodel";
 import { useState } from "react";
 import PImg1 from "../../assets/image/home/PSimg1.webp";
+import img11 from "../../assets/image/product/PImg1.1.webp";
+import img12 from "../../assets/image/product/PImg1.2.webp";
 import PImg2 from "../../assets/image/home/PSimg2.webp";
+import img21 from "../../assets/image/product/PImg2.1.webp";
+import img22 from "../../assets/image/product/PImg2.2.webp";
+import img23 from "../../assets/image/product/PImg2.3.webp";
 import PImg3 from "../../assets/image/home/PSimg3.webp";
+import img31 from "../../assets/image/product/PImg3.1.webp";
+import img32 from "../../assets/image/product/PImg3.2.webp";
+import img33 from "../../assets/image/product/PImg3.3.webp";
+import img34 from "../../assets/image/product/PImg3.4.webp";
 import PImg4 from "../../assets/image/home/PSimg4.webp";
+import img41 from "../../assets/image/product/PImg4.1.webp";
+import img42 from "../../assets/image/product/PImg4.2.webp";
 import PImg5 from "../../assets/image/home/PSimg5.webp";
+import img51 from "../../assets/image/product/PImg5.1.webp";
+import img52 from "../../assets/image/product/PImg5.2.webp";
 import PImg6 from "../../assets/image/home/PSimg6.webp";
 import img61 from "../../assets/image/product/PImg6.1.webp";
 import img62 from "../../assets/image/product/PImg6.2.webp";
 import img63 from "../../assets/image/product/PImg6.3.webp";
 import img64 from "../../assets/image/product/PImg6.4.webp";
 import PImg7 from "../../assets/image/home/PSimg7.webp";
+import img71 from "../../assets/image/product/PImg7.1.webp";
+import img72 from "../../assets/image/product/PImg7.2.webp";
+import img73 from "../../assets/image/product/PImg7.3.webp";
 import PImg8 from "../../assets/image/home/PSimg8.webp";
+import img81 from "../../assets/image/product/PImg8.1.webp";
+import img82 from "../../assets/image/product/PImg8.2.webp";
+
 
 const allProducts = [
   {
@@ -39,7 +58,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Teensali",
     image: PImg7,
-    images: [PImg7],
+    images: [PImg7, img71,img72,img73, img63,img64],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "June to August (Kharif) and February to March (Rabi)"],
@@ -61,7 +80,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Barmasi",
     image: PImg8,
-    images: [PImg8],
+    images: [PImg8, img81,img82,img63,img64],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "February–April & August–September"],
@@ -82,7 +101,7 @@ const allProducts = [
   {
     name: "Ganesh Kasni",
     image: PImg3,
-    images: [PImg3],
+    images: [PImg3, img31,img32,img33,img34],
     description: "Perfect for high productivity and early harvest.",
     details: [
       ["Time of Sowing", "October to December"],
@@ -104,7 +123,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Bajra",
     image: PImg5,
-    images: [PImg5],
+    images: [PImg5,img51,img52],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "June to July (Kharif Season)"],
@@ -126,7 +145,7 @@ const allProducts = [
   {
     name: "Barseem",
     image: PImg1,
-    images: [PImg1],
+    images: [PImg1,img11,img12],
     description: "High quality hybrid sunflower seeds for better yield.",
     details: [
       ["Time of Sowing", "October to November (Rabi Season)"],
@@ -148,7 +167,7 @@ const allProducts = [
   {
     name: "Ganesh Jaudo",
     image: PImg2,
-    images: [PImg2],
+    images: [PImg2, img21,img22,img23],
     description: "Rich in oil content and disease resistance.",
     details: [
       ["Time of Sowing", "June–August (Kharif) & February–March (Rabi)"],
@@ -170,7 +189,7 @@ const allProducts = [
   {
     name: "Oat Seeds",
     image: PImg4,
-    images: [PImg4],
+    images: [PImg4,img41, img42],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "October to December (Rabi Season)"],

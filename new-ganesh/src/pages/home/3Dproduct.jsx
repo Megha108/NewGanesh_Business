@@ -54,7 +54,7 @@ export default function ThreeDProducts() {
                   Rajka Seed
                 </h3>
               </div>
-              <p className="text-base text-gray-700 leading-relaxed py-10">
+              <p className="text-md text-gray-700 leading-relaxed py-10">
                 Rajka Seeds (Lucerne Seeds) are known for their excellent
                 germination and strong growth. They help improve soil fertility
                 and provide high-quality fodder for livestock. Sourced directly
@@ -97,7 +97,7 @@ export default function ThreeDProducts() {
                   Jaudo Seed
                 </h3>
               </div>
-              <p className="text-base text-gray-700 leading-relaxed py-10">
+              <p className="text-md text-gray-700 leading-relaxed py-10">
                 Jaudo Bajra Seeds are high-quality pearl millet seeds known for
                 their strong growth and resilience. They are ideal for dry and
                 semi-dry regions, offering excellent yield even in tough
