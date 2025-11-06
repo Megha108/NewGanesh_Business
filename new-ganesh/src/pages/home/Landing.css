@@ -1,0 +1,38 @@
+.grassText {
+  position: relative;
+  font-weight: 900 !important;
+  font-size: 4rem;
+  text-transform: uppercase;
+  color: transparent !important;
+  background-image: url("../../assets/image/home/grase.png");
+  background-size: cover;
+  background-repeat: repeat;
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* 🌿 Adds realistic grass depth and shadow */
+ 
+
+  letter-spacing: 2px;
+  display: inline-block;
+  text-align: left;
+}
+
+/* Slightly blurred green layer under the text — acts like a “grass border” */
+.grassText::before {
+  content: "NEW GANESH SEEDS";
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  color: #1b5e20;
+  filter: blur(3px) brightness(0.9);
+  transform: scale(1.03);
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .grassText {
+    font-size: 2.5rem;
+  }
+}

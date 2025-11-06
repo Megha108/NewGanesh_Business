@@ -28,7 +28,7 @@ export default function Footer() {
   return (
     <footer className="relative bg-[#ffffff] text-black pt-20 overflow-hidden">
       {/* Waves */}
-      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-70 pointer-events-none z-10"
+      <div className="absolute bottom-0 left-0 w-[200%] h-[42vw] opacity-70 pointer-events-none z-10"
            style={{
              background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
              backgroundSize: "1200px 600px",
@@ -36,7 +36,7 @@ export default function Footer() {
              animation: "waveTop 30s ease-in-out infinite alternate",
            }}
       ></div>
-      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-50 pointer-events-none z-10"
+      <div className="absolute bottom-0 left-0 w-[300%] h-[42vw] opacity-50 pointer-events-none z-10"
            style={{
              background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
              backgroundSize: "1200px 600px",
@@ -45,7 +45,7 @@ export default function Footer() {
              animationDelay: "-6s",
            }}
       ></div>
-      <div className="absolute bottom-0 left-0 w-[200%] h-[38vw] opacity-30 pointer-events-none z-10"
+      <div className="absolute bottom-0 left-0 w-[200%] h-[42vw] opacity-30 pointer-events-none z-10"
            style={{
              background: `url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1200 120' preserveAspectRatio='none'><path d='M0,40 C300,80 900,0 1200,40 L1200,120 L0,120 Z' fill='%2300a651' fill-opacity='0.9'/></svg>")`,
              backgroundSize: "1200px 600px",

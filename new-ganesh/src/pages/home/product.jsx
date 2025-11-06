@@ -21,8 +21,6 @@ const PRODUCTS = [
   { src: p8, alt: "Oat Seeds" },
 ];
 
-
-
 export default function ProductsMarquee() {
   const doubled = [...PRODUCTS, ...PRODUCTS];
 
@@ -46,10 +44,17 @@ export default function ProductsMarquee() {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Featured Products Title */}
-        <div className="flex justify-center mb-10">
-          <h2 className="text-3xl md:text-5xl font-semibold tracking-wide text-black">
+        <div className="flex flex-col items-center text-center mb-10">
+          <h2 className="text-3xl md:text-5xl font-semibold tracking-wide text-black mb-4">
             <span className="mr-2">“</span>Featured Products<span className="ml-2">”</span>
           </h2>
+
+          {/* Description */}
+          <p className="max-w-3xl text-gray-600 text-base sm:text-lg leading-relaxed">
+            "Unveiling a superior selection of hybrid seeds, crafted with cutting-edge innovation
+            to boost agricultural productivity, fulfill market demands, and address the challenges
+            posed by dynamic environmental changes.
+          </p>
         </div>
 
         {/* Featured Products Marquee */}
@@ -74,4 +79,3 @@ export default function ProductsMarquee() {
     </section>
   );
 }
-
