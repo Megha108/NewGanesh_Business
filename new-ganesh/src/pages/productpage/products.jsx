@@ -17,27 +17,29 @@ import PImg8 from "../../assets/image/home/PSimg8.webp";
 const allProducts = [
   {
     name: "Ganesh Rajka Seeds",
-    image: PImg6,img61,img62,img63,img64,
+    image: PImg6, // thumbnail for card
+    images: [PImg6, img61, img62, img63, img64], // slider images
     description: "High germination rate and pest resistance.",
     details: [
-    ["Time of Sowing", "October to February (Rabi Season)"],
-    ["Sowing Method", "Broadcast or Line Sowing"],
-    ["Maturity Days", "First cutting in 55–60 days; subsequent every 25–30 days"],
-    ["Crop Type", "Perennial Fodder Crop"],
-    ["Plant Type", "Deep-rooted and highly drought-resistant"],
-    ["Growth Habit", "Fast growing with dense foliage"],
-    ["Protein Content", "18–22% (Excellent Fodder Quality)"],
-    ["Soil Requirement", "Well-drained loamy soil with good organic matter"],
-    ["Irrigation", "Requires regular irrigation for high yield"],
-    ["Pest Resistance", "Tolerant to most common pests and diseases"],
-    ["Yield", "80–100 tons/ha green fodder annually under good management"],
-    ["Uses", "Ideal for dairy farms and livestock feed"],
-    ["CATEGORY", "Fodder Crop Seeds / Lucerne (Alfalfa) Seeds"],
-  ],
+      ["Time of Sowing", "October to February (Rabi Season)"],
+      ["Sowing Method", "Broadcast or Line Sowing"],
+      ["Maturity Days", "First cutting in 55–60 days; subsequent every 25–30 days"],
+      ["Crop Type", "Perennial Fodder Crop"],
+      ["Plant Type", "Deep-rooted and highly drought-resistant"],
+      ["Growth Habit", "Fast growing with dense foliage"],
+      ["Protein Content", "18–22% (Excellent Fodder Quality)"],
+      ["Soil Requirement", "Well-drained loamy soil with good organic matter"],
+      ["Irrigation", "Requires regular irrigation for high yield"],
+      ["Pest Resistance", "Tolerant to most common pests and diseases"],
+      ["Yield", "80–100 tons/ha green fodder annually under good management"],
+      ["Uses", "Ideal for dairy farms and livestock feed"],
+      ["CATEGORY", "Fodder Crop Seeds / Lucerne (Alfalfa) Seeds"],
+    ],
   },
   {
     name: "Ganesh Rajka Teensali",
     image: PImg7,
+    images: [PImg7],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "June to August (Kharif) and February to March (Rabi)"],
@@ -59,6 +61,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Barmasi",
     image: PImg8,
+    images: [PImg8],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "February–April & August–September"],
@@ -79,6 +82,7 @@ const allProducts = [
   {
     name: "Ganesh Kasni",
     image: PImg3,
+    images: [PImg3],
     description: "Perfect for high productivity and early harvest.",
     details: [
       ["Time of Sowing", "October to December"],
@@ -100,8 +104,9 @@ const allProducts = [
   {
     name: "Ganesh Rajka Bajra",
     image: PImg5,
+    images: [PImg5],
     description: "High germination rate and pest resistance.",
-     details: [
+    details: [
       ["Time of Sowing", "June to July (Kharif Season)"],
       ["Maturity Days", "85–95 Days"],
       ["Crop Type", "Dual Purpose – Grain and Fodder"],
@@ -121,6 +126,7 @@ const allProducts = [
   {
     name: "Barseem",
     image: PImg1,
+    images: [PImg1],
     description: "High quality hybrid sunflower seeds for better yield.",
     details: [
       ["Time of Sowing", "October to November (Rabi Season)"],
@@ -142,6 +148,7 @@ const allProducts = [
   {
     name: "Ganesh Jaudo",
     image: PImg2,
+    images: [PImg2],
     description: "Rich in oil content and disease resistance.",
     details: [
       ["Time of Sowing", "June–August (Kharif) & February–March (Rabi)"],
@@ -163,6 +170,7 @@ const allProducts = [
   {
     name: "Oat Seeds",
     image: PImg4,
+    images: [PImg4],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "October to December (Rabi Season)"],
@@ -190,19 +198,21 @@ const Products = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 py-10 px-5">
-      <h1 className="text-[72px] font-semibold text-center text-black mb-16">
+      <h1 className="text-[42px] sm:text-[56px] lg:text-[72px] leading-tight font-semibold text-center text-black mb-12">
         Our Seed Products
       </h1>
 
-      {/* Product Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-        {allProducts.map((product, index) => (
-          <ProductCard
-            key={index}
-            {...product}
-            onClick={() => setSelectedProduct(product)}
-          />
-        ))}
+      <div className="container mx-auto">
+        {/* Product Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+          {allProducts.map((product, index) => (
+            <ProductCard
+              key={index}
+              {...product}
+              onClick={() => setSelectedProduct(product)}
+            />
+          ))}
+        </div>
       </div>
 
       {/* Modal */}
