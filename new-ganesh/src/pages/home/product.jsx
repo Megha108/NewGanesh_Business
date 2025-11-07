@@ -42,18 +42,21 @@ export default function ProductsMarquee() {
       `}</style>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-
         {/* Featured Products Title */}
         <div className="flex flex-col items-center text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-wide text-black mb-4">
-            <span className="mr-2">“</span>Featured Products<span className="ml-2">”</span>
+            <span className="mr-2">“</span>Featured Products
+            <span className="ml-2">”</span>
           </h2>
 
           {/* Description */}
-          <p className="max-w-3xl text-gray-600 text-base sm:text-lg leading-relaxed">
-            "Unveiling a superior selection of hybrid seeds, crafted with cutting-edge innovation
-            to boost agricultural productivity, fulfill market demands, and address the challenges
-            posed by dynamic environmental changes.
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
+            At <strong>NEW GANESH SEEDS</strong>, we take pride in offering a
+            diverse range of high-quality seeds carefully selected to ensure
+            maximum yield and purity. Each product reflects our dedication to
+            innovation, sustainability, and farmer success. Whether it’s fodder,
+            fiber, or vegetable seeds, every batch is processed with precision
+            and tested for exceptional germination performance.
           </p>
         </div>
 
@@ -63,7 +66,11 @@ export default function ProductsMarquee() {
           <div className="pointer-events-none absolute right-0 top-0 h-full w-12" />
           <div className="marquee-track flex gap-10 md:gap-14 items-center">
             {doubled.map((item, idx) => (
-              <motion.div key={idx} className="shrink-0" whileHover={{ scale: 1.03 }}>
+              <motion.div
+                key={idx}
+                className="shrink-0"
+                whileHover={{ scale: 1.03 }}
+              >
                 <img
                   src={item.src}
                   alt={item.alt}
@@ -74,7 +81,6 @@ export default function ProductsMarquee() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

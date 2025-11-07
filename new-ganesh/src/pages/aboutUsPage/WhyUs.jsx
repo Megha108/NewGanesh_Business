@@ -70,7 +70,7 @@ const WhyUs = () => {
       {/* Header Section */}
       <div className="grid gap-10 md:gap-16 items-start mb-10 md:mb-5 grid-cols-1 md:grid-cols-2">
         {/* Right Side - Highlight Text */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 20, x: 350 }}
           viewport={{ once: true, amount: 0.3}}
@@ -82,11 +82,11 @@ const WhyUs = () => {
           <p className="text-2xl md:text-1xl text-gray-700 italic font-bold leading-tight line-clamp-7 text-center">
             {highlightText}
           </p>
-        </motion.div>
+        </motion.div> */}
       </div>
         {/* Left Side - Headings */}
         <div className="text-center md:text-left">
-          <motion.h1
+          {/* <motion.h1
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
@@ -94,7 +94,7 @@ const WhyUs = () => {
             className="text-2xl text-gray-600 mb-2 relative pb-3"
           >
             BEST SEEDS FOR YOU
-          </motion.h1>
+          </motion.h1> */}
 
           <motion.h2
             initial={{ opacity: 0, x: -50 }}
@@ -105,6 +105,10 @@ const WhyUs = () => {
           >
             Why Choose Us
           </motion.h2>
+
+          <p className="text-2xl md:text-1xl text-gray-600 italic font-semibold leading-normal line-clamp-7 text-center m-20">
+            {highlightText}
+          </p>
 
           <motion.div
             initial={{ width: 0 }}

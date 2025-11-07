@@ -3,7 +3,7 @@ import img1 from "../../assets/image/home/l2.webp";
 import img2 from "../../assets/image/home/l1.webp";
 
 const CompanyOverview = () => {
-  const radius = 39; // orbit radius
+  const radius = 80; // orbit radius
 
   // Motion value for orbit rotation
   const rotate = useMotionValue(0);
@@ -13,7 +13,7 @@ const CompanyOverview = () => {
     <div className="bg-[#F8F7F3]">
       <section
         id="overview"
-        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 "
+        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 "
       >
         <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-40">
           {/* Left side with images */}
@@ -25,7 +25,7 @@ const CompanyOverview = () => {
             className="relative flex-shrink-0"
           >
             {/* Big Circle */}
-            <div className="relative w-72 h-72 rounded-full overflow-hidden shadow-lg">
+            <div className="relative w-96 h-96 rounded-full overflow-hidden shadow-lg">
               <img
                 src={img1}
                 alt="plant in hands"
@@ -73,12 +73,26 @@ const CompanyOverview = () => {
               Company Overview
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">
-              <b>NEW GANESH SEEDS</b> is a trusted name in the seed industry, serving
-              both wholesale and retail customers across India. We specialize in
-              providing premium-quality seeds sourced directly from farmers,
-              ensuring natural freshness and reliability. Each batch is
-              carefully cleaned, processed, and packed in our own facility to
-              maintain purity and high germination rates.
+              <b>NEW GANESH SEEDS</b> is a trusted name in the seed industry,
+              serving both wholesale and retail customers across India. We
+              specialize in providing premium-quality seeds sourced directly
+              from farmers, ensuring natural freshness and reliability. Each
+              batch is carefully cleaned, processed, and packed in our own
+              facility to maintain purity and high germination rates.
+            </p>
+            <p className="text-gray-700 leading-relaxed mb-4">
+              Over the years, we have built strong relationships with farming
+              communities, helping them access modern agricultural practices
+              while preserving traditional values. Our commitment goes beyond
+              selling seeds — we educate, guide, and support farmers at every
+              stage of cultivation to ensure successful harvests.
+            </p>
+
+            <p className="text-gray-700 leading-relaxed mb-4">
+              From fodder crops to fiber and vegetable seeds, our products cater
+              to diverse agricultural needs. Every variety is tested under real
+              farming conditions to guarantee consistent growth and superior
+              performance, even in challenging climates.
             </p>
             <p className="text-gray-700 leading-relaxed mb-4">
               Our products serve the needs of farmers, traders, and agricultural
@@ -88,11 +102,11 @@ const CompanyOverview = () => {
               <b> “Growing Trust, Ensuring Quality.”</b>
             </p>
             <a
-            href="/about"
-            className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
-          >
-            Discover more ➔
-          </a>
+              href="/about"
+              className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
+            >
+              Discover more ➔
+            </a>
           </motion.div>
         </div>
       </section>
