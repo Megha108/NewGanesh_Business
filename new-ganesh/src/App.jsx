@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 
 import HomeMain from "./pages/home/main";
-import AboutUsPage from "./pages/aboutUsPage";
+import AboutUsPage from "./pages/aboutUsPage/main.jsx";
 
 import ProductMain from "./pages/productpage/main.jsx";
 import SeedTrail from "./common/SeedTrail";
