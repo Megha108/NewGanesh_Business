@@ -1,0 +1,18 @@
+canvas {
+  display: block;
+}
+
+/* 🌊 Smooth Gradient Wave Animation */
+@keyframes waveMotion {
+  0% {
+    background: linear-gradient(135deg, #b4ec51, #429321);
+  }
+  50% {
+    background: linear-gradient(135deg, #8fd63b, #357a1a);
+  }
+  100% {
+    background: linear-gradient(135deg, #b4ec51, #429321);
+  }
+}
+
+
