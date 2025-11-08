@@ -1,0 +1,20 @@
+/* 🌿 Georgia serif with green-to-white hover animation */
+.animatedTitle {
+  font-family: Georgia, serif;
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(to right, #16561a, #16561a);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: background 0.6s ease;
+  display: inline-block;
+  text-align: center;
+}
+
+/* Hover: dark green → white gradient */
+.animatedTitle:hover {
+  background: linear-gradient(to right, #1ec229, #1ec229);
+  -webkit-background-clip: text;
+  color: transparent;
+}

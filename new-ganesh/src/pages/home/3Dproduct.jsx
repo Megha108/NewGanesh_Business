@@ -24,11 +24,11 @@ function Model({ rotation, path }) {
 
 export default function ThreeDProducts() {
   return (
-    <section className="relative py-12 md:py-16 ">
+    <section className="relative py-1 md:py-5 ">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         {/* First 3D Model Block */}
-        <div className="mt-14">
-          <div className="flex flex-col md:flex-row items-start gap-30">
+        <div className="mt-1">
+          <div className="flex flex-col md:flex-row items-start gap-25">
             <div className="relative w-[250px] h-[300px] mx-auto md:mx-0 shadow-2xl rounded-xl bg-white mt-32">
               <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
                 <ambientLight intensity={3} />
@@ -48,7 +48,7 @@ export default function ThreeDProducts() {
                 />
               </Canvas>
             </div>
-            <div className="flex-1 p-10">
+            <div className="flex-1 p-2">
               <div className="inline-block px-6 py-2 rounded-lg  bg-white shadow-md">
                 <h3 className="text-2xl font-semibold text-black">
                   Rajka Seed
@@ -82,10 +82,10 @@ export default function ThreeDProducts() {
         </div>
 
         {/* Second 3D Model Block */}
-        <div className="mt-14">
-          <div className="flex justify-center mb-6"></div>
+        <div className="mt-1">
+          <div className="flex justify-center mb-1"></div>
 
-          <div className="flex flex-col md:flex-row items-start gap-30">
+          <div className="flex flex-col md:flex-row items-start gap-25">
             <div className="relative w-[250px] h-[300px] mx-auto md:mx-0 shadow-2xl rounded-xl bg-white mt-32">
               <Canvas camera={{ position: [0, 0, 5], fov: 40 }}>
                 <ambientLight intensity={3} />

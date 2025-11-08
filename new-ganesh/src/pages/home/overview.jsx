@@ -1,31 +1,31 @@
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import img1 from "../../assets/image/home/l2.webp";
 import img2 from "../../assets/image/home/l1.webp";
+import "./CompanyOverviewTitle.css";
 
 const CompanyOverview = () => {
-  const radius = 80; // orbit radius
-
-  // Motion value for orbit rotation
+  const radius = 50; // smaller for mobile responsiveness
   const rotate = useMotionValue(0);
-  const rotateInverse = useTransform(rotate, (r) => -r); // counter-rotate image
+  const rotateInverse = useTransform(rotate, (r) => -r);
 
   return (
     <div className="bg-[#F8F7F3]">
       <section
         id="overview"
-        className="relative container mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-24 "
+        className="relative container mx-auto px-2 sm:px-6 lg:px-8 py-10 md:py-18"
       >
-        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center gap-40">
-          {/* Left side with images */}
+        {/* ✅ Reduced gap on small screens */}
+        <div className="flex flex-col md:flex-row items-center md:gap-32 gap-10">
+          {/* 🌱 Left Side */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
             className="relative flex-shrink-0"
           >
-            {/* Big Circle */}
-            <div className="relative w-96 h-96 rounded-full overflow-hidden shadow-lg">
+            {/* ✅ Responsive image sizes */}
+            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full overflow-hidden shadow-lg mx-auto">
               <img
                 src={img1}
                 alt="plant in hands"
@@ -33,24 +33,22 @@ const CompanyOverview = () => {
               />
             </div>
 
-            {/* Orbit wrapper */}
+            {/* Orbit animation */}
             <motion.div
               className="absolute top-1/2 left-1/2"
               style={{
                 width: 0,
                 height: 0,
                 transformOrigin: "0 0",
-                rotate, // parent rotation
+                rotate,
               }}
               animate={{ rotate: 360 }}
               transition={{ repeat: Infinity, duration: 12, ease: "linear" }}
             >
-              {/* Small circle positioned along X-axis */}
               <div
-                className="absolute w-40 h-40 rounded-full overflow-hidden border-4 border-white shadow-md"
-                style={{ left: radius, top: -80 }}
+                className="absolute w-20 h-20 sm:w-24 sm:h-24 md:w-36 md:h-36 rounded-full overflow-hidden border-4 border-white shadow-md"
+                style={{ left: radius, top: -60 }}
               >
-                {/* Image stays upright */}
                 <motion.img
                   src={img2}
                   alt="seedlings"
@@ -61,18 +59,17 @@ const CompanyOverview = () => {
             </motion.div>
           </motion.div>
 
-          {/* Right side text */}
+          {/* 🌿 Right Side */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.4 }}
+            viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
             className="max-w-xl md:text-left text-center"
           >
-            <h2 className="text-3xl md:text-5xl mb-6 font-semibold tracking-wide">
-              Company Overview
-            </h2>
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <h2 className="animatedTitle">Company Overview</h2>
+
+            <p className="text-gray-700 leading-relaxed mb-5 mt-7">
               <b>NEW GANESH SEEDS</b> is a trusted name in the seed industry,
               serving both wholesale and retail customers across India. We
               specialize in providing premium-quality seeds sourced directly
@@ -80,6 +77,7 @@ const CompanyOverview = () => {
               batch is carefully cleaned, processed, and packed in our own
               facility to maintain purity and high germination rates.
             </p>
+
             <p className="text-gray-700 leading-relaxed mb-4">
               Over the years, we have built strong relationships with farming
               communities, helping them access modern agricultural practices
@@ -94,13 +92,15 @@ const CompanyOverview = () => {
               farming conditions to guarantee consistent growth and superior
               performance, even in challenging climates.
             </p>
+
             <p className="text-gray-700 leading-relaxed mb-4">
               Our products serve the needs of farmers, traders, and agricultural
               suppliers who value quality and consistency. With years of
               experience and commitment, we continue to promote sustainable
-              farming and better yields. At NEW GANESH SEEDS, our motto is
-              <b> “Growing Trust, Ensuring Quality.”</b>
+              farming and better yields. At NEW GANESH SEEDS, our motto is{" "}
+              <b>“Growing Trust, Ensuring Quality.”</b>
             </p>
+
             <a
               href="/about"
               className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"

@@ -6,7 +6,7 @@ const EnquiryPage = () => {
   return (
     <div className="relative z-10 isolate font-bricolage">
       <Navbar />
-      <div className="relative mt-20 overflow-hidden">
+      <div className="relative mt-15 overflow-hidden">
         
       </div>
       <EnquiryForm />
