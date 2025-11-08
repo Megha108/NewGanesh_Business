@@ -25,7 +25,7 @@ export default function ProductsMarquee() {
   const doubled = [...PRODUCTS, ...PRODUCTS];
 
   return (
-    <section className="relative py-12 md:py-16 bg-[#F8F7F3]">
+    <section className="relative py-12 md:py-6 bg-[#F8F7F3]">
       <style>{`
         @keyframes marqueeScroll {
           from { transform: translateX(0); }
