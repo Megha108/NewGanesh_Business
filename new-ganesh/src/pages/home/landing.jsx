@@ -89,7 +89,7 @@ const Landing = () => {
 
             <a
               href="/product"
-              className="inline-block mt-8 px-6 px-3 py-3 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition"
+              className="inline-block mt-8 px-6 py-3 bg-white text-black font-medium rounded-xl shadow-md hover:bg-gray-100 transition"
             >
               Explore Products
             </a>
