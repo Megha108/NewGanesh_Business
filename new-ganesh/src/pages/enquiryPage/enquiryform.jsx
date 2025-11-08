@@ -8,52 +8,48 @@ export default function EnquiryForm() {
     const ctx = canvas.getContext("2d");
 
     const resizeCanvas = () => {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
     };
 
     resizeCanvas();
     let width = canvas.width;
     let height = canvas.height;
 
-    const elements = [
-      { x: 80, y: 100, baseR: 40, type: "ring", color: "rgba(46,139,87,0.3)", speed: 0.003, offset: 0, pulseStrength: 0.05 },
-      { x: 250, y: 150, baseR: 60, type: "ring", color: "rgba(46,139,87,0.25)", speed: 0.004, offset: 2, pulseStrength: 0.04 },
-      { x: width - 80, y: height - 100, baseR: 30, type: "circle", color: "rgba(0,100,0,0.3)", speed: 0.001, offset: 1, pulseStrength: 0.02 },
-      { x: 120, y: height - 120, baseR: 55, type: "ring", color: "rgba(46,139,87,0.3)", speed: 0.003, offset: 3, pulseStrength: 0.04 },
-      { x: width - 100, y: 200, baseR: 25, type: "circle", color: "rgba(0,100,0,0.4)", speed: 0.002, offset: 0, pulseStrength: 0.03 },
-
-      // 20 more below ↓
-      { x: 180, y: 250, baseR: 45, type: "ring", color: "rgba(34,139,34,0.25)", speed: 0.0045, offset: 4, pulseStrength: 0.06 },
-      { x: 400, y: 100, baseR: 35, type: "circle", color: "rgba(0,100,0,0.35)", speed: 0.0018, offset: 5, pulseStrength: 0.025 },
-      { x: 600, y: 200, baseR: 70, type: "ring", color: "rgba(46,139,87,0.28)", speed: 0.0035, offset: 6, pulseStrength: 0.05 },
-      { x: width - 150, y: height - 150, baseR: 40, type: "circle", color: "rgba(0,100,0,0.25)", speed: 0.001, offset: 7, pulseStrength: 0.03 },
-      { x: 300, y: height - 200, baseR: 60, type: "ring", color: "rgba(46,139,87,0.32)", speed: 0.004, offset: 8, pulseStrength: 0.05 },
-
-      { x: width / 2, y: 100, baseR: 50, type: "circle", color: "rgba(0,128,0,0.3)", speed: 0.002, offset: 9, pulseStrength: 0.03 },
-      { x: 100, y: height / 2, baseR: 40, type: "ring", color: "rgba(46,139,87,0.25)", speed: 0.003, offset: 10, pulseStrength: 0.06 },
-      { x: width - 250, y: height / 2 + 100, baseR: 65, type: "ring", color: "rgba(34,139,34,0.35)", speed: 0.005, offset: 11, pulseStrength: 0.05 },
-      { x: 220, y: height / 2 - 50, baseR: 30, type: "circle", color: "rgba(0,100,0,0.25)", speed: 0.0015, offset: 12, pulseStrength: 0.02 },
-      { x: width - 320, y: 300, baseR: 55, type: "ring", color: "rgba(46,139,87,0.3)", speed: 0.0035, offset: 13, pulseStrength: 0.04 },
-
-      { x: 180, y: 400, baseR: 35, type: "circle", color: "rgba(0,100,0,0.35)", speed: 0.001, offset: 14, pulseStrength: 0.025 },
-      { x: width - 500, y: height - 350, baseR: 70, type: "ring", color: "rgba(34,139,34,0.3)", speed: 0.004, offset: 15, pulseStrength: 0.06 },
-      { x: 450, y: height - 150, baseR: 25, type: "circle", color: "rgba(0,128,0,0.4)", speed: 0.0012, offset: 16, pulseStrength: 0.02 },
-      { x: width - 400, y: 120, baseR: 60, type: "ring", color: "rgba(46,139,87,0.26)", speed: 0.0045, offset: 17, pulseStrength: 0.045 },
-      { x: 90, y: height - 250, baseR: 45, type: "circle", color: "rgba(0,100,0,0.28)", speed: 0.002, offset: 18, pulseStrength: 0.03 },
-
-      { x: width - 600, y: height / 3, baseR: 40, type: "ring", color: "rgba(34,139,34,0.3)", speed: 0.005, offset: 19, pulseStrength: 0.05 },
-      { x: width / 2 + 200, y: height / 2 - 150, baseR: 55, type: "circle", color: "rgba(0,100,0,0.35)", speed: 0.0018, offset: 20, pulseStrength: 0.025 },
-      { x: 220, y: 80, baseR: 25, type: "circle", color: "rgba(0,100,0,0.3)", speed: 0.0015, offset: 21, pulseStrength: 0.02 },
-      { x: width - 250, y: 80, baseR: 45, type: "ring", color: "rgba(46,139,87,0.28)", speed: 0.0042, offset: 22, pulseStrength: 0.04 },
-      { x: 300, y: height - 300, baseR: 70, type: "ring", color: "rgba(46,139,87,0.25)", speed: 0.0038, offset: 23, pulseStrength: 0.05 },
-      { x: width / 2 + 100, y: height - 180, baseR: 30, type: "circle", color: "rgba(0,128,0,0.32)", speed: 0.0013, offset: 24, pulseStrength: 0.025 },
-    ];
-
+    // 🌿 Create moving green circles/rings
+    const elements = Array.from({ length: 25 }, (_, i) => ({
+      x: Math.random() * width,
+      y: Math.random() * height,
+      baseR: 25 + Math.random() * 50,
+      type: Math.random() > 0.5 ? "circle" : "ring",
+      color:
+        Math.random() > 0.5
+          ? "rgba(46,139,87,0.25)"
+          : "rgba(0,100,0,0.35)",
+      speed: 0.001 + Math.random() * 0.004,
+      offset: i * 2,
+      pulseStrength: 0.02 + Math.random() * 0.05,
+      dx: (Math.random() - 0.5) * 0.3,
+      dy: (Math.random() - 0.5) * 0.3,
+    }));
 
     const draw = () => {
-      ctx.clearRect(0, 0, width, height);
+      // 🌈 Gradient background
+      const gradient = ctx.createLinearGradient(0, 0, 0, height);
+      gradient.addColorStop(0, "#d4f8d4");
+      gradient.addColorStop(1, "#b7e3b7");
+      ctx.fillStyle = gradient;
+      ctx.fillRect(0, 0, width, height);
+
       elements.forEach((el) => {
+        el.x += el.dx;
+        el.y += el.dy;
+
+        if (el.x < -100) el.x = width + 100;
+        if (el.x > width + 100) el.x = -100;
+        if (el.y < -100) el.y = height + 100;
+        if (el.y > height + 100) el.y = -100;
+
         const pulse = Math.sin(Date.now() * el.speed + el.offset);
         const dynamicR = el.baseR * (1 + el.pulseStrength * pulse);
 
@@ -69,6 +65,7 @@ export default function EnquiryForm() {
           ctx.fill();
         }
       });
+
       requestAnimationFrame(draw);
     };
 
@@ -78,16 +75,17 @@ export default function EnquiryForm() {
   }, []);
 
   return (
-    <div className="flex justify-center items-center py-16 bg-white">
-      {/* Outer animated green box */}
-      <div className="relative bg-green-200 rounded-2xl shadow-2xl p-10 w-[95%] max-w-7xl overflow-hidden">
-        <canvas ref={canvasRef} className="absolute inset-0 w-full h-full z-0" />
+    <div className="relative w-full h-screen overflow-hidden m-0 p-0">
+      {/* 🌿 Fullscreen animated gradient background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full z-0"
+      />
 
-        {/* Inner smaller white box */}
-        <div className="relative z-10 bg-white rounded-xl shadow-xl p-6 md:p-8 w-[90%] mx-auto">
-          {/* Map + Form container */}
-          <div className="flex flex-col md:flex-row gap-4 md:gap-6">
-
+      {/* 🌼 Centered Enquiry Form */}
+      <div className="relative z-10 flex justify-center items-center h-full">
+        <div className="bg-white rounded-2xl shadow-2xl p-8 md:p-10 w-[90%] max-w-5xl backdrop-blur-sm bg-opacity-90">
+          <div className="flex flex-col md:flex-row gap-6">
             {/* Map */}
             <div className="w-full md:w-1/2 h-[250px] md:h-[350px] rounded-lg overflow-hidden shadow-md">
               <iframe
@@ -169,3 +167,4 @@ export default function EnquiryForm() {
     </div>
   );
 }
+    
