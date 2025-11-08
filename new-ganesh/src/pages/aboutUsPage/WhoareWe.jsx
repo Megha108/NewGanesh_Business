@@ -4,10 +4,10 @@ import React from "react";
 const WhoareWe = () => {
   const styles = {
     container: {
-      maxWidth: 500,
+      maxWidth: 1400,
       margin: "40px auto",
-      padding: "0 20px",
-      textAlign: "center", // Fixed typo: "centre" to "center"
+      padding: "0 0",
+      textAlign: "left", // Fixed typo: "centre" to "center"
     },
 
     title: {
@@ -22,7 +22,7 @@ const WhoareWe = () => {
       fontSize: 18,
       color: "#666666",
       lineHeight: 1.5,
-      textAlign: "center", // Center the description text
+      textAlign: "left", // Center the description text
       margin: 0, // Remove default margins
     },
   };

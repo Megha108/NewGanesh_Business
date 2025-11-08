@@ -72,7 +72,7 @@ const Landing = () => {
         {/* Hero Section */}
         <div className="relative w-full flex justify-start pl-10 md:pl-20">
           <div className="max-w-xl">
-            <h3 className="text-sm tracking-[0.25em] uppercase opacity-75 text-white">
+            <h3 className="text-sm tracking-[0.50em]  uppercase opacity-90 leading-relaxed text-white font-bold">
               SINCE 1990
             </h3>
 
