@@ -91,7 +91,7 @@ function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/gallery" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>
+              <Link to="/gallerypage" className="block py-2 hover:text-emerald-800" onClick={() => setOpen(false)}>
                 Gallery
               </Link>
             </li>
