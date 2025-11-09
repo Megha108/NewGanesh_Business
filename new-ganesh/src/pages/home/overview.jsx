@@ -65,7 +65,7 @@ const CompanyOverview = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.8 }}
-            className="max-w-xl md:text-left text-center"
+            className="max-3xl md:text-left text-center"
           >
             <h2 className="animatedTitle">Company Overview</h2>
 

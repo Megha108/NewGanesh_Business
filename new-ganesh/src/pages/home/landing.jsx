@@ -5,14 +5,14 @@ import BG3 from "../../assets/image/home/ganesh54.jpg";
 import BG4 from "../../assets/image/home/ganesh6.jpg";
 import BG5 from "../../assets/image/home/ganesh16.jpg";
 import BG6 from "../../assets/image/home/ganesh52.jpg";
-import BG7 from "../../assets/image/home/ganesh67.jpg";
+// import BG7 from "../../assets/image/home/ganesh67.jpg";
 import BG9 from "../../assets/image/home/ganesh84.jpg";
 import BG8 from "../../assets/image/home/grase.png";
 
 import "./Landing.css";
 
 const Landing = () => {
-  const webImages = [BG7, BG1, BG6, BG9,];
+  const webImages = [ BG1, BG6, BG9,];
   const mobileImages = [BG5, BG4, BG3, BG2];
 
   const getMobile = () => window.innerWidth < 900;
@@ -72,7 +72,7 @@ const Landing = () => {
         {/* Hero Section */}
         <div className="relative w-full flex justify-start pl-10 md:pl-20">
           <div className="max-w-xl">
-            <h3 className="text-sm tracking-[0.25em] uppercase opacity-75 text-white">
+            <h3 className="text-2xl tracking-[0.50em]  uppercase opacity-90 leading-relaxed text-white font-bold">
               SINCE 1990
             </h3>
 

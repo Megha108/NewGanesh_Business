@@ -86,7 +86,7 @@ const WhyUs = () => {
 
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 150 }}
+            whileInView={{ width: 350 }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="h-[3px] bg-black mt-4 mb-6"
           />
