@@ -1,7 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router-dom"; // ✅ added
 import GreenBackground from "./GreenBackground";
 
 export default function EnquiryForm() {
+  const location = useLocation();
+  const selectedProduct = location.state?.selectedProduct || ""; // ✅ get product name
+
   return (
     <div className="relative w-full min-h-screen flex justify-center items-center overflow-hidden">
       {/* 🌿 Global animated background */}
@@ -24,8 +28,7 @@ export default function EnquiryForm() {
               ></iframe>
             </div>
 
-            {/* Contact Details */}
-            <div className="p-4 md:p-5 mt-3  text-gray-700 text-sm md:text-base">
+            <div className="p-4 md:p-5 mt-3 text-gray-700 text-sm md:text-base">
               <h3 className="text-lg font-semibold text-green-700 mb-2">
                 📍 Address
               </h3>
@@ -127,6 +130,28 @@ export default function EnquiryForm() {
                   className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
                 />
+              </div>
+
+              {/* ✅ Auto-selected Product Dropdown */}
+              <div>
+                <label className="block text-gray-700 font-medium mb-1">
+                  Select Product
+                </label>
+                <select
+                  defaultValue={selectedProduct}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
+                  required
+                >
+                  <option value="">-- Select a Product --</option>
+                  <option>Ganesh Rajka Seeds</option>
+                  <option>Ganesh Rajka Teensali</option>
+                  <option>Ganesh Rajka Bamasi</option>
+                  <option>Ganesh Kasni</option>
+                  <option>Ganesh Rajka Bajra</option>
+                  <option>Barseem</option>
+                  <option>Ganesh Jaudo</option>
+                  <option>Oat Seeds</option>
+                </select>
               </div>
 
               <div>
