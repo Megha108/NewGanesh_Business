@@ -145,7 +145,7 @@ export default function EnquiryForm() {
                   <option value="">-- Select a Product --</option>
                   <option>Ganesh Rajka Seeds</option>
                   <option>Ganesh Rajka Teensali</option>
-                  <option>Ganesh Rajka Bamasi</option>
+                  <option>Ganesh Rajka Barmasi</option>
                   <option>Ganesh Kasni</option>
                   <option>Ganesh Rajka Bajra</option>
                   <option>Barseem</option>

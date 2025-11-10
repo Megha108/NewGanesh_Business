@@ -9,23 +9,23 @@ import img4 from "../../assets/image/aboutus/ganesh39.jpg"
 const items = [
   {
     img: img1,
-    title: "Premium Hybrid Seeds",
-    desc: "High-yield hybrid varieties with stronger germination & performance."
+    title: "Germination",
+    desc: "Seeds ensuring excellent germination rates for a strong start to your crops.",
   },
   {
     img: img2,
-    title: "Vegetable Crop Solutions",
-    desc: "Seeds bred for disease resistance, flavour & longer shelf-life."
+    title: "Strong Crop Growth",
+    desc: "Vigorous plant development with enhanced disease resistance and resilience.",
   },
   {
     img: img3,
-    title: "Oilseed & Grain Excellence",
-    desc: "Optimized traits for higher oil content & uniform harvesting."
+    title: "Higher Yields",
+    desc: "Superior Seed Quality for maximum productivity and efficiency.",
   },
   {
     img: img4,
-    title: "Future-Ready Seed Genetics",
-    desc: "Next-gen biotechnology aligned with modern farming needs."
+    title: "Farmer Trusted",
+    desc: "Preferred by farmers for consistent performance and dependable results.",
   },
 ]
 
@@ -46,7 +46,7 @@ export default function ImageHover() {
               flex-1 hover:flex-[4]
             "
             style={{ backgroundImage: `url(${item.img})` }}
-            onClick={() => setActive(isActive ? null : i)}  // tap mobile
+            onClick={() => setActive(isActive ? null : i)}  // tap for mobile
           >
             <div className="absolute inset-0 bg-black/30" />
 
