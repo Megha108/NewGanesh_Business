@@ -162,6 +162,7 @@ export default function Footer() {
         <ul className="space-y-3 text-black text-sm font-semibold">
           <li>
             📍{" "}
+            <p>Office</p>
             <a
               href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
               target="_blank"
@@ -169,6 +170,18 @@ export default function Footer() {
               className="transition-colors hover:text-[#FFD700]"
             >
               New Ganesh Seeds - 38, Market Yard Rd, Kadi, Gujarat 382715
+            </a>
+          </li>
+          <li>
+            📍{" "}
+            <p>Warehouse</p>
+            <a
+              href="https://maps.app.goo.gl/5nDv3t7NAxy4CbvD6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-[#FFD700]"
+            >
+              Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near Thol Road, Kadi, Gujarat 384440
             </a>
           </li>
           <li>
