@@ -23,14 +23,15 @@ const WhoareWe = () => {
       color: "#666666",
       lineHeight: 1.5,
       textAlign: "left", // Center the description text
-      margin: 0, // Remove default margins
+      marginLeft: "8vw",
+      marginRight: "8vw",
     },
   };
 
   return (
     <div style={styles.container}>
       <h2 style={styles.title}>Who Are We?</h2>
-      <p style={styles.text}>
+      <p style={styles.text} >
         <strong>NEW GANESH SEEDS</strong> is a leading name in the Indian seed
         industry, committed to empowering farmers through quality, innovation,
         and trust. Since our establishment, we have focused on producing
