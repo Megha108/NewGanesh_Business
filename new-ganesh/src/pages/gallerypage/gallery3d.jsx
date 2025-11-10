@@ -3,7 +3,7 @@ import "./gallery3D.css";
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
 
-// ✅ Import local images from src/assets/gallery/
+// ✅ Import local images
 import img1 from "../../assets/image/gallery/ganesh11.jpg";
 import img2 from "../../assets/image/gallery/ganesh12.jpg";
 import img3 from "../../assets/image/gallery/ganesh44.jpg";
@@ -16,14 +16,16 @@ export default function Gallery3D() {
   const [hoveredImage, setHoveredImage] = useState(null);
   const [visible, setVisible] = useState(false);
 
+  // 🟢 Open image on hover
   const handleMouseEnter = (src) => {
     setHoveredImage(src);
     setTimeout(() => setVisible(true), 50);
   };
 
-  const handleMouseLeave = () => {
-    setVisible(true);
-    setTimeout(() => setHoveredImage(null), 5000);
+  // 🔴 Remove the auto-close timer — now closes only on click
+  const handleClose = () => {
+    setVisible(false);
+    setTimeout(() => setHoveredImage(null), 300); // fade-out smoothly
   };
 
   return (
@@ -41,7 +43,6 @@ export default function Gallery3D() {
             <div
               key={index}
               onMouseEnter={() => handleMouseEnter(src)}
-              onMouseLeave={handleMouseLeave}
               className="gallery-item w-[160px] h-[110px] rounded-lg bg-center bg-cover shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
               style={{ backgroundImage: `url(${src})` }}
             ></div>
@@ -55,11 +56,13 @@ export default function Gallery3D() {
           className={`fullscreen fixed inset-0 flex items-center justify-center z-[1000] bg-black/90 transition-opacity duration-500 ${
             visible ? "opacity-100" : "opacity-0"
           }`}
+          onClick={handleClose} // 👈 click anywhere closes
         >
           <img
             src={hoveredImage}
             alt="Full view"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-700 scale-100"
+            onClick={(e) => e.stopPropagation()} // 👈 prevent closing when clicking on image
           />
         </div>
       )}
