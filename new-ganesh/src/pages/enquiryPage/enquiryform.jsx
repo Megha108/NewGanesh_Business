@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import GreenBackground from "./GreenBackground";
@@ -6,15 +6,36 @@ import GreenBackground from "./GreenBackground";
 export default function EnquiryForm() {
   const location = useLocation();
   const selectedProduct = location.state?.selectedProduct || "";
-
-  // UI state
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState({ ok: null, msg: "" });
+  const [dropdownOpen, setDropdownOpen] = useState(false);
+  const [selected, setSelected] = useState(selectedProduct);
+  const dropdownRef = useRef(null);
 
-  // EmailJS keys (env with fallbacks so it doesn't crash if unset)
-  const SERVICE_ID  = import.meta.env.VITE_EMAILJS_SERVICE_ID  || "service_xxx";
+  const products = [
+    "Ganesh Rajka Seeds",
+    "Ganesh Rajka Teensali",
+    "Ganesh Rajka Barmasi",
+    "Ganesh Kasni",
+    "Ganesh Rajka Bajra",
+    "Barseem",
+    "Ganesh Jaudo",
+    "Oat Seeds",
+  ];
+
+  const SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID || "service_xxx";
   const TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || "template_yyy";
-  const PUBLIC_KEY  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY  || "public_zzz";
+  const PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || "public_zzz";
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
   async function handleSubmit(e) {
     e.preventDefault();
@@ -23,30 +44,26 @@ export default function EnquiryForm() {
     const formEl = e.currentTarget;
     const form = new FormData(formEl);
 
-    // Honeypot check (bot trap)
     if ((form.get("website") || "").toString().trim().length > 0) {
       setStatus({ ok: true, msg: "Thanks! (spam filtered)" });
       formEl.reset();
       return;
     }
 
-    // Phone validation (exact 10 digits)
     const phone = (form.get("phone") || "").toString().replace(/\D/g, "");
     if (phone.length !== 10) {
       setStatus({ ok: false, msg: "Please enter a valid 10-digit mobile number." });
       return;
     }
 
-    // Build template params expected by your EmailJS template
     const templateParams = {
       from_name: form.get("name"),
       from_email: form.get("email"),
       phone: phone,
       city: form.get("city") || "",
-      product: form.get("product") || "",
+      product: selected || "",
       subject: "Website Enquiry",
       message: form.get("message"),
-      // you can add more fields if your template includes them
     };
 
     try {
@@ -54,6 +71,7 @@ export default function EnquiryForm() {
       await emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, { publicKey: PUBLIC_KEY });
       setStatus({ ok: true, msg: "Thanks! Your enquiry has been sent." });
       formEl.reset();
+      setSelected(""); // reset dropdown
     } catch (err) {
       console.error(err);
       setStatus({
@@ -67,10 +85,8 @@ export default function EnquiryForm() {
 
   return (
     <div className="relative w-full min-h-screen flex justify-center items-center overflow-hidden">
-      {/* 🌿 Global animated background */}
       <GreenBackground />
 
-      {/* 🌼 Enquiry Form */}
       <div className="relative z-10 bg-white rounded-2xl shadow-2xl p-8 md:p-10 w-[90%] max-w-5xl backdrop-blur-sm bg-opacity-90">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Map + Contact Details */}
@@ -126,7 +142,7 @@ export default function EnquiryForm() {
             </h2>
 
             <form className="space-y-3" onSubmit={handleSubmit}>
-              {/* Honeypot (bots will fill this) */}
+              {/* Honeypot */}
               <input
                 type="text"
                 name="website"
@@ -186,25 +202,38 @@ export default function EnquiryForm() {
                 />
               </div>
 
-              {/* Auto-selected Product Dropdown */}
-              <div>
-                <label className="block text-gray-700 font-medium mb-1">Select Product</label>
-                <select
-                  name="product"
-                  defaultValue={selectedProduct}
-                  className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-500"
-                  required
+              {/* ✅ Custom Scrollable Dropdown */}
+              <div className="relative" ref={dropdownRef}>
+                <label className="block text-gray-700 font-medium mb-1">
+                  Select Product
+                </label>
+                <button
+                  type="button"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                  className="w-full border border-gray-300 rounded-lg px-4 py-2 text-left flex justify-between items-center focus:outline-none focus:ring-2 focus:ring-green-500"
                 >
-                  <option value="">-- Select a Product --</option>
-                  <option>Ganesh Rajka Seeds</option>
-                  <option>Ganesh Rajka Teensali</option>
-                  <option>Ganesh Rajka Barmasi</option>
-                  <option>Ganesh Kasni</option>
-                  <option>Ganesh Rajka Bajra</option>
-                  <option>Barseem</option>
-                  <option>Ganesh Jaudo</option>
-                  <option>Oat Seeds</option>
-                </select>
+                  {selected || "Select Product"}
+                  <span className="ml-2">&#9662;</span>
+                </button>
+
+                {dropdownOpen && (
+                  <ul className="absolute z-20 mt-1 w-full bg-white border border-gray-300 rounded-lg max-h-[8rem] overflow-y-auto shadow-lg">
+                    {products.map((p, idx) => (
+                      <li
+                        key={idx}
+                        className={`px-4 py-2 cursor-pointer hover:bg-green-100 ${
+                          selected === p ? "bg-green-200 font-semibold" : ""
+                        }`}
+                        onClick={() => {
+                          setSelected(p);
+                          setDropdownOpen(false);
+                        }}
+                      >
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </div>
 
               <div>

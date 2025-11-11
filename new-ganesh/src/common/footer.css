@@ -7,9 +7,11 @@ canvas {
   0% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
+
   50% {
     background: linear-gradient(135deg, #0F3E12, #1B6E1B);
   }
+
   100% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
@@ -21,6 +23,67 @@ canvas {
   animation: darkGreenGradient 6s ease-in-out infinite;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
 
+:root {
+    --clr-1: #00c2ff;
+  --clr-2: #ff6d33;
+  --clr-3: #ffc640;
+  --clr-4: #e54cff;
+}
 
+/* ✨ Subtle Animated Dark Gradient Text */
+.quote-animation {
+  display: inline-block;
+  font-family: "Inter", "DM Sans", Arial, sans-serif;
+  font-size: clamp(2rem, 2.5vw, 1.75rem);
+  font-weight: 700;
+  text-align: left;
+  transform: translateX(-50%);
+margin-left: 14vw;
+  background: linear-gradient(
+    90deg,
+    var(--clr-1),
+    var(--clr-2),
+    var(--clr-3),
+    var(--clr-4),
+    var(--clr-1)
+  );
+  background-size: 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
 
+  animation: auroraText 6s ease-in-out infinite, fadeSlideUp 1.5s ease-in-out forwards;
+}
+
+/* 🌈 Smooth Gradient Shift */
+@keyframes auroraText {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ☁️ Soft Fade & Slide */
+@keyframes fadeSlideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 15px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+
+/* 🌾 Second line delay */
+.quote-animation.delay {
+  animation-delay: 0.8s;
+}

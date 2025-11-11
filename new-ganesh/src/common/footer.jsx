@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/image/common/Logo.webp";
+import logo from "../assets/image/common/Logo.png";
+import "./footer.css";
 
 export default function Footer() {
   const canvasRef = useRef(null);
@@ -11,7 +12,7 @@ export default function Footer() {
 
     const setCanvasSize = () => {
       canvas.width = window.innerWidth;
-      canvas.height = 480; // taller for mobile
+      canvas.height = 480;
     };
     setCanvasSize();
 
@@ -27,7 +28,6 @@ export default function Footer() {
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-
       const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
       gradient.addColorStop(0, "#b4ec51");
       gradient.addColorStop(1, "#429321");
@@ -106,110 +106,112 @@ export default function Footer() {
     </svg>
   );
 
-  return (<footer className="relative text-black font-bold overflow-hidden">
-    {/* 🌿 Canvas Background */}
-    <canvas
-      ref={canvasRef}
-      className="absolute inset-0 w-full h-full"
-      style={{ display: "block" }}
-    />
+  return (
+    <footer className="relative text-black font-bold overflow-hidden">
+      {/* 🌿 Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+        style={{ display: "block" }}
+      />
 
-    {/* 🌿 Footer Content */}
-    <div className="relative z-10 container mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-12">
-      {/* Left */}
-      <div className="space-y-4 text-center sm:text-left">
-        <img
-          src={logo}
-          alt="Company Logo"
-          className="h-14 sm:h-16 mx-auto sm:mx-0 object-contain"
-        />
-        <p className="text-black text-sm leading-relaxed font-semibold">
-          The seed company, NEW GANESH SEEDS is pioneer in seed business in
-          India, established in 1984. The company deals with quality seed
-          production and marketing.
-        </p>
-        <p className="text-black text-sm font-semibold">
-          Our motto is <strong>"MORE FOR ALL"</strong> — from farmers to farmers.
-        </p>
-        <div className="flex justify-center sm:justify-start space-x-4 mt-4 text-black transition-colors">
-          <Link to="/facebook" className="hover:text-[#FFD700]">
-            <IconWrap><IconFB /></IconWrap>
-          </Link>
-          <Link to="/youtube" className="hover:text-[#FFD700]">
-            <IconWrap><IconYT /></IconWrap>
-          </Link>
-          <Link to="/whatsapp" className="hover:text-[#FFD700]">
-            <IconWrap><IconWA /></IconWrap>
-          </Link>
+      {/* 🌿 Footer Content */}
+      <div className="relative z-10 container mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-12">
+
+        {/* ✅ Left Column (Updated Quote) */}
+        <div className="flex flex-col justify-between h-full text-left">
+          {/* Quote */}
+          <p className="text-center whitespace-nowrap">
+            <strong className="quote-animation">"For Every Seed, For Every Farmer</strong>
+            <br />
+            <strong className="quote-animation delay">— We Grow Together."</strong>
+          </p>
+
+
+          {/* Logo above Social Icons */}
+          <img
+            src={logo}
+            alt="Company Logo"
+            className="h-28 sm:h-32 md:h-36 mt-10 object-contain scale-[1.7]"
+          />
+
+
+          {/* Social Icons aligned fully left */}
+          <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25">
+            <Link to="/facebook" className="hover:text-[#FFD700]">
+              <IconWrap><IconFB /></IconWrap>
+            </Link>
+            <Link to="/youtube" className="hover:text-[#FFD700]">
+              <IconWrap><IconYT /></IconWrap>
+            </Link>
+            <Link to="/whatsapp" className="hover:text-[#FFD700]">
+              <IconWrap><IconWA /></IconWrap>
+            </Link>
+          </div>
+        </div>
+
+        {/* Middle Column */}
+        <div className="text-end sm:text-left ml-25 sm:pl-12 md:pl-20 lg:pl-28">
+          <ul className="space-y-4 text-black text-sm font-semibold">
+            <li><Link to="/" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Home</Link></li>
+            <li><Link to="/about" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">About</Link></li>
+            <li><Link to="/products" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Products</Link></li>
+            <li><Link to="/gallery" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Gallery</Link></li>
+            <li><Link to="/brochure" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">E-Brochure</Link></li>
+          </ul>
+        </div>
+
+        {/* Right Column */}
+        <div className="text-center sm:text-left">
+          <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Us</h3>
+          <ul className="space-y-3 text-black text-sm font-semibold">
+            <li>
+              📍 Office<br />
+              <a
+                href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#FFD700]"
+              >
+                New Ganesh Seeds - 38, Market Yard Rd, Kadi, Gujarat 382715
+              </a>
+            </li>
+            <li>
+              📍 Warehouse<br />
+              <a
+                href="https://maps.app.goo.gl/5nDv3t7NAxy4CbvD6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="transition-colors hover:text-[#FFD700]"
+              >
+                Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near Thol Road, Kadi, Gujarat 384440
+              </a>
+            </li>
+            <li>
+              📞 Contact<br />
+              <div className="flex flex-col items-center sm:items-start">
+                <a href="tel:+919825062048" className="transition-colors hover:text-[#FFD700]">+91 9825062048</a>
+                <a href="tel:+919925062048" className="transition-colors hover:text-[#FFD700]">+91 9925062048</a>
+                <a href="tel:+919978031353" className="transition-colors hover:text-[#FFD700]">+91 9978031353</a>
+              </div>
+            </li>
+            <li>
+              ✉️ Email<br />
+              <a
+                href="mailto:newganeshseeds38@gmail.com"
+                className="transition-colors hover:text-[#FFD700]"
+              >
+                newganeshseeds38@gmail.com
+              </a>
+            </li>
+          </ul>
         </div>
       </div>
 
-      {/* Middle */}
-      <div className="text-center sm:text-left">
-        <h3 className="text-lg sm:text-xl font-bold mb-4">About Us</h3>
-        <ul className="space-y-2 text-black text-sm font-semibold">
-          <li><Link to="/" className="transition-colors hover:text-[#FFD700]">Home</Link></li>
-          <li><Link to="/about" className="transition-colors hover:text-[#FFD700]">About</Link></li>
-          <li><Link to="/products" className="transition-colors hover:text-[#FFD700]">Products</Link></li>
-          <li><Link to="/gallery" className="transition-colors hover:text-[#FFD700]">Gallery</Link></li>
-          <li><Link to="/brochure" className="transition-colors hover:text-[#FFD700]">E-Brochure</Link></li>
-        </ul>
+      {/* Bottom Bar */}
+      <div className="border-t border-black/40 text-center text-xs sm:text-sm py-4 relative z-10 font-semibold bg-white/20 backdrop-blur-sm hover:text-[#FFD700] transition">
+        © 2025 New Ganesh Seeds | All Rights Reserved
       </div>
-
-      {/* Right */}
-      <div className="text-center sm:text-left">
-        <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Us</h3>
-        <ul className="space-y-3 text-black text-sm font-semibold">
-          <li>
-            📍{" "}
-            <p>Office</p>
-            <a
-              href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-[#FFD700]"
-            >
-              New Ganesh Seeds - 38, Market Yard Rd, Kadi, Gujarat 382715
-            </a>
-          </li>
-          <li>
-            📍{" "}
-            <p>Warehouse</p>
-            <a
-              href="https://maps.app.goo.gl/5nDv3t7NAxy4CbvD6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="transition-colors hover:text-[#FFD700]"
-            >
-              Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near Thol Road, Kadi, Gujarat 384440
-            </a>
-          </li>
-          <li>
-            📞{" "}
-            <div className="flex flex-col items-center sm:items-start">
-              <a href="tel:+919825062048" className="transition-colors hover:text-[#FFD700]">+91 9825062048</a>
-              <a href="tel:+919925062048" className="transition-colors hover:text-[#FFD700]">+91 9925062048</a>
-              <a href="tel:+919978031353" className="transition-colors hover:text-[#FFD700]">+91 9978031353</a>
-            </div>
-          </li>
-          <li>
-            ✉️{" "}
-            <a
-              href="mailto:newganeshseeds38@gmail.com"
-              className="transition-colors hover:text-[#FFD700]"
-            >
-              newganeshseeds38@gmail.com
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-
-    {/* Bottom */}
-    <div className="border-t border-black/40 text-center text-xs sm:text-sm py-4 relative z-10 font-semibold bg-white/20 backdrop-blur-sm transition-colors hover:text-[#FFD700]">
-      © 2025 New Ganesh Seeds | All Rights Reserved
-    </div>
-  </footer>
-
+    </footer>
   );
 }
