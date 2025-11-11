@@ -95,10 +95,10 @@ export default function Footer() {
   );
 
   const IconInsta = () => (
-    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-    </svg>
-  );
+  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+  </svg>
+);
 
 
   const IconWA = () => (
@@ -135,16 +135,16 @@ export default function Footer() {
   <img
     src={logo}
     alt="Company Logo"
-    className="h-28 sm:h-32 md:h-36 mt-10 object-contain scale-[1.7]"
+     className="h-28 sm:h-30 md:h-36 mt-10 object-contain scale-[1.3] mb-10"
   />
 
   {/* Social Icons */}
-  <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25">
+  <div className="flex justify-start space-x-4 text-black transition-colors text-lg  ml-25">
     <Link to="/facebook" className="hover:text-[#FFD700]">
       <IconWrap><IconFB /></IconWrap>
     </Link>
     <Link to="/youtube" className="hover:text-[#FFD700]">
-      <IconWrap><IconYT /></IconWrap>
+      <IconWrap><IconInsta /></IconWrap>
     </Link>
     <Link to="/whatsapp" className="hover:text-[#FFD700]">
       <IconWrap><IconWA /></IconWrap>
