@@ -12,10 +12,7 @@ import img5 from "../../assets/image/gallery/ganesh10.jpg";
 import img6 from "../../assets/image/gallery/ganesh14.jpg";
 
 export default function Gallery3D() {
-  const [activeImg, setActiveImg] = useState(null);
-
   const images = [img1, img2, img3, img4, img5, img6];
-
   const [hoveredImage, setHoveredImage] = useState(null);
   const [visible, setVisible] = useState(false);
 
@@ -32,43 +29,25 @@ export default function Gallery3D() {
   };
 
   return (
-    <div className="relative z-10 isolate font-bricolage">
+    <div className="relative z-10 isolate font-bricolage bg-white min-h-screen">
       <Navbar />
-      <div className="min-h-screen flex flex-col items-center overflow-x-hidden bg-white">
-        <h1 className="font-mono text-[1.3em] tracking-[1em] uppercase mt-16 mb-16 text-[#16561A]">
+
+      <div className="min-h-screen flex flex-col items-center overflow-x-hidden pt-24 pb-12">
+        <h1 className="font-mono text-[1.3em] tracking-[2em] uppercase mb-12">
           Gallery
         </h1>
 
-        {/* Image Grid */}
-        <div className="relative flex justify-center items-center flex-wrap gap-8 px-4 mb-16">
-          {images.map((src, i) => (
+        {/* Gallery grid */}
+        <div className="gallery-grid flex flex-wrap justify-center gap-6">
+          {images.map((src, index) => (
             <div
-              key={i}
-              onMouseEnter={() => {
-                handleMouseEnter(src);
-                setActiveImg(src);
-              }}
+              key={index}
+              onMouseEnter={() => handleMouseEnter(src)}
               className="gallery-item w-[160px] h-[110px] rounded-lg bg-center bg-cover shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
               style={{ backgroundImage: `url(${src})` }}
-            />
+            ></div>
           ))}
         </div>
-
-        {/* Fullscreen Image */}
-        {activeImg && (
-          <div
-            className="fixed inset-0 bg-black/90 flex justify-center items-center z-50"
-            onMouseLeave={() => setActiveImg(null)}
-          >
-            <img
-              src={activeImg}
-              alt="Full view"
-              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg object-contain"
-            />
-          </div>
-        )}
-
-        <Footer />
       </div>
 
       {/* Fullscreen view */}
