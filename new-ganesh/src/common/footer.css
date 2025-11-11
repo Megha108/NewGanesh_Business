@@ -7,11 +7,9 @@ canvas {
   0% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
-
   50% {
     background: linear-gradient(135deg, #0F3E12, #1B6E1B);
   }
-
   100% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
@@ -23,67 +21,136 @@ canvas {
   animation: darkGreenGradient 6s ease-in-out infinite;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400');
 
-/* 🌾 Quote Animation — Bold → Normal with Border Draw */
-.quote-animation {
-  position: relative;
-  display: inline-block;
-  font-family: "Inter", "DM Sans", Arial, sans-serif;
+/* 🌾 Animated Quote Section */
+.quote-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000000;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
   font-size: clamp(1.5rem, 2.5vw, 2rem);
-  color: #222;
+  text-align: center;
+  padding: 1rem 0;
+  margin-bottom: 1rem;
+}
+
+.quote-text {
+  margin-right: 0.5rem;
+  font-weight: 600;
+}
+
+.dropping-texts {
+  display: inline-block;
+  width: 180px;
   text-align: left;
-  margin-left: 14vw;
-  transform: translateX(-50%);
-  font-weight: 700;
-  /* bold by default */
-  transition: font-weight 0.2s ease-in-out;
-  animation: fadeSlideUp 1.5s ease-in-out forwards;
-  padding: 8px 16px;
-  /* add space for border */
+  height: 36px;
+  vertical-align: -2px;
+  position: relative;
 }
 
-/* 🪶 On hover — font goes normal */
-.quote-animation:hover {
-  font-weight: 400;
-}
-
-/* ✨ Border draw effect */
-.quote-animation::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 2px solid #222;
-  border-radius: 6px;
+.dropping-texts > div {
+  font-size: 0px;
   opacity: 0;
-  transform: scale(0.95);
-  transition: opacity 0.2s ease, transform 0.2s ease, clip-path 0.8s ease-in-out;
-  clip-path: inset(50% 50% 50% 50%);
-  /* invisible center */
+  margin-left: -30px;
+  position: absolute;
+  font-weight: 800;
+  box-shadow: 0px 60px 25px -20px rgba(235, 230, 230, 0);
 }
 
-/* 🖋️ On hover — draw the border */
-.quote-animation:hover::before {
-  opacity: 1;
-  transform: scale(1);
-  clip-path: inset(0% 0% 0% 0%);
-  /* full visible */
+/* ⏱ Each line timing */
+.dropping-texts > div:nth-child(1) {
+  animation: roll 5s linear infinite 0s;
+}
+.dropping-texts > div:nth-child(2) {
+  animation: roll 5s linear infinite 1s;
+}
+.dropping-texts > div:nth-child(3) {
+  animation: roll 5s linear infinite 2s;
+}
+.dropping-texts > div:nth-child(4) {
+  animation: roll2 5s linear infinite 3s;
 }
 
-/* ☁️ Fade & Slide Entrance */
-@keyframes fadeSlideUp {
-  from {
+/* 🎞 Same original animation */
+@keyframes roll {
+  0% {
+    font-size: 0px;
     opacity: 0;
-    transform: translate(-50%, 15px);
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(-25deg);
   }
-
-  to {
+  3% {
     opacity: 1;
-    transform: translate(-50%, 0);
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  20% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    transform: rotate(0deg);
+  }
+  27% {
+    font-size: 0px;
+    opacity: 0.5;
+    margin-left: 20px;
+    margin-top: 100px;
+  }
+  100% {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(15deg);
   }
 }
 
-/* ⏳ Delay for second line */
-.quote-animation.delay {
-  animation-delay: 0.8s;
+@keyframes roll2 {
+  0% {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(-25deg);
+  }
+  3% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+  5% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+  }
+  30% {
+    font-size: inherit;
+    opacity: 1;
+    margin-left: 0px;
+    margin-top: 0px;
+    transform: rotate(0deg);
+  }
+  37% {
+    font-size: 1500px;
+    opacity: 0;
+    margin-left: -1000px;
+    margin-top: -800px;
+  }
+  100% {
+    font-size: 0px;
+    opacity: 0;
+    margin-left: -30px;
+    margin-top: 0px;
+    transform: rotate(15deg);
+  }
 }

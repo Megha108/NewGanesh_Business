@@ -108,48 +108,49 @@ export default function Footer() {
 
   return (
     <footer className="relative text-black font-bold overflow-hidden">
-      {/* 🌿 Canvas Background */}
-      <canvas
-        ref={canvasRef}
-        className="absolute inset-0 w-full h-full"
-        style={{ display: "block" }}
-      />
-      
+{/* 🌿 Canvas Background */}
+<canvas
+  ref={canvasRef}
+  className="absolute inset-0 w-full h-full"
+  style={{ display: "block" }}
+/>
 
-      {/* 🌿 Footer Content */}
-      <div className="relative z-10 container mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-12">
+{/* Main Content Container */}
+<div className="relative z-20 grid grid-cols-1 sm:grid-cols-3 gap-7 p-8 sm:p-12 whitespace-nowrap font-bold">
+  {/* ✅ Left Column (Updated Quote) */}
+  <div className="flex flex-col justify-between h-full text-left">
+  {/* Animated Quote */}
+  <div className="quote-wrapper">
+    <span className="quote-text">Seeds for</span>
+    <div className="dropping-texts">
+      <div>Quality</div>
+      <div>Trust</div>
+      <div>Success</div>
+      <div>Everyone!</div>
+    </div>
+  </div>
 
-        {/* ✅ Left Column (Updated Quote) */}
-        <div className="flex flex-col justify-between h-full text-left">
-          {/* Quote */}
-          <p className="text-center whitespace-nowrap">
-            <strong className="quote-animation">"For Every Seed, For Every Farmer
-            <br />
-            — We Grow Together."</strong>
-          </p>
+  {/* Logo */}
+  <img
+    src={logo}
+    alt="Company Logo"
+    className="h-28 sm:h-32 md:h-36 mt-10 object-contain scale-[1.7]"
+  />
 
+  {/* Social Icons */}
+  <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25">
+    <Link to="/facebook" className="hover:text-[#FFD700]">
+      <IconWrap><IconFB /></IconWrap>
+    </Link>
+    <Link to="/youtube" className="hover:text-[#FFD700]">
+      <IconWrap><IconYT /></IconWrap>
+    </Link>
+    <Link to="/whatsapp" className="hover:text-[#FFD700]">
+      <IconWrap><IconWA /></IconWrap>
+    </Link>
+  </div>
+</div>
 
-          {/* Logo above Social Icons */}
-          <img
-            src={logo}
-            alt="Company Logo"
-            className="h-28 sm:h-32 md:h-36 mt-10 object-contain scale-[1.7]"
-          />
-
-
-          {/* Social Icons aligned fully left */}
-          <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25">
-            <Link to="/facebook" className="hover:text-[#FFD700]">
-              <IconWrap><IconFB /></IconWrap>
-            </Link>
-            <Link to="/youtube" className="hover:text-[#FFD700]">
-              <IconWrap><IconYT /></IconWrap>
-            </Link>
-            <Link to="/whatsapp" className="hover:text-[#FFD700]">
-              <IconWrap><IconWA /></IconWrap>
-            </Link>
-          </div>
-        </div>
 
         {/* Middle Column */}
         <div className="text-end sm:text-left ml-25 sm:pl-12 md:pl-20 lg:pl-28">
@@ -161,7 +162,6 @@ export default function Footer() {
             <li><Link to="/brochure" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">E-Brochure</Link></li>
           </ul>
         </div>
-
         {/* Right Column */}
         <div className="text-center sm:text-left">
           <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Us</h3>
