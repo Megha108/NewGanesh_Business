@@ -23,67 +23,67 @@ canvas {
   animation: darkGreenGradient 6s ease-in-out infinite;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
 
-:root {
-    --clr-1: #00c2ff;
-  --clr-2: #ff6d33;
-  --clr-3: #ffc640;
-  --clr-4: #e54cff;
-}
-
-/* ✨ Subtle Animated Dark Gradient Text */
+/* 🌾 Quote Animation — Bold → Normal with Border Draw */
 .quote-animation {
+  position: relative;
   display: inline-block;
   font-family: "Inter", "DM Sans", Arial, sans-serif;
-  font-size: clamp(2rem, 2.5vw, 1.75rem);
-  font-weight: 700;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: #222;
   text-align: left;
+  margin-left: 14vw;
   transform: translateX(-50%);
-margin-left: 14vw;
-  background: linear-gradient(
-    90deg,
-    var(--clr-1),
-    var(--clr-2),
-    var(--clr-3),
-    var(--clr-4),
-    var(--clr-1)
-  );
-  background-size: 400%;
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
-  -webkit-text-fill-color: transparent;
-
-  animation: auroraText 6s ease-in-out infinite, fadeSlideUp 1.5s ease-in-out forwards;
+  font-weight: 700;
+  /* bold by default */
+  transition: font-weight 0.2s ease-in-out;
+  animation: fadeSlideUp 1.5s ease-in-out forwards;
+  padding: 8px 16px;
+  /* add space for border */
 }
 
-/* 🌈 Smooth Gradient Shift */
-@keyframes auroraText {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+/* 🪶 On hover — font goes normal */
+.quote-animation:hover {
+  font-weight: 400;
 }
 
-/* ☁️ Soft Fade & Slide */
+/* ✨ Border draw effect */
+.quote-animation::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 2px solid #222;
+  border-radius: 6px;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.2s ease, transform 0.2s ease, clip-path 0.8s ease-in-out;
+  clip-path: inset(50% 50% 50% 50%);
+  /* invisible center */
+}
+
+/* 🖋️ On hover — draw the border */
+.quote-animation:hover::before {
+  opacity: 1;
+  transform: scale(1);
+  clip-path: inset(0% 0% 0% 0%);
+  /* full visible */
+}
+
+/* ☁️ Fade & Slide Entrance */
 @keyframes fadeSlideUp {
   from {
     opacity: 0;
     transform: translate(-50%, 15px);
   }
+
   to {
     opacity: 1;
     transform: translate(-50%, 0);
   }
 }
 
-/* 🌾 Second line delay */
+/* ⏳ Delay for second line */
 .quote-animation.delay {
   animation-delay: 0.8s;
 }

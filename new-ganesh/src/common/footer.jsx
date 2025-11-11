@@ -122,9 +122,9 @@ export default function Footer() {
         <div className="flex flex-col justify-between h-full text-left">
           {/* Quote */}
           <p className="text-center whitespace-nowrap">
-            <strong className="quote-animation">"For Every Seed, For Every Farmer</strong>
+            <strong className="quote-animation">"For Every Seed, For Every Farmer
             <br />
-            <strong className="quote-animation delay">— We Grow Together."</strong>
+            — We Grow Together."</strong>
           </p>
 
 
