@@ -12,7 +12,11 @@ import img5 from "../../assets/image/gallery/ganesh10.jpg";
 import img6 from "../../assets/image/gallery/ganesh14.jpg";
 
 export default function Gallery3D() {
+  const [activeImg, setActiveImg] = useState(null);
+
   const images = [img1, img2, img3, img4, img5, img6];
+<<<<<<< HEAD
+=======
   const [hoveredImage, setHoveredImage] = useState(null);
   const [visible, setVisible] = useState(false);
 
@@ -27,28 +31,52 @@ export default function Gallery3D() {
     setVisible(false);
     setTimeout(() => setHoveredImage(null), 300); // fade-out smoothly
   };
+>>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
 
   return (
-    <div className="relative z-10 isolate font-bricolage bg-white min-h-screen">
+    <div className="relative z-10 isolate font-bricolage">
       <Navbar />
-
-      <div className="min-h-screen flex flex-col items-center overflow-x-hidden pt-24 pb-12">
-        <h1 className="font-mono text-[1.3em] tracking-[2em] uppercase mb-12">
+      <div className="min-h-screen flex flex-col items-center overflow-x-hidden bg-white">
+        <h1 className="font-mono text-[1.3em] tracking-[1em] uppercase mt-16 mb-16 text-[#16561A]">
           Gallery
         </h1>
 
-        {/* Gallery grid */}
-        <div className="gallery-grid flex flex-wrap justify-center gap-6">
-          {images.map((src, index) => (
+        {/* Image Grid */}
+        <div className="relative flex justify-center items-center flex-wrap gap-8 px-4 mb-16">
+          {images.map((src, i) => (
             <div
+<<<<<<< HEAD
+              key={i}
+              className="w-[200px] h-[150px] bg-center bg-cover rounded-lg shadow-md cursor-pointer transition-transform duration-300 hover:scale-105"
+=======
               key={index}
               onMouseEnter={() => handleMouseEnter(src)}
               className="gallery-item w-[160px] h-[110px] rounded-lg bg-center bg-cover shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
+>>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
               style={{ backgroundImage: `url(${src})` }}
-            ></div>
+              onMouseEnter={() => setActiveImg(src)}
+            />
           ))}
         </div>
+
+        {/* Fullscreen Image */}
+        {activeImg && (
+          <div
+            className="fixed inset-0 bg-black/90 flex justify-center items-center z-50"
+            onMouseLeave={() => setActiveImg(null)}
+          >
+            <img
+              src={activeImg}
+              alt="Full view"
+              className="max-w-[90%] max-h-[90%] rounded-lg shadow-lg object-contain"
+            />
+          </div>
+        )}
+
+        <Footer />
       </div>
+<<<<<<< HEAD
+=======
 
       {/* Fullscreen view */}
       {hoveredImage && (
@@ -68,6 +96,7 @@ export default function Gallery3D() {
       )}
 
       <Footer />
+>>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
     </div>
   );
 }
