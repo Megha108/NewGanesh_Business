@@ -59,7 +59,16 @@ canvas {
   font-weight: 800;
   box-shadow: 0px 60px 25px -20px rgba(235, 230, 230, 0);
 }
-
+.dropping-texts > div {
+  font-size: 0px;
+  opacity: 0;
+  margin-left: -30px;
+  position: absolute;
+  font-weight:7800;
+  background: linear-gradient(90deg, #ffee00, #ffee00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 /* ⏱ Each line timing */
 .dropping-texts > div:nth-child(1) {
   animation: roll 5s linear infinite 0s;
