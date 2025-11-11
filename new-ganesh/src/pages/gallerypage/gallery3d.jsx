@@ -15,8 +15,7 @@ export default function Gallery3D() {
   const [activeImg, setActiveImg] = useState(null);
 
   const images = [img1, img2, img3, img4, img5, img6];
-<<<<<<< HEAD
-=======
+
   const [hoveredImage, setHoveredImage] = useState(null);
   const [visible, setVisible] = useState(false);
 
@@ -31,7 +30,6 @@ export default function Gallery3D() {
     setVisible(false);
     setTimeout(() => setHoveredImage(null), 300); // fade-out smoothly
   };
->>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
 
   return (
     <div className="relative z-10 isolate font-bricolage">
@@ -45,16 +43,13 @@ export default function Gallery3D() {
         <div className="relative flex justify-center items-center flex-wrap gap-8 px-4 mb-16">
           {images.map((src, i) => (
             <div
-<<<<<<< HEAD
               key={i}
-              className="w-[200px] h-[150px] bg-center bg-cover rounded-lg shadow-md cursor-pointer transition-transform duration-300 hover:scale-105"
-=======
-              key={index}
-              onMouseEnter={() => handleMouseEnter(src)}
+              onMouseEnter={() => {
+                handleMouseEnter(src);
+                setActiveImg(src);
+              }}
               className="gallery-item w-[160px] h-[110px] rounded-lg bg-center bg-cover shadow-md cursor-pointer hover:scale-105 transition-transform duration-300"
->>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
               style={{ backgroundImage: `url(${src})` }}
-              onMouseEnter={() => setActiveImg(src)}
             />
           ))}
         </div>
@@ -75,8 +70,6 @@ export default function Gallery3D() {
 
         <Footer />
       </div>
-<<<<<<< HEAD
-=======
 
       {/* Fullscreen view */}
       {hoveredImage && (
@@ -96,7 +89,6 @@ export default function Gallery3D() {
       )}
 
       <Footer />
->>>>>>> 0768a6570443d4868a18feefdf7f1d60b89e1796
     </div>
   );
 }
