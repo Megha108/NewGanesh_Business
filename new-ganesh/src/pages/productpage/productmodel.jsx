@@ -1,4 +1,10 @@
-import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 
 const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
@@ -69,9 +75,10 @@ const ProductModal = ({ product, onClose }) => {
 
   // --------- SLIDER LOGIC ----------
   const images = useMemo(() => {
-    const arr = Array.isArray(product.images) && product.images.length
-      ? product.images
-      : [product.image];
+    const arr =
+      Array.isArray(product.images) && product.images.length
+        ? product.images
+        : [product.image];
     // de-dup in case first item is same as thumbnail
     return Array.from(new Set(arr));
   }, [product]);
@@ -86,7 +93,10 @@ const ProductModal = ({ product, onClose }) => {
   // autoplay
   useEffect(() => {
     if (paused || images.length <= 1) return;
-    const id = setInterval(() => setIndex((i) => (i + 1) % images.length), 3500);
+    const id = setInterval(
+      () => setIndex((i) => (i + 1) % images.length),
+      3500
+    );
     return () => clearInterval(id);
   }, [paused, images.length]);
 
@@ -117,7 +127,7 @@ const ProductModal = ({ product, onClose }) => {
       <div className="relative w-full max-w-5xl rounded-2xl bg-white shadow-lg">
         <button
           onClick={handleCloseClick}
-          className="absolute right-3 top-3 text-xl text-gray-500 transition hover:text-black"
+          className="absolute right-2 top-3 text-xl text-gray-500 transition hover:text-black"
           aria-label="Close"
         >
           ✕
@@ -173,7 +183,9 @@ const ProductModal = ({ product, onClose }) => {
                         aria-label={`Go to image ${i + 1}`}
                         onClick={() => setIndex(i)}
                         className={`h-2.5 w-2.5 rounded-full transition ${
-                          i === index ? "bg-green-700 scale-110" : "bg-gray-300 hover:bg-gray-400"
+                          i === index
+                            ? "bg-green-700 scale-110"
+                            : "bg-gray-300 hover:bg-gray-400"
                         }`}
                       />
                     ))}
@@ -195,18 +207,38 @@ const ProductModal = ({ product, onClose }) => {
 
             {/* RIGHT: Details */}
             <div>
-              <h3 className="text-lg font-semibold text-gray-900 mb-4">
+              <h2 className="text-2xl font-semibold text-[#16561A] mb-4">
                 Product Details
-              </h3>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3">
-                {product.details?.map(([k, v], i) => (
-                  <div key={i}>
-                    <p className="text-sm font-semibold uppercase tracking-wide text-green-800">
-                      {k}
-                    </p>
-                    <p className="text-sm text-gray-700 mt-1">{v}</p>
-                  </div>
-                ))}
+              </h2>
+
+              {/* 🟩 Outer wrapper adds spacing from all 4 sides */}
+              <div className="p-2 sm:p-4 md:p-6 overflow-y-auto max-h-[70vh]">
+                <div className="grid grid-cols-1 sm:grid-cols-2 border border-[#16561A] rounded-lg overflow-hidden">
+                  {product.details.map(([label, value], index) => {
+                    const colIndex = index % 2; // 0 = left col, 1 = right col
+                    const rowIndex = Math.floor(index / 2); // pair index
+
+                    const isHighlighted =
+                      (colIndex === 0 && rowIndex % 2 === 0) ||
+                      (colIndex === 1 && rowIndex % 2 === 1);
+
+                    return (
+                      <div
+                        key={index}
+                        className={`p-4 border-b border-[#16561A] sm:border-b-0 sm:border-r ${
+                          (index + 1) % 2 === 0 ? "sm:border-r-0" : ""
+                        } ${isHighlighted ? "bg-green-50" : "bg-white"}`}
+                      >
+                        <h3 className="text-[#16561A] font-semibold uppercase text-sm tracking-wide mb-1">
+                          {label}
+                        </h3>
+                        <p className="text-gray-800 text-sm leading-snug">
+                          {value}
+                        </p>
+                      </div>
+                    );
+                  })}
+                </div>
               </div>
             </div>
           </div>
