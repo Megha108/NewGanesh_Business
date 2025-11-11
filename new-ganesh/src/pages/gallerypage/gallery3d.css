@@ -17,7 +17,6 @@
   transform: scale(1.05);
 }
 
-/* prevent white flash by keeping background black during fade */
 .fullscreen {
   background-color: rgba(0, 0, 0, 0.9);
   will-change: opacity, transform;

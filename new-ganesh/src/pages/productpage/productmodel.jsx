@@ -1,16 +1,14 @@
-import React, {
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+
+
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom"; // ✅ added
 
 const ProductModal = ({ product, onClose }) => {
   if (!product) return null;
 
   const prevRef = useRef(null);
   const lockedRef = useRef(false);
+  const navigate = useNavigate(); // ✅ added
 
   // --- scroll lock ---
   const lock = () => {
@@ -79,7 +77,7 @@ const ProductModal = ({ product, onClose }) => {
       Array.isArray(product.images) && product.images.length
         ? product.images
         : [product.image];
-    // de-dup in case first item is same as thumbnail
+
     return Array.from(new Set(arr));
   }, [product]);
 
@@ -90,7 +88,6 @@ const ProductModal = ({ product, onClose }) => {
     setIndex((i) => (i + dir + images.length) % images.length);
   };
 
-  // autoplay
   useEffect(() => {
     if (paused || images.length <= 1) return;
     const id = setInterval(
@@ -100,7 +97,6 @@ const ProductModal = ({ product, onClose }) => {
     return () => clearInterval(id);
   }, [paused, images.length]);
 
-  // keyboard support
   useEffect(() => {
     const onKey = (e) => {
       if (e.key === "ArrowLeft") go(-1);
@@ -118,7 +114,6 @@ const ProductModal = ({ product, onClose }) => {
       role="dialog"
       aria-modal="true"
     >
-      {/* Hide scrollbar but still allow scrolling */}
       <style>{`
         .no-scrollbar::-webkit-scrollbar { display: none; }
         .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
@@ -135,15 +130,12 @@ const ProductModal = ({ product, onClose }) => {
 
         <div className="max-h-[85vh] overflow-y-auto no-scrollbar">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 p-6 items-center">
-            {/* LEFT: Slider + Title + CTA */}
             <div className="flex flex-col items-center text-center">
-              {/* Slider */}
               <div
                 className="relative w-full max-w-sm md:max-w-md aspect-square rounded-xl bg-white"
                 onMouseEnter={() => setPaused(true)}
                 onMouseLeave={() => setPaused(false)}
               >
-                {/* Slide image */}
                 <img
                   key={images[index]}
                   src={images[index]}
@@ -151,7 +143,6 @@ const ProductModal = ({ product, onClose }) => {
                   className="absolute inset-0 h-full w-full object-contain p-6 transition-opacity duration-300"
                 />
 
-                {/* Prev */}
                 {images.length > 1 && (
                   <>
                     <button
@@ -162,7 +153,6 @@ const ProductModal = ({ product, onClose }) => {
                     >
                       ‹
                     </button>
-                    {/* Next */}
                     <button
                       type="button"
                       onClick={() => go(1)}
@@ -174,7 +164,6 @@ const ProductModal = ({ product, onClose }) => {
                   </>
                 )}
 
-                {/* Dots */}
                 {images.length > 1 && (
                   <div className="absolute bottom-2 left-0 right-0 flex items-center justify-center gap-2">
                     {images.map((_, i) => (
@@ -193,19 +182,25 @@ const ProductModal = ({ product, onClose }) => {
                 )}
               </div>
 
-              {/* Title / Desc / CTA */}
               <h2 className="mt-4 text-xl sm:text-2xl font-bold text-green-700">
                 {product.name}
               </h2>
               <p className="text-gray-600 mt-2 text-sm sm:text-base px-2">
                 {product.description}
               </p>
-              <button className="mt-5 bg-[#16561A] text-white px-6 py-2 rounded-lg hover:bg-[#228B22] transition">
-                Buy Now
+
+              {/* ✅ Enquire Now with product info */}
+              <button
+                onClick={() => {
+                  handleCloseClick();
+                  navigate("/enquire", { state: { selectedProduct: product.name } });
+                }}
+                className="mt-5 bg-[#16561A] text-white px-6 py-2 rounded-lg hover:bg-[#228B22] transition"
+              >
+                Enquire Now
               </button>
             </div>
 
-            {/* RIGHT: Details */}
             <div>
               <h2 className="text-2xl font-semibold text-[#16561A] mb-4">
                 Product Details

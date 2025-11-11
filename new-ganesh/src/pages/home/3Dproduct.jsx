@@ -173,10 +173,10 @@ export default function ThreeDProducts() {
 
           <div className="flex-1 p-10">
             <div className="inline-block px-6 py-2 rounded-lg bg-white shadow-md">
-              <h3 className="text-2xl font-semibold text-black -mt-10">Kansi Seed</h3>
+              <h3 className="text-2xl font-semibold text-black -mt-10">Kasni Seed</h3>
             </div>
             <p className="text-md text-gray-700 leading-relaxed py-6">
-              Kansi Seeds are widely recognized for their adaptability,
+              Kasni Seeds are widely recognized for their adaptability,
               resilience, and rich green fodder output. Perfect for mixed
               farming systems, they are known to enhance soil fertility while
               offering excellent digestibility for livestock. The crop grows
@@ -184,7 +184,7 @@ export default function ThreeDProducts() {
               fodder supply year-round.
             </p>
             <p className="text-md text-gray-700 leading-relaxed">
-              Cultivated with precision and care, each lot of Kansi Seeds from
+              Cultivated with precision and care, each lot of Kasni Seeds from
               <strong> NEW GANESH SEEDS </strong> undergoes strict quality
               control for purity, germination rate, and vitality. Their quick
               regrowth cycle makes them an economical and sustainable fodder
