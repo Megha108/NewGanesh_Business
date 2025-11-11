@@ -94,11 +94,12 @@ export default function Footer() {
     </svg>
   );
 
-  const IconYT = () => (
+  const IconInsta = () => (
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-      <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.7 3.5 12 3.5 12 3.5s-7.7 0-9.4.6A3 3 0 0 0 .5 6.2C0 7.9 0 12 0 12s0 4.1.5 5.8a3 3 0 0 0 2.1 2.1c1.7.6 9.4.6 9.4.6s7.7 0 9.4-.6a3 3 0 0 0 2.1-2.1C24 16.1 24 12 24 12s0-4.1-.5-5.8zM9.6 15.5V8.5L15.9 12l-6.3 3.5z" />
+      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
     </svg>
   );
+
 
   const IconWA = () => (
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
@@ -114,7 +115,7 @@ export default function Footer() {
         className="absolute inset-0 w-full h-full"
         style={{ display: "block" }}
       />
-      
+
 
       {/* 🌿 Footer Content */}
       <div className="relative z-10 container mx-auto px-6 sm:px-10 lg:px-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-12">
@@ -124,8 +125,8 @@ export default function Footer() {
           {/* Quote */}
           <p className="text-center whitespace-nowrap">
             <strong className="quote-animation">"For Every Seed, For Every Farmer
-            <br />
-            — We Grow Together."</strong>
+              <br />
+              — We Grow Together."</strong>
           </p>
 
 
@@ -133,17 +134,17 @@ export default function Footer() {
           <img
             src={logo}
             alt="Company Logo"
-            className="h-28 sm:h-32 md:h-36 mt-10 object-contain scale-[1.7]"
+            className="h-28 sm:h-30 md:h-36 mt-10 object-contain scale-[1.3] mb-10"
           />
 
 
           {/* Social Icons aligned fully left */}
-          <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25">
+          <div className="flex justify-start space-x-4 text-black transition-colors text-lg -mt-5 ml-25 -mb-10">
             <Link to="/facebook" className="hover:text-[#FFD700]">
               <IconWrap><IconFB /></IconWrap>
             </Link>
             <Link to="/youtube" className="hover:text-[#FFD700]">
-              <IconWrap><IconYT /></IconWrap>
+              <IconWrap><IconInsta /></IconWrap>
             </Link>
             <Link to="/whatsapp" className="hover:text-[#FFD700]">
               <IconWrap><IconWA /></IconWrap>
@@ -152,7 +153,7 @@ export default function Footer() {
         </div>
 
         {/* Middle Column */}
-        <div className="text-end sm:text-left ml-25 sm:pl-12 md:pl-20 lg:pl-28">
+        <div className="text-center sm:text-left ml- sm:pl-12 md:pl-20 lg:pl-28">
           <ul className="space-y-4 text-black text-sm font-semibold">
             <li><Link to="/" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Home</Link></li>
             <li><Link to="/about" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">About</Link></li>
