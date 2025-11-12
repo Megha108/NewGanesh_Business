@@ -5,8 +5,8 @@ import ownerImg3 from "../../assets/image/ownerPhoto/Picsart_25-11-11_19-58-32-7
 
 export default function OwnerPhoto() {
   return (
-    <div className="space-y-[0.2px]"> {/* ⬅️ 99% reduced spacing */}
-
+    <div className="space-y-[0.2px] mx-6 sm:mx-0"> {/* ⬅️ Increased mobile margin by 50% */}
+      
       {/* 🔹 Section 1 - Left Image, Right Text */}
       <section className="flex flex-col sm:flex-row items-center justify-start sm:justify-start sm:gap-[1px] p-[1px] sm:p-[1px] sm:pl-[5%]">
         <div className="w-[260px] h-[250px] overflow-hidden rounded-md">
@@ -41,7 +41,7 @@ export default function OwnerPhoto() {
           />
         </div>
 
-        <div className="max-w-xl text-left sm:text-left"> {/* ⬅️ Aligned text to right */}
+        <div className="max-w-xl text-left sm:text-left">
           <div className="text-4xl sm:text-5xl font-serif text-black mb-[0.5px] sm:mb-[1px]">“</div>
           <p className="text-gray-800 text-lg sm:text-xl font-medium leading-tight">
             His creative insight helped transform our vision into a beautiful, usable product.
@@ -49,8 +49,8 @@ export default function OwnerPhoto() {
           </p>
 
           <div className="mt-[0.5px] sm:mt-[1px]">
-            <h3 className="text-lg font-semibold text-black text-right sm:text-right">Sarah Mitchell</h3>
-            <p className="text-gray-600 text-sm text-right sm:text-right">Product Manager, Bloom Labs</p>
+            <h3 className="text-lg font-semibold text-left sm:text-right">Sarah Mitchell</h3>
+            <p className="text-gray-600 text-sm text-left sm:text-right">Product Manager, Bloom Labs</p>
           </div>
         </div>
       </section>
