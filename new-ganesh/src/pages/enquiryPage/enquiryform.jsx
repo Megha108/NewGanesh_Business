@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import emailjs from "@emailjs/browser";
 import GreenBackground from "./GreenBackground";
+import SentEmailAnimation from "../../assets/SendEmailAnimation.mp4";
 
 export default function EnquiryForm() {
   const location = useLocation();
@@ -87,10 +88,10 @@ export default function EnquiryForm() {
     <div className="relative w-full min-h-screen flex justify-center items-center overflow-hidden">
       <GreenBackground />
 
-      <div className="relative z-10 bg-white rounded-2xl  p-8 md:p-10 w-[90%] max-w-5xl backdrop-blur-sm bg-opacity-90">
+      <div className="relative z-10 bg-white rounded-2xl p-8 md:p-10 w-[90%] max-w-5xl backdrop-blur-sm bg-opacity-90">
         <div className="flex flex-col md:flex-row gap-6">
           {/* Map + Contact Details */}
-          <div className="w-full md:w-1/2 h-auto rounded-lg overflow-hidden  flex flex-col mt-10">
+          <div className="w-full md:w-1/2 h-auto rounded-lg overflow-hidden flex flex-col mt-10">
             <div className="h-[250px] md:h-[350px]">
               <iframe
                 title="New Ganesh Seeds Location"
@@ -136,7 +137,7 @@ export default function EnquiryForm() {
           </div>
 
           {/* Form */}
-          <div className="w-full md:w-1/2 rounded-lg  p-5 md:p-6">
+          <div className="w-full md:w-1/2 rounded-lg p-5 md:p-6">
             <h2 className="text-2xl md:text-3xl font-semibold mb-5 text-center text-gray-800">
               Enquiry Form
             </h2>
@@ -204,9 +205,7 @@ export default function EnquiryForm() {
 
               {/* ✅ Custom Scrollable Dropdown */}
               <div className="relative" ref={dropdownRef}>
-                <label className="block text-gray-700 font-medium mb-1">
-                  Select Product
-                </label>
+                <label className="block text-gray-700 font-medium mb-1">Select Product</label>
                 <button
                   type="button"
                   onClick={() => setDropdownOpen(!dropdownOpen)}
@@ -221,9 +220,8 @@ export default function EnquiryForm() {
                     {products.map((p, idx) => (
                       <li
                         key={idx}
-                        className={`px-4 py-2 cursor-pointer hover:bg-green-100 ${
-                          selected === p ? "bg-green-200 font-semibold" : ""
-                        }`}
+                        className={`px-4 py-2 cursor-pointer hover:bg-green-100 ${selected === p ? "bg-green-200 font-semibold" : ""
+                          }`}
                         onClick={() => {
                           setSelected(p);
                           setDropdownOpen(false);
@@ -256,20 +254,45 @@ export default function EnquiryForm() {
                   {loading ? "Sending..." : "Submit"}
                 </button>
               </div>
-
-              {status.msg && (
-                <p
-                  className={`text-center text-sm ${
-                    status.ok ? "text-green-700" : "text-red-600"
-                  }`}
-                >
-                  {status.msg}
-                </p>
-              )}
             </form>
           </div>
         </div>
       </div>
+
+      {/* ✅ Popup Overlay */}
+      {/* ✅ Popup Overlay */}
+      {status.msg && (
+        <div className="fixed inset-0 bg-transparent flex justify-center items-center z-50">
+          <div className="bg-white rounded-2xl shadow-xl p-8 w-[90%] max-w-sm text-center border-2 border-green-600 animate-fadeIn bg-opacity-95 backdrop-blur-md">
+            <p
+              className={`text-base mb-4 ${status.ok ? "text-green-700" : "text-red-600"
+                }`}
+            >
+              {status.msg}
+            </p>
+
+            {/* 🎬 Mail Send Animation */}
+            {status.ok && (
+              <video
+                src={SentEmailAnimation}
+                autoPlay
+                muted
+                loop
+                playsInline
+                className="w-48 h-48 mx-auto rounded-lg filter-green"
+              />
+            )}
+
+            <button
+              onClick={() => setStatus({ ok: null, msg: "" })}
+              className="bg-green-600 text-white px-6 py-2 mt-4 rounded-lg hover:bg-green-700 transition-all duration-200"
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
+
     </div>
   );
 }

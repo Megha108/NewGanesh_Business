@@ -95,10 +95,10 @@ export default function Footer() {
   );
 
   const IconInsta = () => (
-  <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
-    <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
-  </svg>
-);
+    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
+      <path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9A5.5 5.5 0 0 1 16.5 22h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9zM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6zm4.75-.75a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z" />
+    </svg>
+  );
 
 
   const IconWA = () => (
@@ -109,48 +109,49 @@ export default function Footer() {
 
   return (
     <footer className="relative text-black font-bold overflow-hidden">
-{/* 🌿 Canvas Background */}
-<canvas
-  ref={canvasRef}
-  className="absolute inset-0 w-full h-full"
-  style={{ display: "block" }}
-/>
+      {/* 🌿 Canvas Background */}
+      <canvas
+        ref={canvasRef}
+        className="absolute inset-0 w-full h-full"
+        style={{ display: "block" }}
+      />
 
-{/* Main Content Container */}
-<div className="relative z-20 grid grid-cols-1 sm:grid-cols-3 gap-7 p-8 sm:p-12 whitespace-nowrap font-bold">
-  {/* ✅ Left Column (Updated Quote) */}
-  <div className="flex flex-col justify-between h-full text-left">
-  {/* Animated Quote */}
-  <div className="quote-wrapper">
-    <span className="quote-text">Seeds for</span>
-    <div className="dropping-texts">
-      <div>Quality</div>
-      <div>Trust</div>
-      <div>Success</div>
-      <div>Everyone!</div>
-    </div>
-  </div>
+      {/* Main Content Container */}
+      <div className="relative z-20 grid grid-cols-1 sm:grid-cols-3 gap-7 p-8 sm:p-12 whitespace-nowrap font-bold">
+        {/* ✅ Left Column (Updated Quote) */}
+        <div className="flex flex-col justify-between h-full text-left">
+          {/* Animated Quote */}
+          <div className="quote-wrapper">
+            <span className="quote-text">Seeds for</span>
+            <div className="dropping-texts">
+              <div>Quality</div>
+              <div>Trust</div>
+              <div>Success</div>
+              <div>Everyone!</div>
+            </div>
+          </div>
 
-  {/* Logo */}
-  <img
-    src={logo}
-    alt="Company Logo"
-     className="h-28 sm:h-30 md:h-36 mt-10 object-contain scale-[1.3] mb-10"
-  />
+          {/* Logo */}
+          <img
+            src={logo}
+            alt="Company Logo"
+            className="h-28 sm:h-30 md:h-36 mt-10 object-contain scale-[1.25] ml-3 mb-10"
+          />
 
-  {/* Social Icons */}
-  <div className="flex justify-start space-x-4 text-black transition-colors text-lg  ml-25">
-    <Link to="/facebook" className="hover:text-[#FFD700]">
-      <IconWrap><IconFB /></IconWrap>
-    </Link>
-    <Link to="/youtube" className="hover:text-[#FFD700]">
-      <IconWrap><IconInsta /></IconWrap>
-    </Link>
-    <Link to="/whatsapp" className="hover:text-[#FFD700]">
-      <IconWrap><IconWA /></IconWrap>
-    </Link>
-  </div>
-</div>
+          {/* Social Icons */}
+          {/* Social Icons */}
+          <div className="flex justify-start space-x-4 text-black transition-colors text-lg ml-24 sm:ml-28">
+            <Link to="/facebook" className="hover:text-[#FFD700]">
+              <IconWrap><IconFB /></IconWrap>
+            </Link>
+            <Link to="/youtube" className="hover:text-[#FFD700]">
+              <IconWrap><IconInsta /></IconWrap>
+            </Link>
+            <Link to="/whatsapp" className="hover:text-[#FFD700]">
+              <IconWrap><IconWA /></IconWrap>
+            </Link>
+          </div>
+        </div>
 
 
         {/* Middle Column */}
@@ -164,32 +165,37 @@ export default function Footer() {
           </ul>
         </div>
         {/* Right Column */}
-        <div className="text-center sm:text-left">
-          <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Us</h3>
-          <ul className="space-y-3 text-black text-sm font-semibold">
-            <li>
+        <div className="text-center sm:text-left px-3 sm:pl-6 sm:ml-0 -ml-3">
+          <h3 className="text-lg sm:text-xl font-bold mb-4 sm:ml-0 ml-3">Contact Us</h3>
+          <ul className="space-y-3 text-black text-sm font-semibold break-words sm:break-normal">
+
+            <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full break-words">
               📍 Office<br />
               <a
                 href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[#FFD700]"
+                className="transition-colors hover:text-[#FFD700] break-words whitespace-normal overflow-hidden"
+                style={{ wordBreak: "break-word", overflowWrap: "break-word", whiteSpace: "normal" }}
               >
                 New Ganesh Seeds - 38, Market Yard Rd, Kadi, Gujarat 382715
               </a>
             </li>
-            <li>
+
+
+            <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full break-words">
               📍 Warehouse<br />
               <a
                 href="https://maps.app.goo.gl/5nDv3t7NAxy4CbvD6"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-[#FFD700]"
+                className="transition-colors hover:text-[#FFD700] break-words whitespace-normal overflow-hidden"
               >
                 Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near Thol Road, Kadi, Gujarat 384440
               </a>
             </li>
-            <li>
+
+            <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full">
               📞 Contact<br />
               <div className="flex flex-col items-center sm:items-start">
                 <a href="tel:+919825062048" className="transition-colors hover:text-[#FFD700]">+91 9825062048</a>
@@ -197,17 +203,20 @@ export default function Footer() {
                 <a href="tel:+919978031353" className="transition-colors hover:text-[#FFD700]">+91 9978031353</a>
               </div>
             </li>
-            <li>
+
+            <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full">
               ✉️ Email<br />
               <a
                 href="mailto:newganeshseeds38@gmail.com"
-                className="transition-colors hover:text-[#FFD700]"
+                className="transition-colors hover:text-[#FFD700] break-words sm:whitespace-normal"
               >
                 newganeshseeds38@gmail.com
               </a>
             </li>
+
           </ul>
         </div>
+
       </div>
 
       {/* Bottom Bar */}

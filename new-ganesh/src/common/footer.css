@@ -7,9 +7,11 @@ canvas {
   0% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
+
   50% {
     background: linear-gradient(135deg, #0F3E12, #1B6E1B);
   }
+
   100% {
     background: linear-gradient(135deg, #1B6E1B, #0F3E12);
   }
@@ -25,20 +27,27 @@ canvas {
 
 /* 🌾 Animated Quote Section */
 .quote-wrapper {
+  
   display: flex;
   justify-content: center;
   align-items: center;
   color: #000000;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   text-align: center;
   padding: 1rem 0;
   margin-bottom: 1rem;
+  margin-left: -2vw;
+  line-height: 1.1;
+  user-select: none;
+  /* 🚫 disables text selection */
+  cursor: default;
+  /* 🖱️ keeps arrow cursor */
 }
 
 .quote-text {
-  margin-right: 0.5rem;
+  margin-right: 0.7rem;
   font-weight: 600;
 }
 
@@ -47,39 +56,58 @@ canvas {
   width: 180px;
   text-align: left;
   height: 36px;
-  vertical-align: -2px;
+  vertical-align: middle;
+  /* ✅ align with quote text */
   position: relative;
+  top: -10.25px;
+    /* ✅ fine-tune to perfectly align baseline */
 }
 
-.dropping-texts > div {
+@media (max-width: 640px) {
+  .dropping-texts {
+    top:0.5px ;
+    /* ✅ fine-tuned for mobile */
+  }
+  .quote-wrapper{
+    margin-left: 4vw;
+  }
+}
+
+.dropping-texts>div {
   font-size: 0px;
   opacity: 0;
   margin-left: -30px;
   position: absolute;
   font-weight: 800;
   box-shadow: 0px 60px 25px -20px rgba(235, 230, 230, 0);
+
 }
-.dropping-texts > div {
+
+.dropping-texts>div {
   font-size: 0px;
   opacity: 0;
   margin-left: -30px;
   position: absolute;
-  font-weight:7800;
+  font-weight: 7800;
   background: linear-gradient(90deg, #ffee00, #ffee00);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
 /* ⏱ Each line timing */
-.dropping-texts > div:nth-child(1) {
+.dropping-texts>div:nth-child(1) {
   animation: roll 5s linear infinite 0s;
 }
-.dropping-texts > div:nth-child(2) {
+
+.dropping-texts>div:nth-child(2) {
   animation: roll 5s linear infinite 1s;
 }
-.dropping-texts > div:nth-child(3) {
+
+.dropping-texts>div:nth-child(3) {
   animation: roll 5s linear infinite 2s;
 }
-.dropping-texts > div:nth-child(4) {
+
+.dropping-texts>div:nth-child(4) {
   animation: roll2 5s linear infinite 3s;
 }
 
@@ -92,16 +120,19 @@ canvas {
     margin-top: 0px;
     transform: rotate(-25deg);
   }
+
   3% {
     opacity: 1;
     transform: rotate(0deg);
   }
+
   5% {
     font-size: inherit;
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
   }
+
   20% {
     font-size: inherit;
     opacity: 1;
@@ -109,12 +140,14 @@ canvas {
     margin-top: 0px;
     transform: rotate(0deg);
   }
+
   27% {
     font-size: 0px;
     opacity: 0.5;
     margin-left: 20px;
     margin-top: 100px;
   }
+
   100% {
     font-size: 0px;
     opacity: 0;
@@ -132,16 +165,19 @@ canvas {
     margin-top: 0px;
     transform: rotate(-25deg);
   }
+
   3% {
     opacity: 1;
     transform: rotate(0deg);
   }
+
   5% {
     font-size: inherit;
     opacity: 1;
     margin-left: 0px;
     margin-top: 0px;
   }
+
   30% {
     font-size: inherit;
     opacity: 1;
@@ -149,12 +185,14 @@ canvas {
     margin-top: 0px;
     transform: rotate(0deg);
   }
+
   37% {
     font-size: 1500px;
     opacity: 0;
     margin-left: -1000px;
     margin-top: -800px;
   }
+
   100% {
     font-size: 0px;
     opacity: 0;
