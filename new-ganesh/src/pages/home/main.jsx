@@ -5,7 +5,7 @@ import WhatWeDo from "./whatWeDo.jsx";
 import ProductsMarquee from "./product.jsx";
 import ThreeDProducts from "./3Dproduct.jsx"
 import Footer from "../../common/footer.jsx";
-
+import OwnerPhoto from "./Ownerphoto.jsx";
 const HomeMain = () => {
   return (
     <>
@@ -16,6 +16,7 @@ const HomeMain = () => {
         <WhatWeDo />
         <ProductsMarquee />
         <ThreeDProducts/>
+        <OwnerPhoto />
         <Footer />
       </div>
     </>
