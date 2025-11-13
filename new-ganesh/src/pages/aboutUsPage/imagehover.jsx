@@ -1,10 +1,10 @@
 import React, { useState } from "react"
 
 // images
-import img1 from "../../assets/image/aboutus/ganesh41.jpg"
-import img2 from "../../assets/image/aboutus/ganesh50.jpg"
-import img3 from "../../assets/image/aboutus/ganesh61.jpg"
-import img4 from "../../assets/image/aboutus/ganesh39.jpg"
+import img1 from "../../assets/image/product/PImg1.1.webp"
+import img2 from "../../assets/image/product/PImg2.2.webp"
+import img3 from "../../assets/image/product/PImg3.4.webp"
+import img4 from "../../assets/image/product/PImg6.3.webp"
 
 const items = [
   {
