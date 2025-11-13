@@ -53,7 +53,7 @@ export default function OwnerPhoto() {
 
       {/* 🔹 Section 3 (negative gap above) */}
       <section
-        className="flex flex-col sm:flex-row items-center justify-start sm:justify-start gap-[1px] sm:gap-[1px] p-[1px] sm:p-[1px] sm:pl-[5%]"
+        className="flex flex-col sm:flex-row items-center justify-start sm:justify-start gap-[1px] sm:gap-[1px] p-[1px] sm:p-[1px] sm:pl-[5%] mb-10"
         style={{ marginTop: "-5%" }}
       >
         <div className="w-[260px] h-[250px] overflow-hidden rounded-md scale-[1.3]">

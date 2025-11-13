@@ -279,7 +279,7 @@ export default function EnquiryForm() {
                 muted
                 loop
                 playsInline
-                className="w-48 h-48 mx-auto rounded-lg filter-green"
+                className="w-75 h-75 mx-auto rounded-lg filter-green"
               />
             )}
 
