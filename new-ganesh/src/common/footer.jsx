@@ -140,7 +140,7 @@ export default function Footer() {
 
           {/* Social Icons */}
           {/* Social Icons */}
-          <div className="flex justify-start space-x-4 text-black transition-colors text-lg ml-24 sm:ml-28">
+          <div className="flex justify-start space-x-4 text-black transition-colors text-lg ml-19 sm:ml-28">
             <Link to="/facebook" className="hover:text-[#FFD700]">
               <IconWrap><IconFB /></IconWrap>
             </Link>
