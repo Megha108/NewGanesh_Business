@@ -12,15 +12,14 @@ export default function OwnerPhoto() {
         className="flex flex-col sm:flex-row items-center justify-start sm:justify-start sm:gap-[1px] p-[1px] sm:p-[1px] sm:pl-[5%]"
         style={{ marginTop: "-2%" }}
       >
-        <div className="w-[260px] h-[280px] overflow-hidden rounded-md scale-[1.3] ">
-          <img src={ownerImg} alt="Owner" className="w-full h-full object-cover" />
+        <div className="w-[260px] h-[290px] overflow-hidden rounded-md scale-[1.3] ">
+          <img src={ownerImg} alt="Owner" className="w-full h-full object-cover mt-8 -ml-5 " />
         </div>
 
         <div className="max-w-xl text-left">
           <div className="quote-mark fade-in">“</div>
           <p className="text-gray-800 text-lg sm:text-xl leading-snug font-normal">
-            Jade helped us build a software so intuitive that it didn’t need a walkthrough.
-            He solved complex problems with brilliant design thinking.
+            He brings strategic vision and leadership, guiding the overall direction of the business while ensuring sustainable growth and innovation.
           </p>
 
           <div className="mt-2">
@@ -35,17 +34,16 @@ export default function OwnerPhoto() {
       {/* 🔹 Section 2 */}
       <section
         className="flex flex-col sm:flex-row-reverse items-center justify-start sm:justify-start gap-[1px] sm:gap-[1px] p-[1px] sm:p-[1px] sm:pr-[5%]"
-        style={{ marginTop: "-4%" }}
+        style={{ marginTop: "-8%" }}
       >
         <div className="w-[260px] h-[250px] overflow-hidden rounded-md scale-[1.3]">
-          <img src={ownerImg2} alt="Owner 2" className="w-full h-full object-cover mt-5" />
+          <img src={ownerImg2} alt="Owner 2" className="w-full h-full object-cover mt-5 sm:-mt-8 " />
         </div>
 
-        <div className="max-w-xl text-left">
+        <div className="max-w-xl text-left mt-15">
           <div className="quote-mark fade-in">“</div>
-          <p className="text-gray-800 text-lg sm:text-xl leading-snug font-normal">
-            His creative insight helped transform our vision into a beautiful, usable product.
-            Every detail was thoughtfully designed.
+          <p className="text-gray-800 text-lg sm:text-xl leading-snug font-normal ">
+           As he specializes in operations and execution, managing day-to-day processes efficiently to ensure smooth functioning and high performance.
           </p>
 
           <div className="mt-2">
@@ -63,14 +61,13 @@ export default function OwnerPhoto() {
         style={{ marginTop: "-5%" }}
       >
         <div className="w-[260px] h-[250px] overflow-hidden rounded-md scale-[1.3]">
-          <img src={ownerImg3} alt="Owner 3" className="w-full h-full object-cover mt-7" />
+          <img src={ownerImg3} alt="Owner 3" className="w-full h-full object-cover mt-2 sm:mt-0" />
         </div>
 
-        <div className="max-w-xl text-left">
+        <div className="max-w-xl text-left mt-15">
           <div className="quote-mark fade-in">“</div>
           <p className="text-gray-800 text-lg sm:text-xl leading-snug font-normal">
-            Jade's attention to usability and design harmony elevated our brand identity
-            beyond expectations.
+            While he focuses on client relations and creative strategy, building strong partnerships and driving initiatives that enhance customer satisfaction.
           </p>
 
           <div className="mt-2">
