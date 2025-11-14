@@ -3,7 +3,7 @@ import "./gallery3D.css";
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
 
-// ✅ Import local images
+// Images
 import img1 from "../../assets/image/gallery/ganesh11.jpg";
 import img2 from "../../assets/image/gallery/ganesh12.jpg";
 import img3 from "../../assets/image/gallery/ganesh44.jpg";
@@ -20,53 +20,24 @@ import img13 from "../../assets/image/gallery/ganesh32.jpg";
 import img14 from "../../assets/image/gallery/ganesh35.jpg";
 import img15 from "../../assets/image/gallery/ganesh36.jpg";
 
-
 export default function Gallery3D() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
   const [currentIndex, setCurrentIndex] = useState(null);
   const [visible, setVisible] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
 
-  // 🧠 Detect mobile once on load
-  useEffect(() => {
-    const checkMobile = () => setIsMobile(window.innerWidth < 768);
-    checkMobile();
-    window.addEventListener("resize", checkMobile);
-    return () => window.removeEventListener("resize", checkMobile);
-  }, []);
-
-  // ⌨️ Keyboard navigation
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (currentIndex === null) return;
-      if (e.key === "ArrowLeft") handlePrev(e);
-      if (e.key === "ArrowRight") handleNext(e);
-      if (e.key === "Escape") handleClose();
-    };
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [currentIndex]);
-
-  // 🟢 Open (click for mobile, hover for desktop)
+  // Open image on click
   const handleOpen = (index) => {
     setCurrentIndex(index);
     setTimeout(() => setVisible(true), 50);
   };
 
-  const handleMouseEnter = (index) => {
-    if (!isMobile) {
-      setCurrentIndex(index);
-      setTimeout(() => setVisible(true), 50);
-    }
-  };
-
-  // 🔴 Close fullscreen
+  // Close fullscreen
   const handleClose = () => {
     setVisible(false);
     setTimeout(() => setCurrentIndex(null), 300);
   };
 
-  // ⬅️ Prev / ➡️ Next
+  // Prev / Next buttons
   const handlePrev = (e) => {
     e?.stopPropagation();
     setCurrentIndex((prev) => (prev === 0 ? images.length - 1 : prev - 1));
@@ -77,11 +48,9 @@ export default function Gallery3D() {
     setCurrentIndex((prev) => (prev === images.length - 1 ? 0 : prev + 1));
   };
 
-  // 🖼️ Reusable image block
   const renderImage = (src, index, extraClasses = "") => (
     <div
       key={index}
-      onMouseEnter={() => handleMouseEnter(index)}
       onClick={() => handleOpen(index)}
       className={`cursor-pointer overflow-hidden rounded-lg shadow-md hover:scale-105 transition-transform duration-500 ${extraClasses}`}
     >
@@ -95,97 +64,90 @@ export default function Gallery3D() {
 
       <div className="min-h-screen flex flex-col items-center overflow-x-hidden pt-24 pb-12">
 
-  {/* 🔶 INAUGURATION */}
-  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
-    INAUGURATION
-  </h1>
+        {/* INAUGURATION */}
+        <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+          INAUGURATION
+        </h1>
 
-  <div className="w-full max-w-5xl mx-auto px-4">
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-      {renderImage(images[7], 7, "h-48")}
-      {renderImage(images[8], 1, "h-48")}
-      {renderImage(images[6], 6, "h-48")}
-    </div>
-  </div>
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            {renderImage(images[7], 7, "h-48")}
+            {renderImage(images[8], 1, "h-48")}
+            {renderImage(images[6], 6, "h-48")}
+          </div>
+        </div>
 
-  {/* 🔶 WAREHOUSE */}
-  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
-    WAREHOUSE
-  </h1>
+        {/* WAREHOUSE */}
+        <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+          WAREHOUSE
+        </h1>
 
-  <div className="w-full max-w-5xl mx-auto px-4">
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-       {renderImage(images[0], 6, "h-48")}
-      {renderImage(images[1], 1, "h-48")}
-      {renderImage(images[2], 2, "h-48")}
-      {renderImage(images[3], 3, "h-48")}
-      {renderImage(images[4], 4, "h-48")}
-      {renderImage(images[5], 5, "h-48")}
-    </div>
-  </div>
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            {renderImage(images[0], 0, "h-48")}
+            {renderImage(images[1], 1, "h-48")}
+            {renderImage(images[2], 2, "h-48")}
+            {renderImage(images[3], 3, "h-48")}
+            {renderImage(images[4], 4, "h-48")}
+            {renderImage(images[5], 5, "h-48")}
+          </div>
+        </div>
 
-  {/* 🔶 MACHINERY */}
-  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
-    MACHINERY
-  </h1>
+        {/* MACHINERY */}
+        <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+          MACHINERY
+        </h1>
 
-  <div className="w-full max-w-5xl mx-auto px-4">
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
-      
-      {renderImage(images[10], 0, "h-48")}
-      {renderImage(images[11], 1, "h-48")}
-      {renderImage(images[12], 2, "h-48")}
-      {renderImage(images[13], 3, "h-48")}
-      {renderImage(images[14], 4, "h-48")}
-      {renderImage(images[15], 15, "h-48")}
-      
-    </div>
-  </div>
+        <div className="w-full max-w-5xl mx-auto px-4">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+            {renderImage(images[9], 9, "h-48")}
+            {renderImage(images[10], 10, "h-48")}
+            {renderImage(images[11], 11, "h-48")}
+            {renderImage(images[12], 12, "h-48")}
+            {renderImage(images[13], 13, "h-48")}
+            {renderImage(images[14], 14, "h-48")}
+          </div>
+        </div>
+      </div>
 
-</div>
-
-
-      {/* 🔲 Fullscreen viewer */}
+      {/* Fullscreen Viewer */}
       {currentIndex !== null && (
         <div
-          className={`fixed inset-0 flex items-center justify-center z-[1000] bg-gradient-to-b from-black/80 via-black/70 to-black/80 backdrop-blur-md transition-opacity duration-500 ${
-            visible ? "opacity-100" : "opacity-0"
-          }`}
+          className={`fixed inset-0 flex items-center justify-center z-[1000] bg-black/80 backdrop-blur-md transition-opacity duration-500 ${visible ? "opacity-100" : "opacity-0"}`}
           onClick={handleClose}
         >
-          {/* ❌ Close */}
+          {/* Close */}
           <button
-            className="absolute top-6 right-8 text-white text-3xl font-light bg-white/10 hover:bg-white/25 rounded-full w-12 h-12 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
+            className="absolute top-6 right-8 text-white text-3xl font-light bg-white/10 hover:bg-white/25 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
             onClick={(e) => {
               e.stopPropagation();
               handleClose();
             }}
-          >
-            ×
+          ><div className="-mt-2  -ml-1 sm:ml-0">
+              ×</div>
           </button>
 
-          {/* ⬅️ Prev */}
+          {/* Center Arrows */}
           <button
-            className="absolute left-8 text-white text-5xl font-light bg-white/10 hover:bg-white/25 rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
+            className="absolute left-2 sm:left-8 top-1/2 -translate-y-1/2 text-white text-5xl sm:text-5xl font-light bg-white/10 hover:bg-white/25 rounded-full w-16 h-16 sm:w-16 sm:h-16 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all z-50"
             onClick={handlePrev}
           >
-            ‹
+            <div className="-mt-2.5 -ml-1 sm:ml-0">‹</div>
           </button>
 
-          {/* 🖼️ Image */}
+
           <img
             src={images[currentIndex]}
-            alt="Full view"
+            alt="Full View"
             className="max-w-[90vw] max-h-[90vh] object-contain rounded-lg shadow-2xl transition-transform duration-700 scale-100"
             onClick={(e) => e.stopPropagation()}
           />
 
-          {/* ➡️ Next */}
           <button
-            className="absolute right-8 text-white text-5xl font-light bg-white/10 hover:bg-white/25 rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
+            className="absolute right-2 sm:right-8 top-1/2 -translate-y-1/2 text-white text-5xl font-light bg-white/10 hover:bg-white/25 rounded-full w-16 h-16 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
             onClick={handleNext}
-          >
-            ›
+          ><div className="-mt-3 sm:-mt-2.75">
+              ›</div>
           </button>
         </div>
       )}

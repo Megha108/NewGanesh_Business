@@ -220,8 +220,18 @@ export default function Footer() {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-black/40 text-center text-xs sm:text-sm py-4 relative z-10 font-semibold bg-white/20 backdrop-blur-sm hover:text-[#FFD700] transition">
-        © 2025 New Ganesh Seeds | All Rights Reserved
+      <div className="border-t border-black/40 relative z-30 bg-white/20 backdrop-blur-sm py-4">
+
+        {/* Left (Made By) */}
+        <div className="absolute left-4 bottom-4 text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition">
+          Made by Trivexa Tech
+        </div>
+
+        {/* Centered © Text */}
+        <div className="text-center text-xs sm:text-sm font-semibold hover:text-[#FFD700] transition">
+          © 2025 New Ganesh Seeds | All Rights Reserved
+        </div>
+
       </div>
 
 
