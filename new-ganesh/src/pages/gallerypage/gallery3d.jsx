@@ -10,9 +10,19 @@ import img3 from "../../assets/image/gallery/ganesh44.jpg";
 import img4 from "../../assets/image/gallery/ganesh9.jpg";
 import img5 from "../../assets/image/gallery/ganesh10.jpg";
 import img6 from "../../assets/image/gallery/ganesh14.jpg";
+import img7 from "../../assets/image/gallery/godown.jpg";
+import img9 from "../../assets/image/gallery/IMG_7931.jpg";
+import img8 from "../../assets/image/gallery/IMG_7940.jpg";
+import img10 from "../../assets/image/gallery/ganesh21.jpg";
+import img11 from "../../assets/image/gallery/ganesh27.jpg";
+import img12 from "../../assets/image/gallery/ganesh29.jpg";
+import img13 from "../../assets/image/gallery/ganesh32.jpg";
+import img14 from "../../assets/image/gallery/ganesh35.jpg";
+import img15 from "../../assets/image/gallery/ganesh36.jpg";
+
 
 export default function Gallery3D() {
-  const images = [img1, img2, img3, img4, img5, img6];
+  const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
   const [currentIndex, setCurrentIndex] = useState(null);
   const [visible, setVisible] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
@@ -84,28 +94,56 @@ export default function Gallery3D() {
       <Navbar />
 
       <div className="min-h-screen flex flex-col items-center overflow-x-hidden pt-24 pb-12">
-        {/* ✅ Title */}
-        <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
-          WAREHOUSE
-        </h1>
 
-        {/* 🖼️ Responsive Gallery Grid */}
-        <div className="w-full max-w-5xl mx-auto px-4">
-          {/* 🔹 First Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-6">
-            {renderImage(images[0], 0, "h-48")}
-            {renderImage(images[1], 1, "h-48")}
-            {renderImage(images[2], 2, "h-48")}
-          </div>
+  {/* 🔶 INAUGURATION */}
+  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+    INAUGURATION
+  </h1>
 
-          {/* 🔹 Second Row */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 justify-center">
-            {renderImage(images[3], 3, "h-48")}
-            {renderImage(images[4], 4, "h-48")}
-            {renderImage(images[5], 5, "h-48")}
-          </div>
-        </div>
-      </div>
+  <div className="w-full max-w-5xl mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      {renderImage(images[7], 7, "h-48")}
+      {renderImage(images[8], 1, "h-48")}
+      {renderImage(images[6], 6, "h-48")}
+    </div>
+  </div>
+
+  {/* 🔶 WAREHOUSE */}
+  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+    WAREHOUSE
+  </h1>
+
+  <div className="w-full max-w-5xl mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+       {renderImage(images[0], 6, "h-48")}
+      {renderImage(images[1], 1, "h-48")}
+      {renderImage(images[2], 2, "h-48")}
+      {renderImage(images[3], 3, "h-48")}
+      {renderImage(images[4], 4, "h-48")}
+      {renderImage(images[5], 5, "h-48")}
+    </div>
+  </div>
+
+  {/* 🔶 MACHINERY */}
+  <h1 className="font-mono uppercase mb-12 text-center text-[1.3em] sm:text-[1.6em] tracking-[0.6em] sm:tracking-[1em]">
+    MACHINERY
+  </h1>
+
+  <div className="w-full max-w-5xl mx-auto px-4">
+    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-12">
+      
+      {renderImage(images[10], 0, "h-48")}
+      {renderImage(images[11], 1, "h-48")}
+      {renderImage(images[12], 2, "h-48")}
+      {renderImage(images[13], 3, "h-48")}
+      {renderImage(images[14], 4, "h-48")}
+      {renderImage(images[15], 15, "h-48")}
+      
+    </div>
+  </div>
+
+</div>
+
 
       {/* 🔲 Fullscreen viewer */}
       {currentIndex !== null && (
