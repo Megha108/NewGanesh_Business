@@ -10,7 +10,7 @@ function Navbar() {
       <nav className="container mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
         {/* Brand */}
         <Link to="/" className="flex items-center gap-2">
-          <img src={Logo} alt="New Ganesh Seeds Logo" className="h-14 w-17" />
+          <img src={Logo} alt="New Ganesh Seeds Logo" className="h-16 w-19" />
         </Link>
 
         {/* Desktop menu */}
