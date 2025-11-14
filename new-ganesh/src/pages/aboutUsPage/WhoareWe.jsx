@@ -39,6 +39,12 @@ const WhoareWe = () => {
         growth, and higher yields. Each seed batch is sourced from certified
         growers, processed in modern facilities, and tested under real field
         conditions to guarantee purity and reliability.
+        
+      </p>
+      <br/>
+      <p style={styles.text} >
+        Our company proudly represents the third generation of a family committed to excellence in the seed industry. With decades of dedication passed down through our lineage, we continue to uphold the values, trust, and integrity that built this foundation. Each generation has strengthened our vision, and today, we carry forward this legacy with the same pride and responsibility.
+               
       </p>
       <br/>
       <p style={styles.text}>
