@@ -73,7 +73,7 @@ const Landing = () => {
         <div className="relative w-full flex justify-start pl-10 md:pl-20">
           <div className="max-w-xl">
             <h3 className="text-2xl tracking-[0.50em]  uppercase opacity-90 leading-relaxed text-white font-bold">
-              SINCE 1990
+              SINCE 1984
             </h3>
 
             <h1
