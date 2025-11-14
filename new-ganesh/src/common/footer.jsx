@@ -224,7 +224,7 @@ export default function Footer() {
 
         {/* Left (Made By) */}
         <div className="absolute left-4 bottom-4 text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition">
-          Made by Trivexa Tech
+          Made by Trinetra Tech Contact no:- 9104928027
         </div>
 
         {/* Centered © Text */}
