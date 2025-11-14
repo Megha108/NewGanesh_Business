@@ -10,9 +10,13 @@ import RupeeIcon from "../../assets/icon/aboutusIcons/RupeeSymbol.svg";
 
 const WhyUs = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
+  const [lineWidth, setLineWidth] = useState(window.innerWidth < 768 ? 200 : 350);
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 768);
+      setLineWidth(window.innerWidth < 768 ? 260 : 350);
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -65,7 +69,7 @@ const WhyUs = () => {
       {/* === Top Section === */}
       <div className="grid md:grid-cols-2 gap-8 mb-12">
         {/* Left: Headings */}
-        <div className="flex flex-col justify-center text-left">
+        <div className="flex flex-col justify-center text-left mt-10 mb-10">
           <motion.h4
             initial={{ opacity: 0, y: -20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -84,9 +88,10 @@ const WhyUs = () => {
             Why Choose Us
           </motion.h2>
 
+          {/* Responsive Animated Line */}
           <motion.div
             initial={{ width: 0 }}
-            whileInView={{ width: 350 }}
+            whileInView={{ width: lineWidth }}
             transition={{ duration: 0.5, delay: 0.2 }}
             className="h-[3px] bg-black mt-4 mb-6"
           />
@@ -97,7 +102,12 @@ const WhyUs = () => {
           initial={{ opacity: 0, x: 50 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="text-gray-700 italic text-lg leading-relaxed"
+          className="text-black-700 italic text-lg leading-relaxed"
+          style={{
+            fontFamily: "'Permanent Marker', cursive",
+            fontWeight: 600,
+            fontSize: "18px",
+          }}
         >
           {highlightText}
         </motion.p>
@@ -118,12 +128,8 @@ const WhyUs = () => {
               {renderIcon(item.icon, item.title)}
             </div>
             <div>
-              <h3 className="text-xl font-bold text-black mb-2">
-                {item.title}
-              </h3>
-              <p className="text-gray-600 text-base leading-relaxed">
-                {item.text}
-              </p>
+              <h3 className="text-xl font-bold text-black mb-2">{item.title}</h3>
+              <p className="text-gray-600 text-base leading-relaxed">{item.text}</p>
             </div>
           </motion.div>
         ))}
