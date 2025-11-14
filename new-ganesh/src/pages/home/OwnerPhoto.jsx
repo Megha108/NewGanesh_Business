@@ -1,7 +1,7 @@
 import React from "react";
-import ownerImg from "../../assets/image/ownerPhoto/Picsart_25-11-11_19-58-32-712.png";
-import ownerImg2 from "../../assets/image/ownerPhoto/Picsart_25-11-11_19-58-32-712.png";
-import ownerImg3 from "../../assets/image/ownerPhoto/Picsart_25-11-11_19-58-32-712.png";
+import ownerImg from "../../assets/image/ownerPhoto/dilipbapuji.png";
+import ownerImg2 from "../../assets/image/ownerPhoto/tikukaka.png";
+import ownerImg3 from "../../assets/image/ownerPhoto/chatubhai.png";
 import "./OwnerPhoto.css"; // 👈 font + animation styles
 
 export default function OwnerPhoto() {
@@ -12,7 +12,7 @@ export default function OwnerPhoto() {
         className="flex flex-col sm:flex-row items-center justify-start sm:justify-start sm:gap-[1px] p-[1px] sm:p-[1px] sm:pl-[5%]"
         style={{ marginTop: "-2%" }}
       >
-        <div className="w-[260px] h-[250px] overflow-hidden rounded-md scale-[1.3]">
+        <div className="w-[260px] h-[280px] overflow-hidden rounded-md scale-[1.3] ">
           <img src={ownerImg} alt="Owner" className="w-full h-full object-cover" />
         </div>
 
@@ -25,9 +25,9 @@ export default function OwnerPhoto() {
 
           <div className="mt-2">
             <h3 className="text-lg font-playfair font-semibold text-black">
-              John Franklin
+              Dilipbhai Jivanbhai Patel
             </h3>
-            <p className="text-gray-600 text-sm italic">Founder, Double Bunch</p>
+            <p className="text-gray-600 text-sm italic">Owner</p>
           </div>
         </div>
       </section>
@@ -50,9 +50,9 @@ export default function OwnerPhoto() {
 
           <div className="mt-2">
             <h3 className="text-lg font-playfair font-semibold text-black">
-              Sarah Mitchell
+              Kalpeshbhai Jivanbhai Patel
             </h3>
-            <p className="text-gray-600 text-sm italic">Product Manager, Bloom Labs</p>
+            <p className="text-gray-600 text-sm italic">Co-owner</p>
           </div>
         </div>
       </section>
@@ -75,9 +75,9 @@ export default function OwnerPhoto() {
 
           <div className="mt-2">
             <h3 className="text-lg font-playfair font-semibold text-black">
-              Michael Ross
+              Chinteshbhai Dilipbhai Patel
             </h3>
-            <p className="text-gray-600 text-sm italic">CEO, Nova Systems</p>
+            <p className="text-gray-600 text-sm italic">Co-owner</p>
           </div>
         </div>
       </section>
