@@ -9,7 +9,7 @@ import ImageHover from "./imagehover.jsx";   // <-- Capital I
 const AboutUsPage = () => {
   return (
     <>
-      <div className="relative z-10 isolate font-bricolage">
+      <div className="relative z-10 isolate font-bricolage overflow-hidden">
         <Navbar />
         <Title />
         <WhoareWe />

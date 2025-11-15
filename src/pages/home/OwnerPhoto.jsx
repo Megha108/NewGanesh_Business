@@ -10,7 +10,7 @@ export default function OwnerPhoto() {
   return (
     <div className="mx-6 sm:mx-0 font-poppins">
 
-      <section className="flex flex-col items-center justify-center mt-4 mb-8">
+      <section className="flex flex-col items-center justify:center sm:justify-center mt-4 mb-8">
         <div className="w-[290px] h-[330px] overflow-hidden ">
           <img
             src={jivanDadImg}
@@ -19,7 +19,7 @@ export default function OwnerPhoto() {
           />
         </div>
 
-        <h3 className="text-2xl font-playfair font-semibold text-black -mt-5">
+        <h3 className="text-2xl font-playfair font-semibold text-black -mt-5 text-center">
           Late Shri Jivanbhai Bechardas Patel
         </h3>
         <p className="text-gray-600 text-sm italic -mt-1">Founder and Pioneer</p>

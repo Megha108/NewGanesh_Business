@@ -8,11 +8,13 @@ import BG6 from "../../assets/image/home/Ganesh52.jpg";
 import BG9 from "../../assets/image/home/IMG_3133.jpeg";
 import BG10 from "../../assets/image/home/IMG_7917.JPG";
 import BG8 from "../../assets/image/home/grase.png";
+import { Link } from "react-router-dom";
+
 
 import "./Landing.css";
 
 const Landing = () => {
-  const webImages = [ BG1, BG6, BG9,BG10,];
+  const webImages = [BG1, BG6, BG9, BG10,];
   const mobileImages = [BG5, BG4, BG3, BG2];
 
   const getMobile = () => window.innerWidth < 900;
@@ -55,9 +57,8 @@ const Landing = () => {
         {backgrounds.map((bg, i) => (
           <div
             key={i}
-            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
-              i === current && !fading ? "opacity-100" : "opacity-0"
-            }`}
+            className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${i === current && !fading ? "opacity-100" : "opacity-0"
+              }`}
             style={{
               backgroundImage: `url(${bg})`,
               backgroundSize: "cover",
@@ -87,12 +88,13 @@ const Landing = () => {
               Trusted Seeds for a Better Tomorrow
             </p>
 
-            <a
-              href="/product"
-              className="inline-block mt-8 px-6 px-3 py-3 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition"
+            <Link
+              to="/products"
+              className="inline-block mt-8 px-6 py-3 bg-[#16561A] text-white rounded-lg hover:bg-[#228B22] transition"
             >
               Explore Products
-            </a>
+            </Link>
+
           </div>
         </div>
       </div>

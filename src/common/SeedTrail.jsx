@@ -6,7 +6,10 @@ export default function SeedTrail() {
   const containerRef = useRef(null);
   const lastMousePos = useRef({ x: 0, y: 0 });
   const frameCount = useRef(0);
-  const trailInterval = 2; // frames between spawns when moving
+
+  // 2x faster trail on mobile
+  const isMobile = window.matchMedia("(pointer: coarse)").matches;
+  const trailInterval = isMobile ? 0.5 : 2;
 
   useEffect(() => {
     const createSeed = (x, y) => {
@@ -21,7 +24,6 @@ export default function SeedTrail() {
       seed.style.zIndex = 9999;
       containerRef.current.appendChild(seed);
 
-      // Fade out after 1 second
       gsap.to(seed, {
         duration: 1,
         opacity: 0,
@@ -31,30 +33,48 @@ export default function SeedTrail() {
       });
     };
 
-    const handleMove = (e) => {
-      const dx = e.clientX - lastMousePos.current.x;
-      const dy = e.clientY - lastMousePos.current.y;
+    const handleMove = (clientX, clientY) => {
+      const dx = clientX - lastMousePos.current.x;
+      const dy = clientY - lastMousePos.current.y;
       const distance = Math.sqrt(dx * dx + dy * dy);
 
-      // Only spawn seed if mouse actually moved
       if (distance > 0) {
         frameCount.current++;
         if (frameCount.current % trailInterval === 0) {
           createSeed(
-            e.clientX + Math.random() * 8 - 4,
-            e.clientY + Math.random() * 8 - 4
+            clientX + Math.random() * 8 - 4,
+            clientY + Math.random() * 8 - 4
           );
         }
-        lastMousePos.current = { x: e.clientX, y: e.clientY };
+        lastMousePos.current = { x: clientX, y: clientY };
       }
     };
 
-    window.addEventListener("mousemove", handleMove);
+    const mouseMove = (e) => handleMove(e.clientX, e.clientY);
+    const touchMove = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        handleMove(touch.clientX, touch.clientY);
+      }
+    };
+
+    const touchStart = (e) => {
+      if (e.touches && e.touches.length > 0) {
+        const touch = e.touches[0];
+        lastMousePos.current = { x: touch.clientX, y: touch.clientY };
+      }
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+    window.addEventListener("touchmove", touchMove, { passive: true });
+    window.addEventListener("touchstart", touchStart, { passive: true });
 
     return () => {
-      window.removeEventListener("mousemove", handleMove);
+      window.removeEventListener("mousemove", mouseMove);
+      window.removeEventListener("touchmove", touchMove);
+      window.removeEventListener("touchstart", touchStart);
     };
-  }, []);
+  }, [trailInterval]);
 
   return (
     <div

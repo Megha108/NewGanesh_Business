@@ -9,7 +9,7 @@ import OwnerPhoto from "./OwnerPhoto.jsx";
 const HomeMain = () => {
   return (
     <>
-      <div className="relative z-10 isolate font-bricolage">
+      <div className="relative z-10 isolate font-bricolage overflow-hidden">
         <Navbar />
         <Landing />
         <CompanyOverview />

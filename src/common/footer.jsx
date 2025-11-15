@@ -140,14 +140,20 @@ export default function Footer() {
 
           {/* Social Icons */}
           {/* Social Icons */}
-          <div className="flex justify-centre space-x-4 text-black transition-colors text-lg">
+          <div className="flex justify-center space-x-4 text-black transition-colors text-lg">
 
             <Link to="/youtube" className="hover:text-[#FFD700]">
               <IconWrap><IconInsta /></IconWrap>
             </Link>
-            <Link to="/whatsapp" className="hover:text-[#FFD700]">
+            <Link
+              to="https://wa.me/+919978031353"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[#FFD700]"
+            >
               <IconWrap><IconWA /></IconWrap>
             </Link>
+
           </div>
         </div>
 
@@ -159,8 +165,7 @@ export default function Footer() {
             <li><Link to="/about" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">About</Link></li>
             <li><Link to="/products" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Products</Link></li>
             <li><Link to="/gallery" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Gallery</Link></li>
-            <li><Link to="/brochure" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">E-Brochure</Link></li>
-          </ul>
+             </ul>
         </div>
         {/* Right Column */}
         <div className="text-center sm:text-left px-3 sm:pl-6 sm:ml-0 -ml-3">
@@ -221,15 +226,19 @@ export default function Footer() {
       <div className="border-t border-black/40 relative z-30 bg-white/20 backdrop-blur-sm py-4">
 
         {/* Left (Made By) */}
-        
+
 
         {/* Centered © Text */}
         <div className="text-center text-xs sm:text-sm font-semibold hover:text-[#FFD700] transition">
           © 2025 New Ganesh Seeds | All Rights Reserved
         </div><br></br>
-<div className="absolute left-4 bottom-4 text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition ml-24 sm:ml-142 ">
-          Made by Onexx Technologies
+        <div className="absolute left-4 bottom-4 text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition ml-24 sm:ml-142 ">
+          Made by{" "}
+          <a href="mailto:onexxtechnologies@gmail.com" className="hover:text-[#FFD700]">
+            Onexx Technologies
+          </a>
         </div>
+
       </div>
 
 
