@@ -6,7 +6,7 @@ import BG4 from "../../assets/image/home/Ganesh6.jpg";
 import BG5 from "../../assets/image/home/Ganesh16.jpg";
 import BG6 from "../../assets/image/home/Ganesh52.jpg";
 import BG9 from "../../assets/image/home/IMG_3133.jpeg";
-import BG10 from "../../assets/image/home/IMG_7917.jpg";
+import BG10 from "../../assets/image/home/IMG_7917.JPG";
 import BG8 from "../../assets/image/home/grase.png";
 
 import "./Landing.css";
