@@ -31,7 +31,7 @@ export default function App() {
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/products" element={<ProductMain />} />
         <Route path="/enquire" element={<EnquiryPage />} />
-        <Route path="/gallery" element={<GalleryPage />} />
+        <Route path="/gallery" element={<Gallerypage />} />
       </Routes>
     </>
   );
