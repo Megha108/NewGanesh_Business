@@ -6,7 +6,7 @@ import AboutUsPage from "./pages/aboutUsPage/main.jsx";
 import ProductMain from "./pages/productpage/main.jsx";
 import SeedTrail from "./common/SeedTrail";
 import EnquiryPage from "./pages/enquiryPage/enquiryPage.jsx";
-import GalleryPage from "./pages/galleryPage/gallerypage.jsx";
+import GalleryPage from "./pages/gallerypage/GalleryPage.jsx";
 import ScrollToTop from "./common/ScrollToTop.jsx"; // 👈 Import scroll helper
 
 export default function App() {
