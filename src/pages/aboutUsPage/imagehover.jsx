@@ -40,17 +40,19 @@ export default function ImageHover() {
         return (
           <div
             key={i}
-            className="
+            className={`
               group relative bg-cover bg-center 
               transition-[flex] duration-300
-              flex-1 hover:flex-[4]
-            "
+              flex-1 hover:flex-[4] cursor-pointer
+            `}
             style={{ backgroundImage: `url(${item.img})` }}
-            onClick={() => setActive(isActive ? null : i)}  // tap for mobile
+            onClick={() => setActive(isActive ? null : i)} // tap for mobile
           >
-            <div className="absolute inset-0 bg-black/30" />
+            {/* Overlay */}
+            <div className="absolute inset-0 bg-black/30 pointer-events-none" />
 
-            <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-2">
+            {/* Content */}
+            <div className="absolute inset-0 flex flex-col justify-center items-center text-white text-center px-2 pointer-events-none">
               <h2 className="font-bold text-sm sm:text-base md:text-xl leading-tight">
                 {item.title}
               </h2>
