@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import BG1 from "../../assets/image/home/godownimg1.jpeg";
 import BG2 from "../../assets/image/home/Ganesh12.jpg";
-import BG3 from "../../assets/image/home/ganesh54.jpg";
-import BG4 from "../../assets/image/home/ganesh6.jpg";
-import BG5 from "../../assets/image/home/ganesh16.jpg";
-import BG6 from "../../assets/image/home/ganesh52.jpg";
+import BG3 from "../../assets/image/home/Ganesh54.jpg";
+import BG4 from "../../assets/image/home/Ganesh6.jpg";
+import BG5 from "../../assets/image/home/Ganesh16.jpg";
+import BG6 from "../../assets/image/home/Ganesh52.jpg";
 import BG9 from "../../assets/image/home/IMG_3133.jpeg";
 import BG10 from "../../assets/image/home/IMG_7917.jpg";
 import BG8 from "../../assets/image/home/grase.png";
