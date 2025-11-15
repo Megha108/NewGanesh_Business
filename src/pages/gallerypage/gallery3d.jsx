@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./gallery3D.css";
+import "./gallery3d.css";
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
 
