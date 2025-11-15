@@ -118,14 +118,15 @@ export default function Gallery3D() {
         >
           {/* Close */}
           <button
-            className="absolute top-6 right-8 text-white text-3xl font-light bg-white/10 hover:bg-white/25 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all"
+            className="absolute top-6 right-8 text-white text-3xl font-light bg-white/10 hover:bg-white/25 rounded-full w-10 h-10 flex items-center justify-center backdrop-blur-sm shadow-lg transition-all z-[9999]"
             onClick={(e) => {
               e.stopPropagation();
               handleClose();
             }}
-          ><div className="-mt-2  -ml-1 sm:ml-0">
-              ×</div>
+          >
+            <div className="-mt-1">×</div>
           </button>
+
 
           {/* Center Arrows */}
           <button

@@ -172,7 +172,7 @@ export default function Footer() {
           <h3 className="text-lg sm:text-xl font-bold mb-4 sm:ml-0 ml-3">Contact Us</h3>
           <ul className="space-y-3 text-black text-sm font-semibold break-words sm:break-normal">
 
-            <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full break-words">
+            <li className="mx-auto sm:text-left text-center sm:mx-0 max-w-[90%] sm:max-w-full break-words">
               📍 Office<br />
               <a
                 href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
@@ -232,7 +232,7 @@ export default function Footer() {
         <div className="text-center text-xs sm:text-sm font-semibold hover:text-[#FFD700] transition">
           © 2025 New Ganesh Seeds | All Rights Reserved
         </div><br></br>
-        <div className="absolute left-4 bottom-4 text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition ml-24 sm:ml-142 ">
+        <div className="relative text-center text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition  ">
           Made by{" "}
           <a href="mailto:onexxtechnologies@gmail.com" className="hover:text-[#FFD700]">
             Onexx Technologies

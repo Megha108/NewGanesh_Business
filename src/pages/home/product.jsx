@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import p1 from "../../assets/image/home/PSimg1.webp";
 import p2 from "../../assets/image/home/PSimg2.webp";
@@ -24,6 +24,21 @@ const PRODUCTS = [
 export default function ProductsMarquee() {
   const doubled = [...PRODUCTS, ...PRODUCTS];
 
+  // -----------------------------
+  // 🟢 Mobile: Pause control
+  // -----------------------------
+  const [paused, setPaused] = useState(false);
+  const isMobile =
+    typeof window !== "undefined" &&
+    window.matchMedia("(pointer: coarse)").matches;
+
+  const handleTap = () => {
+    if (!isMobile) return; // only mobile
+    setPaused(true); // pause animation
+    setTimeout(() => setPaused(false), 2000); // auto resume after 2 sec
+  };
+  // -----------------------------
+
   return (
     <section className="relative py-12 md:py-6 bg-[#F8F7F3]">
       <style>{`
@@ -42,6 +57,7 @@ export default function ProductsMarquee() {
       `}</style>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+
         {/* Featured Products Title */}
         <div className="flex flex-col items-center text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-semibold tracking-wide text-black mb-4">
@@ -51,20 +67,29 @@ export default function ProductsMarquee() {
 
           {/* Description */}
           <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10 leading-relaxed">
-            At <strong>NEW GANESH SEEDS</strong>, we take pride in offering a
-            diverse range of high-quality seeds carefully selected to ensure
-            maximum yield and purity. Each product reflects our dedication to
-            innovation, sustainability, and farmer success. Whether it’s fodder,
-            fiber, or vegetable seeds, every batch is processed with precision
-            and tested for exceptional germination performance.
+            At <strong>NEW GANESH SEEDS</strong>, we take pride in offering...
           </p>
         </div>
 
         {/* Featured Products Marquee */}
-        <div className="marquee relative overflow-hidden rounded-xl mb-16">
+        <div
+          className="marquee relative overflow-hidden rounded-xl mb-16"
+          onClick={handleTap} // ⭐ Mobile tap pause
+        >
           <div className="pointer-events-none absolute left-0 top-0 h-full w-12" />
           <div className="pointer-events-none absolute right-0 top-0 h-full w-12" />
-          <div className="marquee-track flex gap-10 md:gap-14 items-center">
+
+          <div
+            className="marquee-track flex gap-10 md:gap-14 items-center"
+            style={{
+              // ⭐ Mobile controls animation; desktop hover works normally
+              animationPlayState: isMobile
+                ? paused
+                  ? "paused"
+                  : "running"
+                : undefined,
+            }}
+          >
             {doubled.map((item, idx) => (
               <motion.div
                 key={idx}
