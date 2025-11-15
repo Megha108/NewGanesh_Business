@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./gallery3D.css";
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";

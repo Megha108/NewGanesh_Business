@@ -43,7 +43,7 @@ const WhoareWe = () => {
       </p>
       <br/>
       <p style={styles.text} >
-        Our company proudly represents the third generation of a family committed to excellence in the seed industry. With decades of dedication passed down through our lineage, we continue to uphold the values, trust, and integrity that built this foundation. Each generation has strengthened our vision, and today, we carry forward this legacy with the same pride and responsibility.
+        Our company proudly represents the third generation of a family committed to excellence in the seed industry. With decades of dedication passed down through our lineage, we continue to uphold the values, trust, and integrity that built this foundation. Each generation has strengthened our vision, and today, we carry forward this legacy with the same pride and responsibility.
                
       </p>
       <br/>

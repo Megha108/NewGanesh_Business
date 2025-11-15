@@ -1,5 +1,5 @@
 import React from "react";
-import Gallery3D from "./gallery3d";
+import Gallery3D from "./gallery3d.jsx";
 
 export default function GalleryPage() {
   return (

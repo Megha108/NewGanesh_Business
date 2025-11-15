@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { motion, useMotionValue, useTransform } from "framer-motion";
 import img1 from "../../assets/image/home/l2.webp";
 import img2 from "../../assets/image/home/l1.webp";
