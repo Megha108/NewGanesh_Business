@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BG1 from "../../assets/image/home/godownimg1.jpeg";
-import BG2 from "../../assets/image/home/ganesh12.jpg";
+import BG2 from "../../assets/image/home/Ganesh12.jpg";
 import BG3 from "../../assets/image/home/ganesh54.jpg";
 import BG4 from "../../assets/image/home/ganesh6.jpg";
 import BG5 from "../../assets/image/home/ganesh16.jpg";
