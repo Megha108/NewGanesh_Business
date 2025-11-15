@@ -28,7 +28,7 @@ import PImg7 from "../../assets/image/home/PSimg7.webp";
 import img71 from "../../assets/image/product/PImg7.1.webp";
 import img72 from "../../assets/image/product/PImg7.2.webp";
 import img73 from "../../assets/image/product/PImg7.3.webp";
-import PImg8 from "../../assets/image/home/PSimg8.webp";
+import PImg8 from "../../assets/image/home/Psimg8.webp";
 import img81 from "../../assets/image/product/PImg8.1.webp";
 import img82 from "../../assets/image/product/PImg8.2.webp";
 

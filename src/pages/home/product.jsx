@@ -8,7 +8,7 @@ import p4 from "../../assets/image/home/PSimg4.webp";
 import p5 from "../../assets/image/home/PSimg5.webp";
 import p6 from "../../assets/image/home/PSimg6.webp";
 import p7 from "../../assets/image/home/PSimg7.webp";
-import p8 from "../../assets/image/home/PSimg8.webp";
+import p8 from "../../assets/image/home/Psimg8.webp";
 
 const PRODUCTS = [
   { src: p2, alt: "Ganesh Rajka" },
