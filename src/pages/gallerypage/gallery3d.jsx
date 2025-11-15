@@ -4,21 +4,21 @@ import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
 
 // Images
-import img1 from "../../assets/image/gallery/ganesh11.jpg";
-import img2 from "../../assets/image/gallery/ganesh12.jpg";
-import img3 from "../../assets/image/gallery/ganesh44.jpg";
-import img4 from "../../assets/image/gallery/ganesh9.jpg";
-import img5 from "../../assets/image/gallery/ganesh10.jpg";
-import img6 from "../../assets/image/gallery/ganesh14.jpg";
-import img7 from "../../assets/image/gallery/godown.jpg";
-import img9 from "../../assets/image/gallery/IMG_7931.jpg";
-import img8 from "../../assets/image/gallery/IMG_7940.jpg";
-import img10 from "../../assets/image/gallery/ganesh21.jpg";
-import img11 from "../../assets/image/gallery/ganesh27.jpg";
-import img12 from "../../assets/image/gallery/ganesh29.jpg";
-import img13 from "../../assets/image/gallery/ganesh32.jpg";
-import img14 from "../../assets/image/gallery/ganesh35.jpg";
-import img15 from "../../assets/image/gallery/ganesh36.jpg";
+import img1 from "../../assets/image/gallery/Ganesh11.jpg";
+import img2 from "../../assets/image/gallery/Ganesh12.jpg";
+import img3 from "../../assets/image/gallery/Ganesh44.jpg";
+import img4 from "../../assets/image/gallery/Ganesh9.jpg";
+import img5 from "../../assets/image/gallery/Ganesh10.jpg";
+import img6 from "../../assets/image/gallery/Ganesh14.jpg";
+import img7 from "../../assets/image/gallery/Godown.JPG";
+import img9 from "../../assets/image/gallery/IMG_7931.JPG";
+import img8 from "../../assets/image/gallery/IMG_7940.JPG";
+import img10 from "../../assets/image/gallery/Ganesh21.jpg";
+import img11 from "../../assets/image/gallery/Ganesh27.jpg";
+import img12 from "../../assets/image/gallery/Ganesh29.jpg";
+import img13 from "../../assets/image/gallery/Ganesh32.jpg";
+import img14 from "../../assets/image/gallery/Ganesh35.jpg";
+import img15 from "../../assets/image/gallery/Ganesh36.jpg";
 
 export default function Gallery3D() {
   const images = [img1, img2, img3, img4, img5, img6, img7, img8, img9, img10, img11, img12, img13, img14, img15];
