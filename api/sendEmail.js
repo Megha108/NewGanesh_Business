@@ -12,7 +12,7 @@ export default async function handler(req, res) {
   try {
     await resend.emails.send({
       from: "Enquiry <onboarding@resend.dev>",
-      to: "newganeshseeds38@gmail.com", // <-- YOUR PERSONAL EMAIL HERE
+      to: "omk25patel@gmail.com", // <-- YOUR PERSONAL EMAIL HERE
       subject: "New Enquiry Received",
       text: `
         New customer enquiry:
