@@ -1,32 +1,24 @@
-require("dotenv").config();
-const express = require("express");
-const cors = require("cors");
 const nodemailer = require("nodemailer");
 
-const app = express();
-app.use(cors());
-app.use(express.json());
+exports.handler = async function (event, context) {
+  if (event.httpMethod !== "POST") {
+    return { statusCode: 405, body: "Method Not Allowed" };
+  }
 
-// =========================
-//  SEND ENQUIRY API
-// =========================
-app.post("/send-enquiry", async (req, res) => {
-  const { name, email, phone, city, product, message } = req.body;
+  const { name, email, phone, city, product, message } = JSON.parse(event.body);
 
   try {
-    // Gmail Transporter
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.GMAIL_USER, // your gmail
-        pass: process.env.GMAIL_PASS, // your app password
+        user: process.env.GMAIL_USER, // Your Gmail
+        pass: process.env.GMAIL_PASS, // App password from Gmail
       },
     });
 
-    // Email template
     const mailOptions = {
       from: process.env.GMAIL_USER,
-      to: process.env.GMAIL_USER, // You receive the enquiry here
+      to: process.env.GMAIL_USER, // Where you receive the enquiry
       subject: `New Enquiry from ${name}`,
       text: `
 New Customer Enquiry
@@ -42,27 +34,17 @@ Submitted On: ${new Date().toLocaleString()}
       `,
     };
 
-    // Send email
     await transporter.sendMail(mailOptions);
 
-    res.json({
-      success: true,
-      message: "Enquiry sent successfully!",
-    });
+    return {
+      statusCode: 200,
+      body: JSON.stringify({ success: true, message: "Enquiry sent successfully!" }),
+    };
   } catch (err) {
     console.error("❌ Email Error:", err);
-    res.json({
-      success: false,
-      message: "Failed to send enquiry.",
-    });
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ success: false, message: "Failed to send enquiry." }),
+    };
   }
-});
-
-// =========================
-//  SERVER START (IMPORTANT)
-// =========================
-const PORT = process.env.PORT || 10000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
-});
+};
