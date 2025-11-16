@@ -3,6 +3,7 @@ import { motion, useMotionValue, useTransform } from "framer-motion";
 import img1 from "../../assets/image/home/l2.webp";
 import img2 from "../../assets/image/home/l1.webp";
 import "./CompanyOverviewTitle.css";
+import {Link} from "react-router-dom";
 
 const CompanyOverview = () => {
   const radius = 50; // smaller for mobile responsiveness
@@ -102,12 +103,11 @@ const CompanyOverview = () => {
               <b>“Growing Trust, Ensuring Quality.”</b>
             </p>
 
-            <a
-              href="/about"
+            <Link to="/about"
               className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
             >
               Discover more ➔
-            </a>
+            </Link>
           </motion.div>
         </div>
       </section>

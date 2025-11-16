@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { OrbitControls, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
-
+import {Link} from "react-router-dom";
 const MODEL_ROTATION = {
   x: Math.PI / 2,
   y: Math.PI,
@@ -198,12 +198,11 @@ export default function ThreeDProducts() {
 
         {/* View All Products Button */}
         <div className="mt-6 text-center">
-          <a
-            href="/products"
+          <Link to="/products"
             className="inline-block px-6 py-3 bg-[#16561A] text-white font-medium rounded-xl shadow-md hover:bg-[#228B22] transition"
           >
             View All Products ➔
-          </a>
+          </Link>
         </div>
       </div>
     </section>
