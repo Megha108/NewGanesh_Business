@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import GreenBackground from "./GreenBackground";
-import SentEmailAnimation from "../../assets/MailSentAnimation.mp4";
+import SentEmailAnimation from "../../assets/MailSentAnimationunscreen.gif";
 
 export default function EnquiryForm() {
   const location = useLocation();
