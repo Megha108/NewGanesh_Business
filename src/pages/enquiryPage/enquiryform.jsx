@@ -1,7 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import GreenBackground from "./GreenBackground";
-import SentEmailAnimation from "../../assets/MailSentAnimationunscreen.gif";
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+
 
 export default function EnquiryForm() {
   const location = useLocation();
@@ -232,11 +233,10 @@ export default function EnquiryForm() {
             </p>
 
             {status.ok && (
-              <video
-                src={SentEmailAnimation}
-                autoPlay
-                muted
+              <DotLottieReact
+                src="https://lottie.host/4134aeda-2dea-4155-9c4f-c223e0ad6c94/MRCeBhEybG.lottie"
                 loop
+                autoplay
                 className="w-40 h-40 mx-auto"
               />
             )}
