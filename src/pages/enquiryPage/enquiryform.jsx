@@ -62,7 +62,7 @@ export default function EnquiryForm() {
     try {
       setLoading(true);
 
-      const res = await fetch("/.netlify/functions/send-enquiry", {
+      const res = await fetch("../../../backend/server.js", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
