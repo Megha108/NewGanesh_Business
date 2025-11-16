@@ -62,7 +62,8 @@ export default function EnquiryForm() {
     try {
       setLoading(true);
 
-      const res = await fetch("/.netlify/functions/sendEmail", {
+      const res = await fetch("/api/sendEmail", {
+
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
@@ -91,7 +92,7 @@ export default function EnquiryForm() {
 
       <div className="relative z-10 bg-white rounded-2xl p-8 md:p-10 w-[90%] max-w-5xl backdrop-blur-sm bg-opacity-90">
         <div className="flex flex-col md:flex-row gap-6">
-          
+
           {/* LEFT SIDE */}
           <div className="w-full md:w-1/2 h-auto rounded-lg overflow-hidden flex flex-col mt-10">
             <div className="h-[250px] md:h-[350px]">
