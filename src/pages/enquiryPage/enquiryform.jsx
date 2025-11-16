@@ -65,7 +65,7 @@ export default function EnquiryForm() {
       setLoading(true);
 
       // 🔥 Send to backend server
-      const res = await fetch("https://newganeshseeds.onrender.com/send-enquiry", {
+      const res = await fetch("https://newganesh-business.onrender.com/send-enquiry", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
