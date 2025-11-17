@@ -92,7 +92,7 @@ const ProductModal = ({ product, onClose }) => {
     if (paused || images.length <= 1) return;
     const id = setInterval(
       () => setIndex((i) => (i + 1) % images.length),
-      3500
+      2500
     );
     return () => clearInterval(id);
   }, [paused, images.length]);

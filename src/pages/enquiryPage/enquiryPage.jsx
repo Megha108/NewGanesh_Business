@@ -1,6 +1,6 @@
 import Footer from "../../common/footer.jsx";
 import Navbar from "../../common/navbar.jsx";
-import EnquiryTitle from "./enquiryTitle.jsx";
+
 import EnquiryForm from "./enquiryform.jsx";
 const EnquiryPage = () => {
   return (

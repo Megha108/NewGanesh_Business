@@ -7,7 +7,6 @@ import BG5 from "../../assets/image/home/Ganesh16.jpg";
 import BG6 from "../../assets/image/home/Ganesh52.jpg";
 import BG9 from "../../assets/image/home/IMG_3133.jpeg";
 import BG10 from "../../assets/image/home/IMG_7917.JPG";
-import BG8 from "../../assets/image/home/grase.png";
 import { Link } from "react-router-dom";
 
 
