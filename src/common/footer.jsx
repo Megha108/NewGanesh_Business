@@ -28,7 +28,12 @@ export default function Footer() {
 
     const draw = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+      const gradient = ctx.createLinearGradient(
+        0,
+        0,
+        canvas.width,
+        canvas.height,
+      );
       gradient.addColorStop(0, "#b4ec51");
       gradient.addColorStop(1, "#429321");
       ctx.fillStyle = gradient;
@@ -100,7 +105,6 @@ export default function Footer() {
     </svg>
   );
 
-
   const IconWA = () => (
     <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor">
       <path d="M.1 24l1.7-6.1a10.8 10.8 0 1 1 4 4L.1 24zM7 6.6c-.3-.7-.5-.7-.8-.7h-.7c-.3 0-.7.1-1 .5s-1.3 1.2-1.3 3 1.3 3.4 1.5 3.6 2.6 4.2 6.3 5.7c3.1 1.2 3.7 1 4.3 1s2.1-.9 2.4-1.8c.3-.9.3-1.6.2-1.8s-.4-.3-.8-.5-2.4-1.2-2.8-1.3-.6-.2-.8.2-1 1.3-1.3 1.5-.5.2-.9 0c-.4-.2-1.6-.6-3-1.9-1.1-1-1.8-2.2-2-2.6-.2-.4 0-.6.2-.8.2-.2.4-.5.5-.7.2-.2.2-.4.3-.6 0-.2 0-.5-.1-.7-.1-.2-.7-1.6-1-2.3z" />
@@ -141,9 +145,10 @@ export default function Footer() {
           {/* Social Icons */}
           {/* Social Icons */}
           <div className="flex justify-center space-x-4 text-black transition-colors text-lg">
-
             <Link to="/youtube" className="hover:text-[#FFD700]">
-              <IconWrap><IconInsta /></IconWrap>
+              <IconWrap>
+                <IconInsta />
+              </IconWrap>
             </Link>
             <Link
               to="https://wa.me/+919978031353"
@@ -151,64 +156,116 @@ export default function Footer() {
               rel="noopener noreferrer"
               className="hover:text-[#FFD700]"
             >
-              <IconWrap><IconWA /></IconWrap>
+              <IconWrap>
+                <IconWA />
+              </IconWrap>
             </Link>
-
           </div>
         </div>
-
 
         {/* Middle Column */}
         <div className="text-center sm:text-left ml- sm:pl-12 md:pl-20 lg:pl-28">
           <ul className="space-y-4 text-black text-sm font-semibold">
-            <li><Link to="/" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Home</Link></li>
-            <li><Link to="/about" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">About</Link></li>
-            <li><Link to="/products" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Products</Link></li>
-            <li><Link to="/gallery" className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4">Gallery</Link></li>
-             </ul>
+            <li>
+              <Link
+                to="/"
+                className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4"
+              >
+                Home
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/about"
+                className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4"
+              >
+                About
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/products"
+                className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4"
+              >
+                Products
+              </Link>
+            </li>
+            <li>
+              <Link
+                to="/gallery"
+                className="transition-colors hover:text-[#FFD700] text-lg sm:text-1.5xl font-bold mb-4"
+              >
+                Gallery
+              </Link>
+            </li>
+          </ul>
         </div>
         {/* Right Column */}
         <div className="text-center sm:text-left px-3 sm:pl-6 sm:ml-0 -ml-3">
-          <h3 className="text-lg sm:text-xl font-bold mb-4 sm:ml-0 ml-3">Contact Us</h3>
+          <h3 className="text-lg sm:text-xl font-bold mb-4 sm:ml-0 ml-3">
+            Contact Us
+          </h3>
           <ul className="space-y-3 text-black text-sm font-semibold break-words sm:break-normal">
-
             <li className="mx-auto sm:text-left text-center sm:mx-0 max-w-[90%] sm:max-w-full break-words">
-              📍 Office<br />
+              📍 Office
+              <br />
               <a
                 href="https://maps.app.goo.gl/965xX2TCe3P2HXws5"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#FFD700] break-words whitespace-normal overflow-hidden"
-                style={{ wordBreak: "break-word", overflowWrap: "break-word", whiteSpace: "normal" }}
+                style={{
+                  wordBreak: "break-word",
+                  overflowWrap: "break-word",
+                  whiteSpace: "normal",
+                }}
               >
-                New Ganesh Seeds - 38, Market Yard Rd, Kadi, Gujarat 382715
+                New Ganesh Seeds - 1, Market Yard Rd, Kadi, Gujarat 382715
               </a>
             </li>
 
-
             <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full break-words">
-              📍 Warehouse<br />
+              📍 Warehouse
+              <br />
               <a
                 href="https://maps.app.goo.gl/5nDv3t7NAxy4CbvD6"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="transition-colors hover:text-[#FFD700] break-words whitespace-normal overflow-hidden"
               >
-                Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near Thol Road, Kadi, Gujarat 384440
+                Kadi – Thol Rd, near Indian Oil Petrol Pump, TIRTH Arcade, near
+                Thol Road, Kadi, Gujarat 384440
               </a>
             </li>
 
             <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full">
-              📞 Contact<br />
+              📞 Contact
+              <br />
               <div className="flex flex-col items-center sm:items-start">
-                <a href="tel:+919825062048" className="transition-colors hover:text-[#FFD700]">+91 9825062048</a>
-                <a href="tel:+919925062048" className="transition-colors hover:text-[#FFD700]">+91 9925062048</a>
-                <a href="tel:+919978031353" className="transition-colors hover:text-[#FFD700]">+91 9978031353</a>
+                <a
+                  href="tel:+919825062048"
+                  className="transition-colors hover:text-[#FFD700]"
+                >
+                  +91 9825062048
+                </a>
+                <a
+                  href="tel:+919925062048"
+                  className="transition-colors hover:text-[#FFD700]"
+                >
+                  +91 9925062048
+                </a>
+                <a
+                  href="tel:+919978031353"
+                  className="transition-colors hover:text-[#FFD700]"
+                >
+                  +91 9978031353
+                </a>
               </div>
             </li>
 
             <li className="mx-auto sm:mx-0 max-w-[90%] sm:max-w-full">
-              ✉️ Email<br />
+              ✉️ Email
+              <br />
               <a
                 href="mailto:newganeshseeds38@gmail.com"
                 className="transition-colors hover:text-[#FFD700] break-words sm:whitespace-normal"
@@ -216,32 +273,29 @@ export default function Footer() {
                 newganeshseeds38@gmail.com
               </a>
             </li>
-
           </ul>
         </div>
-
       </div>
 
       {/* Bottom Bar */}
       <div className="border-t border-black/40 relative z-30 bg-white/20 backdrop-blur-sm py-4">
-
         {/* Left (Made By) */}
-
 
         {/* Centered © Text */}
         <div className="text-center text-xs sm:text-sm font-semibold hover:text-[#FFD700] transition">
           © 2025 New Ganesh Seeds | All Rights Reserved
-        </div><br></br>
-        <div className="relative text-center text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition  ">
-          Made by{" "}
-          <a href="mailto:onexxtechnologies@gmail.com" className="hover:text-[#FFD700]">
-            Onexx Technologies
-          </a>
         </div>
-
+        <br></br>
+        <p className="relative text-center text-xs sm:text-sm font-semibold text-black opacity-80 hover:text-[#FFD700] transition">
+          Design & Developed By{" "}
+          <a
+            href="https://onexxtechnologies.com"
+            className="hover:text-blue-400 transition-colors"
+          >
+            Onexx-Technologies
+          </a>
+        </p>
       </div>
-
-
     </footer>
   );
 }
