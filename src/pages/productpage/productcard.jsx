@@ -1,4 +1,4 @@
-const ProductCard = ({ name, image, onClick }) => {
+const ProductCard = ({ name, image, alt, onClick }) => {
   return (
     <div
       onClick={onClick}
@@ -7,7 +7,7 @@ const ProductCard = ({ name, image, onClick }) => {
       <div className="relative">
         <img
           src={image}
-          alt={name}
+          alt={alt || name}
           className="w-80 h-80 object-contain mx-auto transform group-hover:scale-105 transition-transform duration-500 p-5"
         />
       </div>

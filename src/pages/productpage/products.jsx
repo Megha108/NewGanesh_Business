@@ -58,7 +58,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Teensali",
     image: PImg7,
-    images: [PImg7, img71,img72,img73, img63,img64],
+    images: [PImg7, img71, img72, img73, img63, img64],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "June to August (Kharif) and February to March (Rabi)"],
@@ -80,7 +80,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Barmasi",
     image: PImg8,
-    images: [PImg8, img81,img82,img63,img64],
+    images: [PImg8, img81, img82, img63, img64],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "February–April & August–September"],
@@ -101,7 +101,7 @@ const allProducts = [
   {
     name: "Ganesh Kasni",
     image: PImg3,
-    images: [PImg3, img31,img32,img33,img34],
+    images: [PImg3, img31, img32, img33, img34],
     description: "Perfect for high productivity and early harvest.",
     details: [
       ["Time of Sowing", "October to December"],
@@ -123,7 +123,7 @@ const allProducts = [
   {
     name: "Ganesh Rajka Bajra",
     image: PImg5,
-    images: [PImg5,img51,img52],
+    images: [PImg5, img51, img52],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "June to July (Kharif Season)"],
@@ -145,7 +145,7 @@ const allProducts = [
   {
     name: "Barseem",
     image: PImg1,
-    images: [PImg1,img11,img12],
+    images: [PImg1, img11, img12],
     description: "High quality hybrid sunflower seeds for better yield.",
     details: [
       ["Time of Sowing", "October to November (Rabi Season)"],
@@ -167,7 +167,7 @@ const allProducts = [
   {
     name: "Ganesh Jaudo",
     image: PImg2,
-    images: [PImg2, img21,img22,img23],
+    images: [PImg2, img21, img22, img23],
     description: "Rich in oil content and disease resistance.",
     details: [
       ["Time of Sowing", "June–August (Kharif) & February–March (Rabi)"],
@@ -189,7 +189,7 @@ const allProducts = [
   {
     name: "Oat Seeds",
     image: PImg4,
-    images: [PImg4,img41, img42],
+    images: [PImg4, img41, img42],
     description: "High germination rate and pest resistance.",
     details: [
       ["Time of Sowing", "October to December (Rabi Season)"],
@@ -212,25 +212,102 @@ const allProducts = [
   },
 ];
 
-const Products = () => { 
+import { LOCALITIES } from "../../data/localities.js";
+import { SEO_CONTENT } from "../../data/seoContent.js";
+
+const Products = ({ seoConfig }) => {
   const [selectedProduct, setSelectedProduct] = useState(null);
+
+  // Filter products based on SEO type if provided
+  const filteredProducts = seoConfig
+    ? allProducts.filter(p => {
+      const category = p.details.find(d => d[0] === "CATEGORY")?.[1] || "";
+      return category.toLowerCase().includes(seoConfig.type.toLowerCase()) ||
+        p.name.toLowerCase().includes(seoConfig.type.toLowerCase());
+    })
+    : allProducts;
+
+  // Generate dynamic SEO content (200-400 words)
+  const generateDynamicContent = () => {
+    if (!seoConfig) return null;
+
+    const currentLocality = seoConfig.locality || LOCALITIES[0];
+    const otherLocations = LOCALITIES.filter(l => l !== (seoConfig.locality || LOCALITIES[0])).join(", ");
+    const type = seoConfig.type;
+    const brand1 = "new ganesh seeds";
+    const brand2 = "ganesh seeds";
+    const brand3 = "ganesh";
+
+    return (
+      <div className="mt-16 max-w-4xl mx-auto text-gray-700 space-y-6 leading-relaxed text-lg border-t pt-10 px-5 sm:px-0">
+        <p>
+          At <strong>{brand1}</strong>, we take pride in being a trusted name for farmers in <strong>{currentLocality}</strong> and across <strong>{otherLocations}</strong>.
+          Our commitment to agricultural excellence drives us to provide the finest <strong>{type}</strong> designed for maximum productivity and sustainability.
+          Whether you are managing a large-scale commercial farm or a local dairy enterprise, <strong>{brand3}</strong> ensures that our seeds are selected for high germination rates and robust growth.
+        </p>
+        <p>
+          Choosing the right <strong>{type}</strong> is critical for achieving a high return on investment. Our selection process involves rigorous quality checks in <strong>{currentLocality}</strong> to ensure
+          that every batch of seeds from <strong>{brand2}</strong> meets the highest industry standards. In regions like <strong>{currentLocality}</strong> and <strong>{LOCALITIES[1]}</strong>,
+          where climatic conditions can be challenging, our seeds offer superior resilience against common pests and diseases, ensuring a stable yield for our partners.
+        </p>
+        <p>
+          Why choose <strong>{brand3}</strong>? We don't just sell seeds; we provide a foundation for agricultural success in <strong>{currentLocality}</strong>. Our platform is designed to make it easy for
+          farmers to browse and select category-specific seeds like <strong>{type}</strong> that transition perfectly from sowing to harvest.
+          The nutritional value of our fodder seeds from <strong>{brand1}</strong> is unmatched, providing essential proteins and minerals that improve the quality of livestock output.
+        </p>
+        <p>
+          As a leader and <strong>agriculture seeds supplier</strong> for <strong>{type}</strong>, we understand the local agricultural landscape of <strong>{currentLocality}</strong> and surrounding areas.
+          Our expertise at <strong>{brand2}</strong> allows us to provide tailored recommendations that help you optimize your resources. We invite you to explore our comprehensive range of seeds
+          and experience the difference that quality makes. <strong>{brand3}</strong> continues to innovate and expand its offerings to serve the evolving
+          needs of the farming community in <strong>{currentLocality}</strong>.
+        </p>
+      </div>
+    );
+  };
 
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col justify-center items-center py-10 px-5">
       {/* 🌿 Grass-text heading */}
-      <h1 className="grassText text-[50px] sm:text-[56px] lg:text-[72px] leading-tight font-bold text-center mb-12">
-        Our Seed Products
+      <h1 className="grassText text-[40px] sm:text-[50px] lg:text-[60px] leading-tight font-bold text-center mb-12 max-w-4xl px-5">
+        {seoConfig ? seoConfig.h1 : "Our Premium Seed Products"}
       </h1>
 
       <div className="container mx-auto">
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {allProducts.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <ProductCard
               key={index}
               {...product}
+              alt={`${product.name} - Premium ${seoConfig?.type || "Agriculture Seed"} Supplier in Kadi`}
               onClick={() => setSelectedProduct(product)}
             />
+          ))}
+        </div>
+      </div>
+
+      {/* Dynamic SEO Content Section */}
+      {generateDynamicContent()}
+
+      {/* Internal Linking Section: Browse Categories */}
+      <div className="mt-20 w-full max-w-7xl mx-auto border-t pt-10 px-5">
+        <h2 className="text-2xl font-bold text-gray-800 mb-6 font-bricolage text-center sm:text-left">Browse Our Categories by Location</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {Object.entries(SEO_CONTENT.buy).map(([key, item]) => (
+            <div key={key} className="space-y-3">
+              <h3 className="font-bold text-green-800 border-b pb-2">{item.type}</h3>
+              <div className="flex flex-wrap gap-2">
+                {item.localities.map(loc => (
+                  <a
+                    key={loc}
+                    href={`/buy/${item.slugPrefix}${loc}`}
+                    className="px-3 py-1.5 bg-white rounded-lg border border-gray-200 hover:border-green-600 hover:text-green-700 transition-all text-sm shadow-sm"
+                  >
+                    {loc.charAt(0).toUpperCase() + loc.slice(1)}
+                  </a>
+                ))}
+              </div>
+            </div>
           ))}
         </div>
       </div>

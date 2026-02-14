@@ -43,6 +43,8 @@ export default function App() {
         <Route path="/" element={<HomeMain />} />
         <Route path="/about" element={<AboutUsPage />} />
         <Route path="/products" element={<ProductMain />} />
+        {/* Dynamic SEO Landing Pages */}
+        <Route path="/:purpose/:slug" element={<ProductMain />} />
         <Route path="/enquire" element={<EnquiryPage />} />
         <Route path="/gallery" element={<Gallerypage />} />
       </Routes>
